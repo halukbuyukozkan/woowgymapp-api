@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DenemeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,5 @@ Route::middleware('auth:sanctum')->get('/my-protected-route', function (Request 
 
 Route::post('/auth/register', [AuthController::class, 'registeruser']);
 Route::post('/auth/login', [AuthController::class, 'loginUser']);
+
+Route::apiResource('users',UserController::class);

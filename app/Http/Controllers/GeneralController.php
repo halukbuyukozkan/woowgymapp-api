@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\General;
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\GeneralRequest;
 
-class UserController extends Controller
+
+class GeneralController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,20 +16,27 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return $users;
+        $general = General::paginate();
+
+        return $general;
     }
 
-
-    public function store(UserRequest $request)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(GeneralRequest $request)
     {
         $validated = $request->validated();
 
-        $user = User::create($validated);
+        $general = General::create($validated);
+
 
         return response()->json([
-            'message' => 'User created successfully',
-            'user' => $user,
+            'message' => 'General features created successfully',
+            'general' => $general,
         ]);
     }
 
@@ -44,32 +52,21 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, User $user)
+    public function update(GeneralRequest $request, General $general)
     {
         $validated = $request->validated();
 
-        $user->update($validated);
+        $general->update($validated);
 
         return response()->json([
-            'message' => 'User updated successfully.',
-            'user' => $user,
+            'message' => 'General features updated successfully.',
+            'general' => $general,
         ]);
     }
 
@@ -79,12 +76,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(General $general)
     {
-        $user->delete();
+        $general->delete();
 
         return response()->json([
-            'message' => 'User deleted successfully.',
+            'message' => 'General features deleted successfully.',
 
         ]);
     }

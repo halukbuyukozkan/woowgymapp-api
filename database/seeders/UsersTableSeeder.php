@@ -21,6 +21,7 @@ class UsersTableSeeder extends Seeder
         \DB::table('users')->insert(array (
             0 => 
             array (
+
                 'id' => 1,
                 'name' => 'haluk',
                 'email' => 'halukbuyukozkan@gmail.com',

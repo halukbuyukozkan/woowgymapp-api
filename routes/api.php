@@ -26,6 +26,11 @@ Route::middleware('auth:sanctum')->get('/my-protected-route', function (Request 
 });
 
 Route::post('/auth/register', [AuthController::class, 'registeruser']);
-Route::post('/auth/login', [AuthController::class, 'loginUser']);
+Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
 
-Route::apiResource('users',UserController::class);
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::apiResource('users',UserController::class);
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
+});
+

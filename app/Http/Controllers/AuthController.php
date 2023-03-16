@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -87,5 +88,14 @@ class AuthController extends Controller
                 'message' => $th->getMessage()
             ], 500);
         }
+    }
+
+    public function logout()
+    {
+        $user = Auth::user();
+        
+        $user->tokens()->where('id', $user->currentAccessToken()->id)->delete();
+
+        return response()->json(['message' => 'Successfully logged out']);
     }
 }

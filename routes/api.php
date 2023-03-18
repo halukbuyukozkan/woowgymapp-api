@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DenemeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GeneralController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +33,6 @@ Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::apiResource('users',UserController::class);
     Route::post('/auth/logout', [AuthController::class, 'logout']);
+    Route::apiResource('generals',GeneralController::class);
 });
 

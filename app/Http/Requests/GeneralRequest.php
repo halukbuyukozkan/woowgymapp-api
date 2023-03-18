@@ -24,10 +24,11 @@ class GeneralRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id'=>'required|exists:users,id',
-            'weight'=>'required|integer',
-            'height'=>'required|integer',
-            'gender'=>'required|string'
+            'user_id' => 'required|exists:users,id',
+            'weight' => 'required|integer',
+            'height' => 'required|integer',
+            'gender' => 'required|string',
+            'job' => 'required|string|max:255'
 
         ];
     }

@@ -16,9 +16,10 @@ class General extends Model
         'weight',
         'height',
         'gender',
+        'job'
     ];
 
-    public function users():BelongsTo
+    public function users(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

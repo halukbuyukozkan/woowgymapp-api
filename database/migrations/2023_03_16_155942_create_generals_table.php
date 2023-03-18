@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('weight');
             $table->integer('height');
             $table->string('gender');
+            $table->string('job');
             $table->timestamps();
         });
     }

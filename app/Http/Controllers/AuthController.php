@@ -85,6 +85,7 @@ class AuthController extends Controller
                 'message' => 'User Logged In Successfully',
                 'token' => $user->createToken("API TOKEN")->plainTextToken,
                 'permissions' => $user->permissions->pluck('name'),
+                'user' => $user
             ], 200);
         } catch (\Throwable $th) {
             return response()->json([

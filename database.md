@@ -19,18 +19,19 @@
 -user_id
 
 
-# BodyFat
+# Bodyfat
 -id
 -user_id
+-rate
 -chest (Erkek)
 -abdominal (Erkek)
 -thigh (Erkek)
 -biceps
 -triceps
--supscapular
+-subscapular
 -suprailiac
 
-# BodyFatNavyMethod
+# BodyfatNavyMethod
 -id
 -body_fat_id
 -neck (Erkek-Kadın)

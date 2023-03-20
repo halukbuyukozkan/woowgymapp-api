@@ -48,8 +48,13 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
-    public function generals():HasMany
+    public function generals(): HasMany
     {
         return $this->hasMany(General::class);
+    }
+
+    public function bodyfats(): HasMany
+    {
+        return $this->hasMany(Bodyfat::class);
     }
 }

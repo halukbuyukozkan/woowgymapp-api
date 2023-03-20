@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -15,19 +16,22 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('generals')->paginate();
+        $users = User::with('generals')->get();
+
         return $users;
     }
 
 
-    public function store(UserRequest $request)
+    public function store(Request $request)
     {
-        $validated = $request->validated();
-
-        $user = User::create($validated);
+        $user = new User;
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+        $user->save();
 
         return response()->json([
-            'message' => 'User created successfully',
+            'success' => true,
             'user' => $user,
         ]);
     }
@@ -87,5 +91,11 @@ class UserController extends Controller
             'message' => 'User deleted successfully.',
 
         ]);
+    }
+
+    public function factory()
+    {
+        $users = User::factory()->count(30)->create();
+        return $users;
     }
 }

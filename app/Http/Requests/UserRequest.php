@@ -24,11 +24,9 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'general_id'=>'required|exist:generals,id',
             'name'=>'required|string',
-            'email'=>'required|string|unique',
+            'email'=>'required|string|unique:users,email',
             'password'=>'required|string',
-
         ];
     }
 }

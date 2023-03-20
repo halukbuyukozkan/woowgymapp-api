@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::apiResource('permissions', PermissionController::class);
     Route::get('/permission/admin/{user}', [PermissionController::class, 'assign']);
     Route::apiResource('users',UserController::class);
+    Route::get('/user/factory', [UserController::class, 'factory']);
     Route::post('/auth/logout', [AuthController::class, 'logout']);
     Route::apiResource('generals',GeneralController::class);
 });

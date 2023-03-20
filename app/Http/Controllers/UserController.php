@@ -93,6 +93,13 @@ class UserController extends Controller
         ]);
     }
 
+    public function getUser(User $user)
+    {
+        $user = User::with('generals', 'roles', 'permissions', 'bodyfats')->find($user->id);
+
+        return $user;
+    }
+
     public function factory()
     {
         $users = User::factory()->count(30)->create();

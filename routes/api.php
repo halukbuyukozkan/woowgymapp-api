@@ -38,8 +38,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/role/admin/{user}', [RoleController::class, 'assign']);
     Route::apiResource('permissions', PermissionController::class);
     Route::get('/permission/admin/{user}', [PermissionController::class, 'assign']);
+
     Route::apiResource('users', UserController::class);
     Route::get('/user/factory', [UserController::class, 'factory']);
+    Route::get('/user/{user}', [UserController::class, 'getUser']);
+
     Route::post('/auth/logout', [AuthController::class, 'logout']);
     Route::apiResource('generals', GeneralController::class);
     Route::apiResource('bodyfats', BodyfatController::class);

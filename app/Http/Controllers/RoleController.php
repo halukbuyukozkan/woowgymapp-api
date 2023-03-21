@@ -80,11 +80,4 @@ class RoleController extends Controller
             'message' => 'Role deleted successfully.'
         ]);
     }
-
-    public function assign(Request $request)
-    {
-        $request->user()->assignRole('admin');
-
-        return $request->user();
-    }
 }

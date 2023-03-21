@@ -39,3 +39,19 @@
 -hip (Kadın)
 
 
+# Parq
+-id
+-chronic_illness
+-tension
+-cardiovascular
+-chest_pain
+-spinal_cord_discomfort
+-anatomical_discomfort
+-operation
+-diabetes
+-medicine
+-supplements
+-smoke
+-addiction
+-allergy
+

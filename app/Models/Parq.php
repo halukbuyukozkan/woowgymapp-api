@@ -10,7 +10,7 @@ class Parq extends Model
     use HasFactory;
 
     protected $fillable = [
-        'chronic_ilness',
+        'chronic_illness',
         'tension',
         'cardiovascular',
         'chest_pain',

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ParqController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DenemeController;
@@ -36,5 +37,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::apiResource('generals', GeneralController::class);
     Route::apiResource('bodyfats', BodyfatController::class);
+    Route::apiResource('parqs', ParqController::class);
     Route::get('/bodyfat/factory', [BodyfatController::class, 'factory']);
 });

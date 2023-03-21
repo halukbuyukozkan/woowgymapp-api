@@ -15,6 +15,19 @@ return new class extends Migration
     {
         Schema::create('parqs', function (Blueprint $table) {
             $table->id();
+            $table->string('chronic_illness');
+            $table->string('tension');
+            $table->string('cardiovascular');
+            $table->string('chest_pain');
+            $table->string('spinal_cord_discomfort');
+            $table->string('anatomical_discomfort');
+            $table->string('operation');
+            $table->string('diabetes');
+            $table->string('medicine');
+            $table->string('supplements');
+            $table->string('smoke');
+            $table->string('addiction');
+            $table->string('allergy');
             $table->timestamps();
         });
     }

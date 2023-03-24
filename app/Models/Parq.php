@@ -10,6 +10,7 @@ class Parq extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'chronic_illness',
         'tension',
         'cardiovascular',
@@ -24,4 +25,9 @@ class Parq extends Model
         'addiction',
         'allergy',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

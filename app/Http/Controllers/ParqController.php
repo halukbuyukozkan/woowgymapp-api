@@ -33,7 +33,7 @@ class ParqController extends Controller
 
         return response()->json([
             'success' => true,
-            'bodyfat' => $parq,
+            'parq' => $parq,
         ]);
     }
 

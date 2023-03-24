@@ -24,6 +24,7 @@ class ParqRequest extends FormRequest
     public function rules()
     {
         return [
+            'user_id'=>'required|string',
             'chronic_illness'=>'nullable|string',
             'tension'=>'required|string',
             'cardiovascular'=>'required|string',

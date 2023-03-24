@@ -57,4 +57,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Bodyfat::class);
     }
+
+    public function parqs(): HasMany
+    {
+        return $this->hasMany(Parq::class);
+    }
 }

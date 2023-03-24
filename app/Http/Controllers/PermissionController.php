@@ -78,11 +78,4 @@ class PermissionController extends Controller
             'message' => 'Permission deleted successfully.'
         ]);
     }
-
-    public function assign(Request $request)
-    {
-        $request->user()->givePermissionTo('system_settings');
-
-        return $request->user();
-    }
 }

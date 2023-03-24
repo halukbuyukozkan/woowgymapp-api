@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('generals', 'roles', 'permissions', 'bodyfats')->get();
+        $users = User::with('generals', 'roles', 'permissions', 'bodyfats','parqs')->get();
 
         return $users;
     }
@@ -95,7 +95,7 @@ class UserController extends Controller
 
     public function getUser(User $user)
     {
-        $user = User::with('generals', 'roles', 'permissions', 'bodyfats')->find($user->id);
+        $user = User::with('generals', 'roles', 'permissions', 'bodyfats','parqs')->find($user->id);
 
         return $user;
     }

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\RoleRequest;
+use App\Models\Parq;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
+use App\Http\Requests\ParqRequest;
+use App\Http\Controllers\Controller;
 
-class RoleController extends Controller
+class ParqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::paginate();
-
-        return $roles;
+        $parqs = Parq::paginate();
+        return $parqs;
     }
 
     /**
@@ -26,15 +26,15 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RoleRequest $request)
+    public function store(ParqRequest $request)
     {
         $validated = $request->validated();
 
-        $role = Role::create($validated);
+        $parq = Parq::create($validated);
 
         return response()->json([
-            'role' => $role,
-            'message' => 'Role created successfully.'
+            'success' => true,
+            'parq' => $parq,
         ]);
     }
 
@@ -56,13 +56,15 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(RoleRequest $request, Role $role)
+    public function update(ParqRequest $request, Parq $parq)
     {
-        $role->update($request->validate());
+        $validated = $request->validated();
+
+        $parq->update($validated);
 
         return response()->json([
-            'role' => $role,
-            'message' => 'Role updated successfully.'
+            'success' => true,
+            'parq' => $parq,
         ]);
     }
 
@@ -72,12 +74,12 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy(Parq $parq)
     {
-        $role->delete();
+        $parq->delete();
 
         return response()->json([
-            'message' => 'Role deleted successfully.'
+            'success' => true,
         ]);
     }
 }

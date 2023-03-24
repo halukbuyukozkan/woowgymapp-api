@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\BodyfatRequest;
-use App\Models\Bodyfat;
-use Illuminate\Http\Request;
-use Termwind\Components\Dd;
+use App\Http\Requests\RoleRequest;
+use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
 
-class BodyfatController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class BodyfatController extends Controller
      */
     public function index()
     {
-        $bodyfats = Bodyfat::paginate();
+        $roles = Role::paginate();
 
-        return $bodyfats;
+        return $roles;
     }
 
     /**
@@ -27,15 +26,15 @@ class BodyfatController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BodyfatRequest $request)
+    public function store(RoleRequest $request)
     {
         $validated = $request->validated();
 
-        $bodyfat = Bodyfat::create($validated);
+        $role = Role::create($validated);
 
         return response()->json([
-            'success' => true,
-            'bodyfat' => $bodyfat,
+            'role' => $role,
+            'message' => 'Role created successfully.'
         ]);
     }
 
@@ -57,15 +56,13 @@ class BodyfatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(BodyfatRequest $request, Bodyfat $bodyfat)
+    public function update(RoleRequest $request, Role $role)
     {
-        $validated = $request->validated();
-
-        $bodyfat->update($validated);
+        $role->update($request->validate());
 
         return response()->json([
-            'success' => true,
-            'bodyfat' => $bodyfat,
+            'role' => $role,
+            'message' => 'Role updated successfully.'
         ]);
     }
 
@@ -75,22 +72,12 @@ class BodyfatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bodyfat $bodyfat)
+    public function destroy(Role $role)
     {
-        $bodyfat->delete();
+        $role->delete();
 
         return response()->json([
-            'success' => true,
-        ]);
-    }
-
-    public function factory()
-    {
-        $bodyfat = Bodyfat::factory()->count(10)->create();
-
-        return response()->json([
-            'success' => true,
-            'bodyfat' => $bodyfat,
+            'message' => 'Role deleted successfully.'
         ]);
     }
 }

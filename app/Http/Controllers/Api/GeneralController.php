@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Models\Parq;
-use Illuminate\Http\Request;
-use App\Http\Requests\ParqRequest;
+use App\Models\General;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\GeneralRequest;
 
-class ParqController extends Controller
+
+class GeneralController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,9 @@ class ParqController extends Controller
      */
     public function index()
     {
-        $parqs = Parq::paginate();
-        return $parqs;
+        $general = General::paginate();
+
+        return $general;
     }
 
     /**
@@ -25,15 +27,16 @@ class ParqController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ParqRequest $request)
+    public function store(GeneralRequest $request)
     {
         $validated = $request->validated();
 
-        $parq = Parq::create($validated);
+        $general = General::create($validated);
+
 
         return response()->json([
-            'success' => true,
-            'parq' => $parq,
+            'message' => 'General features created successfully',
+            'general' => $general,
         ]);
     }
 
@@ -55,15 +58,15 @@ class ParqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ParqRequest $request, Parq $parq)
+    public function update(GeneralRequest $request, General $general)
     {
         $validated = $request->validated();
 
-        $parq->update($validated);
+        $general->update($validated);
 
         return response()->json([
-            'success'=>true,
-            'parq'=>$parq,
+            'message' => 'General features updated successfully.',
+            'general' => $general,
         ]);
     }
 
@@ -73,12 +76,13 @@ class ParqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Parq $parq)
+    public function destroy(General $general)
     {
-        $parq->delete();
+        $general->delete();
 
         return response()->json([
-            'success' => true,
+            'message' => 'General features deleted successfully.',
+
         ]);
     }
 }

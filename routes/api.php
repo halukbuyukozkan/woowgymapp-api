@@ -2,14 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ParqController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\DenemeController;
-use App\Http\Controllers\BodyfatController;
-use App\Http\Controllers\GeneralController;
-use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ParqController;
+use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\BodyfatController;
+use App\Http\Controllers\Api\GeneralController;
+use App\Http\Controllers\Api\PermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +22,7 @@ use App\Http\Controllers\PermissionController;
 */
 
 Route::post('/auth/register', [AuthController::class, 'registeruser']);
-Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
+Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('apilogin');
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {

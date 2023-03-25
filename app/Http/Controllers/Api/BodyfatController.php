@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Models\General;
-use Illuminate\Http\Request;
-use App\Http\Requests\GeneralRequest;
+use App\Models\Bodyfat;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\BodyfatRequest;
 
-
-class GeneralController extends Controller
+class BodyfatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class GeneralController extends Controller
      */
     public function index()
     {
-        $general = General::paginate();
+        $bodyfats = Bodyfat::paginate();
 
-        return $general;
+        return $bodyfats;
     }
 
     /**
@@ -27,16 +26,15 @@ class GeneralController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GeneralRequest $request)
+    public function store(BodyfatRequest $request)
     {
         $validated = $request->validated();
 
-        $general = General::create($validated);
-
+        $bodyfat = Bodyfat::create($validated);
 
         return response()->json([
-            'message' => 'General features created successfully',
-            'general' => $general,
+            'success' => true,
+            'bodyfat' => $bodyfat,
         ]);
     }
 
@@ -58,15 +56,15 @@ class GeneralController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(GeneralRequest $request, General $general)
+    public function update(BodyfatRequest $request, Bodyfat $bodyfat)
     {
         $validated = $request->validated();
 
-        $general->update($validated);
+        $bodyfat->update($validated);
 
         return response()->json([
-            'message' => 'General features updated successfully.',
-            'general' => $general,
+            'success' => true,
+            'bodyfat' => $bodyfat,
         ]);
     }
 
@@ -76,13 +74,22 @@ class GeneralController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(General $general)
+    public function destroy(Bodyfat $bodyfat)
     {
-        $general->delete();
+        $bodyfat->delete();
 
         return response()->json([
-            'message' => 'General features deleted successfully.',
+            'success' => true,
+        ]);
+    }
 
+    public function factory()
+    {
+        $bodyfat = Bodyfat::factory()->count(10)->create();
+
+        return response()->json([
+            'success' => true,
+            'bodyfat' => $bodyfat,
         ]);
     }
 }

@@ -4,103 +4,86 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
-use Termwind\Components\Dd;
 
 class AuthController extends Controller
 {
-    public function registeruser(Request $request)
+    public function registerShow()
     {
-        try {
-            //Validated
-            $validateUser = Validator::make(
-                $request->all(),
-                [
-                    'name' => 'required',
-                    'email' => 'required|email|unique:users,email',
-                    'password' => 'required'
-                ]
-            );
-
-            if ($validateUser->fails()) {
-                return response()->json([
-                    'status' => false,
-                    'message' => 'validation error',
-                    'errors' => $validateUser->errors()
-                ], 401);
-            }
-
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password)
-            ]);
-
-            return response()->json([
-                'status' => true,
-                'message' => 'User Created Successfully',
-                'token' => $user->createToken("API TOKEN")->plainTextToken
-            ], 200);
-        } catch (\Throwable $th) {
-            return response()->json([
-                'status' => false,
-                'message' => $th->getMessage()
-            ], 500);
-        }
+        return view('auth.register');
     }
 
-    public function loginUser(Request $request)
+    /**
+     * Handle account registration request
+     *
+     * @param RegisterRequest $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function register(RegisterRequest $request)
     {
-        try {
-            $validateUser = Validator::make(
-                $request->all(),
-                [
-                    'email' => 'required|email',
-                    'password' => 'required'
-                ]
-            );
+        $user = User::create($request->validated());
 
-            if ($validateUser->fails()) {
-                return response()->json([
-                    'status' => false,
-                    'message' => 'validation error',
-                    'errors' => $validateUser->errors()
-                ], 401);
-            }
+        auth()->login($user);
 
-            if (!Auth::attempt($request->only(['email', 'password']))) {
-                return response()->json([
-                    'status' => false,
-                    'message' => 'Email & Password does not match with our record.',
-                ], 401);
-            }
+        return redirect('/')->with('success', "Account successfully registered.");
+    }
 
-            $user = User::where('email', $request->email)->first();
+    public function show()
+    {
+        return view('auth.login');
+    }
 
-            return response()->json([
-                'status' => true,
-                'message' => 'User Logged In Successfully',
-                'token' => $user->createToken("API TOKEN")->plainTextToken,
-                'permissions' => $user->permissions->pluck('name'),
-                'user' => $user
-            ], 200);
-        } catch (\Throwable $th) {
-            return response()->json([
-                'status' => false,
-                'message' => $th->getMessage()
-            ], 500);
-        }
+    /**
+     * Handle account login request
+     *
+     * @param LoginRequest $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function login(LoginRequest $request)
+    {
+        $credentials = $request->getCredentials();
+
+        if (!Auth::validate($credentials)) :
+            return redirect()->to('login')
+                ->withErrors(trans('auth.failed'));
+        endif;
+
+        $user = Auth::getProvider()->retrieveByCredentials($credentials);
+
+        Auth::login($user);
+
+        return $this->authenticated($request, $user);
+    }
+
+    public function loginShow()
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * Handle response after user authenticated
+     *
+     * @param Request $request
+     * @param Auth $user
+     *
+     * @return \Illuminate\Http\Response
+     */
+    protected function authenticated(Request $request, $user)
+    {
+        return redirect()->intended();
     }
 
     public function logout()
     {
-        $user = Auth::user();
+        Session::flush();
 
-        $user->tokens()->where('id', $user->currentAccessToken()->id)->delete();
+        Auth::logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return redirect('login');
     }
 }

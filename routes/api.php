@@ -22,7 +22,7 @@ use App\Http\Controllers\Api\PermissionController;
 */
 
 Route::post('/auth/register', [AuthController::class, 'registeruser']);
-Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('login');
+Route::post('/auth/login', [AuthController::class, 'loginUser'])->name('apilogin');
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {

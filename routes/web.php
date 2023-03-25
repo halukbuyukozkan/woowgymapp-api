@@ -19,15 +19,13 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['guest']], function () {
-    Route::get('/register', [AuthController::class, 'registerShow'])->name('register.show');
-    Route::post('/register', [AuthController::class, 'register'])->name('register');
     Route::get('/login', [AuthController::class, 'loginShow'])->name('login.show');
     Route::post('/login', [AuthController::class, 'login'])->name('login');
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    /**
-     * Logout Routes
-     */
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });

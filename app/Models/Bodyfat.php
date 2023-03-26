@@ -15,7 +15,7 @@ class Bodyfat extends Model
         'chest',
         'abdominal',
         'thigh',
-        'bicpes',
+        'biceps',
         'triceps',
         'subscapular',
         'suprailiac',

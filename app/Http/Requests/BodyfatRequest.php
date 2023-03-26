@@ -24,7 +24,6 @@ class BodyfatRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'required|exists:users,id',
             'rate' => 'nullable|numeric',
             'chest' => 'nullable|numeric',
             'abdominal' => 'nullable|numeric',

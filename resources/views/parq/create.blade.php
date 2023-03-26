@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="card">
-            <form action="{{ route('parqs.store',$user->id) }}" method="POST">
+            <form action="{{ route('users.parqs.store',$user->id) }}" method="POST">
                 @csrf
                 <div class="p-4">
                     <div class="mb-3">
@@ -43,7 +43,7 @@
                         <input type="text" class="form-control" id="cardiovascular" name="cardiovascular" required>
                     </div>
                     <div class="mb-3">
-                    <label for="chest_pain" class="form-label">Have you felt pain in your chest while walking or climbing stairs in the past month?</label>
+                        <label for="chest_pain" class="form-label">Have you felt pain in your chest while walking or climbing stairs in the past month?</label>
                         <input type="text" class="form-control" id="chest_pain" name="chest_pain" required>
                     </div>
                     <div class="mb-3">

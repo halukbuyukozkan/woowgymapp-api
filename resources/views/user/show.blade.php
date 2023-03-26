@@ -31,7 +31,7 @@
             </div>
             @else
             <div class="col-md-9 d-flex justify-content-end pr-4">
-                <a href="#" class="btn btn-primary">Update Par-q Test</a>
+                <a href="{{route('users.parqs.edit',['user' => $user->id , 'parq' => $parq->id])}}" class="btn btn-primary">Update Par-q Test</a>
             </div>
             @endif
         </div>

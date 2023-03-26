@@ -38,6 +38,7 @@ class ParqController extends Controller
     public function store(ParqRequest $request, User $user)
     {
         $validated = $request->validated();
+
         $validated['user_id'] = $user->id;
 
         $parq = Parq::create($validated);
@@ -62,9 +63,10 @@ class ParqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user, Parq $parq)
     {
-        //
+        return view('parq.edit', compact('user','parq'));
+
     }
 
     /**
@@ -74,9 +76,15 @@ class ParqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ParqRequest $request, User $user , Parq $parq)
     {
-        //
+        $validated = $request->validated();
+
+        $validated['user_id'] = $user->id;
+
+        $parq->update($validated);
+
+        return redirect()->route('users.show', $parq->user_id);
     }
 
     /**

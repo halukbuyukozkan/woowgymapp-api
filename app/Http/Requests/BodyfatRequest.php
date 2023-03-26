@@ -28,7 +28,7 @@ class BodyfatRequest extends FormRequest
             'chest' => 'nullable|numeric',
             'abdominal' => 'nullable|numeric',
             'thigh' => 'nullable|numeric',
-            'bicpes' => 'nullable|numeric',
+            'biceps' => 'nullable|numeric',
             'triceps' => 'nullable|numeric',
             'subscapular' => 'nullable|numeric',
             'suprailiac' => 'nullable|numeric',

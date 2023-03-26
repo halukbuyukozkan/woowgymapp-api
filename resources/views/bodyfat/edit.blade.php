@@ -23,12 +23,13 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>New Body Fat Entry:</h2>
+                <h2>Update Body Fat Entry:</h2>
             </div>
         </div>
         <div class="card">
-            <form action="{{ route('users.bodyfat.store',$user->id) }}" method="POST">
+            <form action="{{ route('users.bodyfat.update', ['user' => $user->id , 'bodyfat' => $bodyfat->id]) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="p-4">
                     <div class="mb-3">
                         <label for="chest" class="form-label">Chest size:</label>
@@ -58,7 +59,7 @@
                         <label for="suprailiac" class="form-label">Suprailiac size:</label>
                         <input type="text" class="form-control" id="suprailiac" name="suprailiac" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Create Bodyfat</button>
+                    <button type="submit" class="btn btn-primary">Update Bodyfat</button>
                 </div>
             </form>
         </div>

@@ -64,9 +64,9 @@ class BodyfatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user, Bodyfat $bodyfat)
     {
-        //
+        return view('bodyfat.edit', compact('user','bodyfat'));
     }
 
     /**
@@ -76,9 +76,15 @@ class BodyfatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BodyfatRequest $request, User $user, Bodyfat $bodyfat)
     {
-        //
+        $validated = $request->validated();
+
+        $validated['user_id'] = $user->id;
+
+        $bodyfat->update($validated);
+
+        return redirect()->route('users.show', $bodyfat->user_id);
     }
 
     /**

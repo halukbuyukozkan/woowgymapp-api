@@ -66,11 +66,11 @@
                         </tbody>
                         <tbody>
                             <td>Subscapular size</td>
-                            <td>{{ $bodyfat->triceps }}</td>
+                            <td>{{ $bodyfat->subscapular }}</td>
                         </tbody>
                         <tbody>
                             <td>Suprailiac size</td>
-                            <td>{{ $bodyfat->subscapular }}</td>
+                            <td>{{ $bodyfat->suprailiac }}</td>
                         </tbody>
                         @else
                         <tbody>

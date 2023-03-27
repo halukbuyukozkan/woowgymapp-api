@@ -34,7 +34,7 @@
                 <a href="{{route('users.bodyfat.edit',['user' => $user->id , 'bodyfat' => $bodyfat->id])}}" class="btn btn-primary">Update Body Fat Entry</a>
             </div>
             @endif
-            <div class="card">
+            <div class="card my-2">
                 <div class="table-responsive px-4">
                     <table class="table table-bordered">
                         <thead>
@@ -44,34 +44,37 @@
                             </tr>
                         </thead>
                         @if(isset($bodyfat))
-                        <tbody>
-                            <td>Chest size</td>
-                            <td>{{ $bodyfat->chest }}</td>
-                        </tbody>
-                        <tbody>
-                            <td>Abdominal size</td>
-                            <td>{{ $bodyfat->abdominal }}</td>
-                        </tbody>
-                        <tbody>
-                            <td>Thigh size</td>
-                            <td>{{ $bodyfat->thigh }}</td>
-                        </tbody>
-                        <tbody>
-                            <td>Biceps size</td>
-                            <td>{{ $bodyfat->biceps }}</td>
-                        </tbody>
-                        <tbody>
-                            <td>Triceps size</td>
-                            <td>{{ $bodyfat->triceps }}</td>
-                        </tbody>
-                        <tbody>
-                            <td>Subscapular size</td>
-                            <td>{{ $bodyfat->subscapular }}</td>
-                        </tbody>
-                        <tbody>
-                            <td>Suprailiac size</td>
-                            <td>{{ $bodyfat->suprailiac }}</td>
-                        </tbody>
+                            @if($user->generals->last()->gender == 'male')
+                            <tbody>
+                                <td>Chest size</td>
+                                <td>{{ $bodyfat->chest }}</td>
+                            </tbody>
+                            <tbody>
+                                <td>Abdominal size</td>
+                                <td>{{ $bodyfat->abdominal }}</td>
+                            </tbody>
+                            <tbody>
+                                <td>Thigh size</td>
+                                <td>{{ $bodyfat->thigh }}</td>
+                            </tbody>
+                            @else
+                            <tbody>
+                                <td>Biceps size</td>
+                                <td>{{ $bodyfat->biceps }}</td>
+                            </tbody>
+                            <tbody>
+                                <td>Triceps size</td>
+                                <td>{{ $bodyfat->triceps }}</td>
+                            </tbody>
+                            <tbody>
+                                <td>Subscapular size</td>
+                                <td>{{ $bodyfat->subscapular }}</td>
+                            </tbody>
+                            <tbody>
+                                <td>Suprailiac size</td>
+                                <td>{{ $bodyfat->suprailiac }}</td>
+                            </tbody>
+                            @endif
                         @else
                         <tbody>
                             <td colspan="2">No data found</td>

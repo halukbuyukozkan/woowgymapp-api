@@ -27,7 +27,7 @@ class BodyfatFactory extends Factory
             'chest' => $this->faker->randomFloat(1, 0, 100),
             'abdominal' => $this->faker->randomFloat(1, 0, 100),
             'thigh' => $this->faker->randomFloat(1, 0, 100),
-            'bicpes' => null,
+            'biceps' => null,
             'triceps' => null,
             'subscapular' => null,
             'suprailiac' => null,

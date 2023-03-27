@@ -24,14 +24,14 @@ class BodyfatRequest extends FormRequest
     public function rules()
     {
         return [
-            'rate' => 'nullable|numeric',
-            'chest' => 'nullable|numeric',
-            'abdominal' => 'nullable|numeric',
-            'thigh' => 'nullable|numeric',
-            'biceps' => 'nullable|numeric',
-            'triceps' => 'nullable|numeric',
-            'subscapular' => 'nullable|numeric',
-            'suprailiac' => 'nullable|numeric',
+            'rate' => 'nullable|integer',
+            'chest' => 'nullable|integer',
+            'abdominal' => 'nullable|integer',
+            'thigh' => 'nullable|integer',
+            'biceps' => 'nullable|integer',
+            'triceps' => 'nullable|integer',
+            'subscapular' => 'nullable|integer',
+            'suprailiac' => 'nullable|integer',
         ];
     }
 }

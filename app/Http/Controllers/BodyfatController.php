@@ -16,7 +16,10 @@ class BodyfatController extends Controller
      */
     public function index(User $user)
     {
-        $bodyfat = $user->bodyfat;
+        $bodyfats = $user->bodyfats;
+
+        $bodyfat = $bodyfats->last();
+
         return view('bodyfat.index',compact('user','bodyfat'));
     }
 

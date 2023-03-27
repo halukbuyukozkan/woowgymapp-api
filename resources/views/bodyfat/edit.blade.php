@@ -33,31 +33,31 @@
                 <div class="p-4">
                     <div class="mb-3">
                         <label for="chest" class="form-label">Chest size:</label>
-                        <input type="text" class="form-control" id="chest" name="chest" required>
+                        <input value="{{$bodyfat->chest}}" type="text" class="form-control" id="chest" name="chest" required>
                     </div>
                     <div class="mb-3">
                         <label for="abdominal" class="form-label">Abdominal size:</label>
-                        <input type="text" class="form-control" id="abdominal" name="abdominal" required>
+                        <input value="{{$bodyfat->abdominal}}" type="text" class="form-control" id="abdominal" name="abdominal" required>
                     </div>
                     <div class="mb-3">
                         <label for="thigh" class="form-label">Thigh size:</label>
-                        <input type="text" class="form-control" id="thigh" name="thigh" required>
+                        <input value="{{$bodyfat->thigh}}" type="text" class="form-control" id="thigh" name="thigh" required>
                     </div>
                     <div class="mb-3">
                         <label for="biceps" class="form-label">Biceps size:</label>
-                        <input type="text" class="form-control" id="biceps" name="biceps" required>
+                        <input value="{{$bodyfat->biceps}}" type="text" class="form-control" id="biceps" name="biceps" required>
                     </div>
                     <div class="mb-3">
                         <label for="triceps" class="form-label">Triceps size:</label>
-                        <input type="text" class="form-control" id="triceps" name="triceps" required>
+                        <input value="{{$bodyfat->triceps}}" type="text" class="form-control" id="triceps" name="triceps" required>
                     </div>
                     <div class="mb-3">
                         <label for="subscapular" class="form-label">Subscapular size:</label>
-                        <input type="text" class="form-control" id="subscapular" name="subscapular" required>
+                        <input value="{{$bodyfat->subscapular}}" type="text" class="form-control" id="subscapular" name="subscapular" required>
                     </div>
                     <div class="mb-3">
                         <label for="suprailiac" class="form-label">Suprailiac size:</label>
-                        <input type="text" class="form-control" id="suprailiac" name="suprailiac" required>
+                        <input value="{{$bodyfat->suprailiac}}" type="text" class="form-control" id="suprailiac" name="suprailiac" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Update Bodyfat</button>
                 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Observers\BodyfatObserver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -22,6 +23,13 @@ class Bodyfat extends Model
         'subscapular',
         'suprailiac',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::observe(BodyfatObserver::class);
+    }
 
     public function user(): BelongsTo
     {

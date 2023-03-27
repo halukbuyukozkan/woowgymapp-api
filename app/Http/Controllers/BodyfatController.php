@@ -18,9 +18,7 @@ class BodyfatController extends Controller
     {
         $bodyfats = $user->bodyfats;
 
-        $bodyfat = $bodyfats->last();
-
-        return view('bodyfat.index',compact('user','bodyfat'));
+        return view('bodyfat.index',compact('user','bodyfats'));
     }
 
     /**
@@ -85,7 +83,27 @@ class BodyfatController extends Controller
 
         $validated['user_id'] = $user->id;
 
+        $bodyfatAttributes = $bodyfat->getAttributes();
+        unset(
+            $bodyfatAttributes['id'], 
+            $bodyfatAttributes['created_at'], 
+            $bodyfatAttributes['user_id'], 
+            $bodyfatAttributes['updated_at']
+        );
+
+        $sum = array_sum($bodyfatAttributes);
+
+        $user = $bodyfat->user;
+
+        if($user->generals->last()->gender == 'male'){
+            $validated['rate'] = (0.29288*$sum) - (0.0005*$sum*$sum) + (0.15845*1) - 5.76377;
+        }
+        else
+            $validated['rate'] = (0.41563*$sum) - (0.00112*$sum*$sum) + (0.03661*26) + 4.03653;
+
         $bodyfat->update($validated);
+
+
 
         return redirect()->route('users.show', $bodyfat->user_id);
     }

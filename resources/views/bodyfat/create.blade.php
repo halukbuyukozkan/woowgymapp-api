@@ -30,6 +30,7 @@
             <form action="{{ route('users.bodyfat.store',$user->id) }}" method="POST">
                 @csrf
                 <div class="p-4">
+                    @if($user->generals->last()->gender == 'male')
                     <div class="mb-3">
                         <label for="chest" class="form-label">Chest size:</label>
                         <input type="text" class="form-control" id="chest" name="chest" required>
@@ -42,6 +43,7 @@
                         <label for="thigh" class="form-label">Thigh size:</label>
                         <input type="text" class="form-control" id="thigh" name="thigh" required>
                     </div>
+                    @else
                     <div class="mb-3">
                         <label for="biceps" class="form-label">Biceps size:</label>
                         <input type="text" class="form-control" id="biceps" name="biceps" required>
@@ -58,6 +60,7 @@
                         <label for="suprailiac" class="form-label">Suprailiac size:</label>
                         <input type="text" class="form-control" id="suprailiac" name="suprailiac" required>
                     </div>
+                    @endif
                     <button type="submit" class="btn btn-primary">Create Bodyfat</button>
                 </div>
             </form>

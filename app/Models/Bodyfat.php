@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Observers\BodyfatObserver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Bodyfat extends Model
 {
@@ -15,13 +18,20 @@ class Bodyfat extends Model
         'chest',
         'abdominal',
         'thigh',
-        'bicpes',
+        'biceps',
         'triceps',
         'subscapular',
         'suprailiac',
     ];
 
-    public function user()
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::observe(BodyfatObserver::class);
+    }
+
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

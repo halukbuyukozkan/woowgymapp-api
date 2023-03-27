@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ParqController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BodyfatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,20 +17,20 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::group(['middleware' => ['guest']], function () {
-    Route::get('/register', [AuthController::class, 'registerShow'])->name('register.show');
-    Route::post('/register', [AuthController::class, 'register'])->name('register');
     Route::get('/login', [AuthController::class, 'loginShow'])->name('login.show');
     Route::post('/login', [AuthController::class, 'login'])->name('login');
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    /**
-     * Logout Routes
-     */
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::resource('users', UserController::class);
+    Route::resource('users.parqs', ParqController::class);
+    Route::resource('users.bodyfat',BodyfatController::class);
 });

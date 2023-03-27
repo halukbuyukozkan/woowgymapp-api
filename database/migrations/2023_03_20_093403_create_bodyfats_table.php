@@ -20,7 +20,7 @@ return new class extends Migration
             $table->float('chest')->nullable();
             $table->float('abdominal')->nullable();
             $table->float('thigh')->nullable();
-            $table->float('bicpes')->nullable();
+            $table->float('biceps')->nullable();
             $table->float('triceps')->nullable();
             $table->float('subscapular')->nullable();
             $table->float('suprailiac')->nullable();

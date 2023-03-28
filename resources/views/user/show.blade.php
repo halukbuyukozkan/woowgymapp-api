@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>{{$user['name']}}'s details</h2>
+                <h2>{{$user['name']}}s details</h2>
             </div>
             @if($parq == null)
             <div class="col-md-9 d-flex justify-content-end pr-4">
@@ -105,6 +105,44 @@
                 </table>
             </div>
         </div><br><br>
+
+        <!-- GENERAL START -->
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <h3>General İnformations</h3>
+            </div>
+            <div class="col-md-9 d-flex justify-content-end pr-4">
+                <a href="{{route('users.generals.index',['user' => $user->id])}}" class="btn btn-primary mx-2">See All</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="table-responsive px-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="fw-bold fs-6 text-gray-800">
+                            <th>Weight</th>
+                            <th>Height</th>
+                            <th>Gender</th>
+                            <th>Job</th>
+                        </tr>
+                    </thead>
+                    @if(isset($general))
+                    <tbody>
+                        <td>{{ $general->weight }}</td>
+                        <td>{{ $general->height }}</td>
+                        <td>{{ $general->gender }}</td>
+                        <td>{{ $general->job }}</td>
+                    </tbody>
+                    @else
+                    <tbody>
+                        <td colspan="2">No data found</td>
+                    </tbody>
+                    @endif
+                </table>
+            </div>
+        </div><br><br>
+        <!-- GENERAL END -->
+
         <div class="card">
             <div class="table-responsive px-4">
                 <table class="table table-bordered align-middle">

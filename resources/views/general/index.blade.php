@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Users
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">General İnformations
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -22,11 +22,11 @@
 	<!--end::Toolbar-->
     <div class="container">
         <div class="row mb-3">
-            <div class="col-md-3">
-                <h2>Users Table</h2>
+            <div class="col-md-5">
+                <h2>General İnformations Table</h2>
             </div>
-            <div class="col-md-9 d-flex justify-content-end pr-4">
-                <a href="{{ route('users.create') }}" class="btn btn-primary">Create User</a>
+            <div class="col-md-7 d-flex justify-content-end pr-4">
+                <a href="{{route('users.generals.create',['user' => $user->id])}}" class="btn btn-primary mx-2">Create new general information</a>
             </div>
         </div>
         <div class="card">
@@ -34,32 +34,29 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr class="fw-bold fs-6 text-gray-800">
-                            <th>Name</th>
-                            <th>Email</th>
                             <th>Weight</th>
                             <th>Height</th>
                             <th>Gender</th>
+                            <th>Job</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($generals as $general)
                         <tr>
-                            @php
-                                // dd($user->generals->first());
-                            @endphp
-                            <td>{{ $user['name'] }}</td>
-                            <td>{{ $user['email'] }}</td>
-                            <td>@if($user->generals->count() > 0){{ $user->generals->first()->weight }}@endif</td>
-                            <td>@if($user->generals->count() > 0){{ $user->generals->first()->height }}@endif</td>
-                            <td>@if($user->generals->count() > 0){{ $user->generals->first()->gender }}@endif</td>
-                            <td>
-                                <a href="{{ route('users.show',['user' => $user['id']]) }}" type="button" class="btn btn-sm btn-light">
-                                    Details
-                                </a>
-                                <a href="{{ route('users.edit',['user' => $user['id']]) }}" type="button" class="btn btn-sm btn-light">
+                            <td>{{ $general->weight }}</td>
+                            <td>{{ $general->height }}</td>
+                            <td>{{ $general->gender }}</td>
+                            <td>{{ $general->job }}</td>
+                            <td style="width: 30%">
+                                <a href="{{route('users.generals.edit',['user' => $user->id , 'general' => $general->id])}}" class="btn btn-primary">
                                     Edit
                                 </a>
+                                <form action="{{route('users.generals.destroy',['user' => $user->id , 'general' => $general->id])}}" style="display: inline-block;" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

@@ -16,7 +16,8 @@ class General extends Model
         'weight',
         'height',
         'gender',
-        'job'
+        'job',
+        'physical_performance_score'
     ];
 
     public function users(): BelongsTo

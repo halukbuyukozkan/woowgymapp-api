@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GeneralRequest extends FormRequest
+class BloodpressureRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,9 @@ class GeneralRequest extends FormRequest
     public function rules()
     {
         return [
-            'weight' => 'required|integer',
-            'height' => 'required|integer',
-            'gender' => 'required|string',
-            'job' => 'required|string|max:255'
-
+            'user_id' => 'nullable|integer',
+            'systolic' => 'nullable|integer',
+            'diastolic' => 'nullable|integer',
         ];
     }
 }

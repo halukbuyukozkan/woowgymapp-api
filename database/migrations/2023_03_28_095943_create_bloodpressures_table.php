@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('generals', function (Blueprint $table) {
+        Schema::create('bloodpressures', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->integer('weight');
-            $table->integer('height');
-            $table->string('gender');
-            $table->string('job');
-            $table->integer('physical_performance_score')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->float('systolic')->nullable();
+            $table->float('diastolic')->nullable();
+
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('generals');
+        Schema::dropIfExists('bloodpressures');
     }
 };

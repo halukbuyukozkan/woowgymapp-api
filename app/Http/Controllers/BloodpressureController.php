@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Bloodpressure;
+use App\Http\Requests\BloodpressureRequest;
 
-class UserController extends Controller
+class BloodpressureController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)
     {
-        $users = User::with('generals', 'roles', 'permissions', 'bodyfats', 'parq')->get();
+        $bloodpressures = $user->bloodpressure;
 
-        return view('user.index', compact('users'));
+        return view('bloodpressure.index',compact('user','bloodpressures'));
     }
 
     /**
@@ -25,9 +26,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $user)
     {
-        return view('user.create');
+        return view('bloodpressure.create',compact('user'));
     }
 
     /**
@@ -36,26 +37,26 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(BloodpressureRequest $request, User $user)
     {
         $validated = $request->validated();
 
-        $user = User::create($validated);
+        $validated['user_id'] = $user->id;
 
-        return redirect()->route('users.index');
+        $bloodpressure = Bloodpressure::create($validated);
+
+        return redirect()->route('users.bloodpressure.index', $bloodpressure->user_id);
     }
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        $parq = $user->parq;
-        $general = $user->generals->last();
-
-        return view('user.show', compact('user', 'parq', 'general'));
+        //
     }
 
     /**
@@ -64,9 +65,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('user.edit', compact('user'));
+        //
     }
 
     /**
@@ -76,13 +77,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        $validated = $request->validated();
-
-        $user->update($validated);
-
-        return redirect()->route('users.index');
+        //
     }
 
     /**
@@ -91,10 +88,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-
-        return redirect()->route('user.index');
+        //
     }
 }

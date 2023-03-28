@@ -13,10 +13,23 @@
 -weight
 -height
 -job
+-physical_performance_score -> nullable
 
-# Par-q
+# Parq
 -id
--user_id
+-chronic_illness
+-tension
+-cardiovascular
+-chest_pain
+-spinal_cord_discomfort
+-anatomical_discomfort
+-operation
+-diabetes
+-medicine
+-supplements
+-smoke
+-addiction
+-allergy
 
 
 # Bodyfat
@@ -39,19 +52,13 @@
 -hip (Kadın)
 
 
-# Parq
+# Blood Pressure
 -id
--chronic_illness
--tension
--cardiovascular
--chest_pain
--spinal_cord_discomfort
--anatomical_discomfort
--operation
--diabetes
--medicine
--supplements
--smoke
--addiction
--allergy
+-user_id
+-systolic
+-diastolic
+-score -> nullable
+
+
+
 

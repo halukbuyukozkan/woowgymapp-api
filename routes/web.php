@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BloodpressureController;
 use App\Http\Controllers\ParqController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BodyfatController;
@@ -33,4 +34,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', UserController::class);
     Route::resource('users.parqs', ParqController::class);
     Route::resource('users.bodyfat',BodyfatController::class);
+    Route::resource('users.bloodpressure',BloodpressureController::class);
 });

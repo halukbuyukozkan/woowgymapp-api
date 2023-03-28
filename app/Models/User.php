@@ -64,4 +64,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Parq::class);
     }
+
+    public function bloodpressure(): HasMany
+    {
+        return $this->hasMany(Bloodpressure::class);
+    }
 }

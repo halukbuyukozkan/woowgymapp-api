@@ -87,8 +87,6 @@ class GeneralController extends Controller
      */
     public function destroy(User $user, General $general)
     {
-        dd($general);
-
         $general->delete();
 
         return redirect()->route('users.generals.index', $user);

@@ -16,9 +16,9 @@ class BloodpressureController extends Controller
      */
     public function index(User $user)
     {
-        $bloodpressures = $user->bloodpressure;
+        $bloodpressures = $user->bloodpressures;
 
-        return view('bloodpressure.index',compact('user','bloodpressures'));
+        return view('bloodpressure.index', compact('user', 'bloodpressures'));
     }
 
     /**
@@ -28,7 +28,7 @@ class BloodpressureController extends Controller
      */
     public function create(User $user)
     {
-        return view('bloodpressure.create',compact('user'));
+        return view('bloodpressure.create', compact('user'));
     }
 
     /**

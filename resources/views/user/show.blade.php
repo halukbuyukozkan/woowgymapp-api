@@ -145,7 +145,7 @@
 
         <div class="card">
             <div class="table-responsive px-4">
-                <table class="table table-bordered align-middle">
+                <table class="table table-bordered align-middle text-center">
                     <thead>
                         <tr class="fw-bold fs-6 text-gray-800">
                             <th>Test Name</th>
@@ -177,7 +177,11 @@
                     <tbody>
                         <td><b>Blood Pressure</b></td>
                         <td>Systolic</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->bloodpressures->last()))
+                            {{ $user->bloodpressures->last()->systolic }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>
@@ -195,9 +199,17 @@
                     <tbody>
                         <td><b>Blood Pressure</b></td>
                         <td>Diastolic</td>
+                        <td>
+                            @if(!empty($user->bloodpressures->last()))
+                            {{ $user->bloodpressures->last()->diastolic }}
+                            @endif
+                        </td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->bloodpressures->last()))
+                            {{ $user->bloodpressures->last()->score }}
+                            @endif
+                        </td>
                         <td>
                             <a href="{{route('users.bloodpressure.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
                                 <span class="svg-icon svg-icon-1">
@@ -557,7 +569,7 @@
                         <td>AVARAGE</td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        <td>{{ $user->generals->last()->physical_performance_score }}</td>
                         <td>
                             <a href="#" class="btn btn-icon btn-primary">
                                 <span class="svg-icon svg-icon-1">

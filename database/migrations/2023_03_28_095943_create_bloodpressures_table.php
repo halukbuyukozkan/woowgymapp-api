@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('bloodpressures', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->float('systolic')->nullable();
-            $table->float('diastolic')->nullable();
+            $table->integer('systolic')->nullable();
+            $table->integer('diastolic')->nullable();
+            $table->integer('score')->nullable();
 
             $table->timestamps();
         });

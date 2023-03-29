@@ -97,4 +97,17 @@ class UserController extends Controller
 
         return redirect()->route('user.index');
     }
+
+    public function updatePhysicalPerformanceScore(User $user)
+    {
+        $bloodpressure = $user->bloodpressures->last()->score;
+
+        $totalscore = $bloodpressure;
+
+        $user->generals->last()->update([
+            'physical_performance_score' => $totalscore
+        ]);
+
+        return redirect()->route('users.index');
+    }
 }

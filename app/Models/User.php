@@ -69,4 +69,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Bloodpressure::class);
     }
+
+    public function fastingbloodsugars(): HasMany
+    {
+        return $this->hasMany(Fastingbloodsugar::class);
+    }
 }

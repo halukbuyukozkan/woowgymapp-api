@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use App\Observers\FastingbloodsugarObserver;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\UserController;
+use App\Observers\FastingbloodsugarObserver;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -20,6 +21,16 @@ class Fastingbloodsugar extends Model
     protected static function booted()
     {
         static::observe(FastingbloodsugarObserver::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function (Fastingbloodsugar $fastingbloodsugar) {
+            $userController = new UserController;
+            $userController->updatePhysicalPerformanceScore($fastingbloodsugar->user);
+        });
     }
 
     public function user(): BelongsTo

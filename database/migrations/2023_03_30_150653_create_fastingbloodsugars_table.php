@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->integer('glucose')->nullable();
+            $table->integer('score')->nullable();
 
             $table->timestamps();
         });

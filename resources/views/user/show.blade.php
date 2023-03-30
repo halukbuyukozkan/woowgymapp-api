@@ -225,9 +225,17 @@
                     <tbody>
                         <td><b>Fasting Blood Sugar</b></td>
                         <td>Glucose</td>
+                        <td>
+                            @if(!empty($user->fastingbloodsugars->last()))
+                            {{ $user->fastingbloodsugars->last()->glucose }}
+                            @endif
+                        </td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->fastingbloodsugars->last()))
+                            {{ $user->fastingbloodsugars->last()->score }}
+                            @endif
+                        </td>
                         <td>
                             <a href="{{route('users.fastingbloodsugar.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
                                 <span class="svg-icon svg-icon-1">

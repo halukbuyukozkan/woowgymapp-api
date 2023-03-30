@@ -59,6 +59,12 @@
 -diastolic
 -score -> nullable
 
+# Fastingbloodsugar
+-id 
+-user_id
+-glucose
+-score -> nullable
+
 
 
 

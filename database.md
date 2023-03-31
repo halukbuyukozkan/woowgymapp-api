@@ -65,6 +65,15 @@
 -glucose
 -score -> nullable
 
+# LungCapacity
+-id
+-user_id
+-fev1
+-fvc
+-pef
+-score -> nullable
+
+
 
 
 

@@ -79,4 +79,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(LungCapacity::class);
     }
+
+    public function mobilities(): HasMany
+    {
+        return $this->hasMany(Mobility::class);
+    }
 }

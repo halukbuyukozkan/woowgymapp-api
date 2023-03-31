@@ -341,7 +341,11 @@
                     <tbody>
                         <td><b>Overhead Squat</b></td>
                         <td>Mobility</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->overhead_squat }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>
@@ -359,7 +363,11 @@
                     <tbody>
                         <td><b>Shoulder Mobility</b></td>
                         <td>Mobility</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->shoulder_mobility }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>
@@ -377,7 +385,11 @@
                     <tbody>
                         <td><b>Hurdle Step</b></td>
                         <td>Mobility</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->hurdle_step }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>
@@ -395,7 +407,11 @@
                     <tbody>
                         <td><b>In Line Lunge</b></td>
                         <td>Mobility</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->in_line_lunge }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>
@@ -413,7 +429,11 @@
                     <tbody>
                         <td><b>Active Straight Leg Raise</b></td>
                         <td>Mobility</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->active_straight_leg_raise }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>
@@ -431,7 +451,11 @@
                     <tbody>
                         <td><b>Trunk Stability Push-up</b></td>
                         <td>Mobility</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->trunk_stability_push_up }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>
@@ -449,11 +473,15 @@
                     <tbody>
                         <td><b>Rotary Stability</b></td>
                         <td>Mobility</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->rotary_stability }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>
-                            <a href="#" class="btn btn-icon btn-primary">
+                            <a href="{{ route('users.mobilities.create',['user'=> $user->id]) }}" class="btn btn-icon btn-primary">
                                 <span class="svg-icon svg-icon-1">
                                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>

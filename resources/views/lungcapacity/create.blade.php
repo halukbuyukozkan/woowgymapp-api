@@ -35,8 +35,8 @@
                         <input type="text" class="form-control" id="fev1" name="fev1" required>
                     </div>
                     <div class="mb-3">
-                        <label for="fvc" class="form-label">fvc:</label>
-                        <input type="text" class="form-control" id="fvc" name="fvc" required>
+                        <label for="fev" class="form-label">fev:</label>
+                        <input type="text" class="form-control" id="fev" name="fev" required>
                     </div>
                     <div class="mb-3">
                         <label for="pef" class="form-label">pef:</label>

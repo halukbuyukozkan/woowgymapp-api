@@ -69,7 +69,7 @@
 -id
 -user_id
 -fev1
--fvc
+-fev
 -pef
 -score -> nullable
 

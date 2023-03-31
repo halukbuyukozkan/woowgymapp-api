@@ -35,7 +35,7 @@
                     <thead>
                         <tr class="fw-bold fs-6 text-gray-800">
                             <th>fev1</th>
-                            <th>fvc</th>
+                            <th>fev</th>
                             <th>pef</th>
                             <th>Actions</th>
                         </tr>
@@ -44,7 +44,7 @@
                         @foreach ($lungCapacities as $lungCapacity)
                         <tr>
                             <td>{{ $lungCapacity->fev1 }}</td>
-                            <td>{{ $lungCapacity->fvc }}</td>
+                            <td>{{ $lungCapacity->fev }}</td>
                             <td>{{ $lungCapacity->pef }}</td>
                             <td style="width: 30%">
                                 <a href="{{route('users.lungcapacities.edit',['user' => $user->id , 'lungcapacity' => $lungCapacity->id])}}" class="btn btn-primary">

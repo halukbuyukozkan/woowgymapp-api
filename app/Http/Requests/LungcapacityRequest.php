@@ -25,7 +25,7 @@ class LungcapacityRequest extends FormRequest
     {
         return [
             'fev1' => 'required|numeric',
-            'fvc' => 'required|numeric',
+            'fev' => 'required|numeric',
             'pef' => 'required|numeric',
         ];
     }

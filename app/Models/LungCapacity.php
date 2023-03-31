@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Observers\LungcapacityObserver;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\UserController;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class LungCapacity extends Model
 {
@@ -12,10 +14,28 @@ class LungCapacity extends Model
     protected $fillable = [
         'user_id',
         'fev1',
-        'fvc',
+        'fev1_score',
+        'fev',
+        'fev_score',
         'pef',
+        'pef_score',
         'score'
     ];
+
+    protected static function booted()
+    {
+        static::observe(LungcapacityObserver::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function (LungCapacity $lungCapacity) {
+            $userController = new UserController;
+            $userController->updatePhysicalPerformanceScore($lungCapacity->user);
+        });
+    }
 
     public function user()
     {

@@ -18,8 +18,11 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
 
             $table->float('fev1');
-            $table->float('fvc');
+            $table->float('fev1_score')->nullable();
+            $table->float('fev');
+            $table->float('fev_score')->nullable();
             $table->float('pef');
+            $table->float('pef_score')->nullable();
             $table->float('score')->nullable();
 
             $table->timestamps();

@@ -102,9 +102,9 @@ class UserController extends Controller
     {
         //her verinin güncel halini alıp, toplamını alıp generals tablosuna yazıyor
         if ($user->bloodpressures->last() != null) {
-            $bloodpressure = $user->bloodpressures->last()->score;
+            $bloodPressure = $user->bloodpressures->last()->score;
         } else {
-            $bloodpressure = 0;
+            $bloodPressure = 0;
         }
 
         if ($user->fastingbloodsugars->last() != null) {
@@ -113,7 +113,13 @@ class UserController extends Controller
             $fastingbloodsugar = 0;
         }
 
-        $totalscore = $bloodpressure + $fastingbloodsugar;
+        if ($user->lungcapacities->last() != null) {
+            $lungCapacity = $user->lungcapacities->last()->score;
+        } else {
+            $lungCapacity = 0;
+        }
+
+        $totalscore = $bloodPressure + $fastingbloodsugar + $lungCapacity;
 
         $user->generals->last()->update([
             'physical_performance_score' => $totalscore

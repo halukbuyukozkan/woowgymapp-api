@@ -16,4 +16,9 @@ class LungCapacity extends Model
         'pef',
         'score'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

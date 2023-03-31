@@ -182,7 +182,11 @@
                             {{ $user->bloodpressures->last()->systolic }}
                             @endif
                         </td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->bloodpressures->last()))
+                            {{ $user->bloodpressures->last()->systolic_score }}
+                            @endif
+                        </td>
                         <td></td>
                         <td>
                             <a href="{{route('users.bloodpressure.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
@@ -204,7 +208,11 @@
                             {{ $user->bloodpressures->last()->diastolic }}
                             @endif
                         </td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->bloodpressures->last()))
+                            {{ $user->bloodpressures->last()->diastolic_score }}
+                            @endif
+                        </td>
                         <td>
                             @if(!empty($user->bloodpressures->last()))
                             {{ $user->bloodpressures->last()->score }}
@@ -251,9 +259,17 @@
                     <tbody>
                         <td><b>Lung Capacities</b></td>
                         <td>FVC</td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->fvc }}
+                            @endif
+                        </td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->score }}
+                            @endif
+                        </td>
                         <td>
                             <a href="{{route('users.lungcapacities.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
                                 <span class="svg-icon svg-icon-1">
@@ -269,7 +285,11 @@
                     <tbody>
                         <td><b>Lung Capacities</b></td>
                         <td>FEV1</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->fev1 }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>
@@ -287,7 +307,11 @@
                     <tbody>
                         <td><b>Lung Capacities</b></td>
                         <td>PEF</td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->pef }}
+                            @endif
+                        </td>
                         <td></td>
                         <td></td>
                         <td>

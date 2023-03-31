@@ -17,11 +17,13 @@ class BloodpressureObserver
         // kan basıncının sistolik değeri 12 veya 13 ise score değeri 1 arttırılır
         if ($bloodpressure->systolic == 12 || $bloodpressure->systolic == 13) {
             $bloodpressure->score = $bloodpressure->score + 1;
+            $bloodpressure->systolic_score = $bloodpressure->systolic_score + 1;
         }
 
         // kan basıncının diastolic değeri 8 veya 9 ise score değeri 1 arttırılır
         if ($bloodpressure->diastolic == 8 || $bloodpressure->diastolic == 9) {
             $bloodpressure->score = $bloodpressure->score + 1;
+            $bloodpressure->diastolic_score = $bloodpressure->diastolic_score + 1;
         }
         $bloodpressure->save();
     }

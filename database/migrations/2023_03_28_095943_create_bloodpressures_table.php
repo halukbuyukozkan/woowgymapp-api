@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('systolic')->nullable();
+            $table->integer('systolic_score')->nullable();
             $table->integer('diastolic')->nullable();
+            $table->integer('diastolic_score')->nullable();
             $table->integer('score')->nullable();
 
             $table->timestamps();

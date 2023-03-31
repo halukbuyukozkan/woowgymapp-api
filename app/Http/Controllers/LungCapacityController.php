@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LungcapacityRequest;
+use App\Models\User;
 use App\Models\LungCapacity;
 use Illuminate\Http\Request;
 
@@ -12,11 +14,11 @@ class LungCapacityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)
     {
         $lungCapacities = LungCapacity::paginate();
 
-        return view('lungcapacity.index', compact('lungCapacities'));
+        return view('lungcapacity.index', compact('lungCapacities','user'));
     }
 
     /**
@@ -24,9 +26,9 @@ class LungCapacityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $user)
     {
-        //
+        return view('lungcapacity.create', compact('user'));
     }
 
     /**
@@ -35,9 +37,13 @@ class LungCapacityController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LungcapacityRequest $request, User $user)
     {
-        //
+        $validated = $request->validated();
+        $validated['user_id'] = $user->id;
+        $lungCapacity = LungCapacity::create($validated);
+
+        return redirect()->route('users.lungcapacities.index', $user);
     }
 
     /**
@@ -80,8 +86,10 @@ class LungCapacityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user,LungCapacity $lungcapacity )
     {
-        //
+        $lungcapacity->delete();
+
+        return redirect()->route('users.lungcapacities.index', $user);
     }
 }

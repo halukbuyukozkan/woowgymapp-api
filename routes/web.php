@@ -6,6 +6,7 @@ use App\Http\Controllers\ParqController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BodyfatController;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\LungCapacityController;
 use App\Http\Controllers\BloodpressureController;
 use App\Http\Controllers\FastingbloodsugarController;
 
@@ -40,4 +41,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users.fastingbloodsugar',FastingbloodsugarController::class);
 
     Route::resource('users.generals', GeneralController::class);
+    Route::resource('users.lungcapacities', LungCapacityController::class);
 });

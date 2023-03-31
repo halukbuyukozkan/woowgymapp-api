@@ -31,7 +31,7 @@
         </div>
         <div class="card">
             <div class="table-responsive px-4">
-                <table class="table table-bordered">
+                <table class="table table-bordered align-middle text-center">
                     <thead>
                         <tr class="fw-bold fs-6 text-gray-800">
                             <th>fev1</th>

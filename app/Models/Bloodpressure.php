@@ -15,7 +15,9 @@ class Bloodpressure extends Model
     protected $fillable = [
         'user_id',
         'systolic',
+        'systolic_score',
         'diastolic',
+        'diastolic_score',
         'score'
     ];
 

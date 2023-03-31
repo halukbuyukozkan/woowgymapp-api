@@ -2,41 +2,42 @@
 
 namespace App\Models;
 
+use App\Observers\LungcapacityObserver;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\UserController;
-use App\Observers\BloodpressureObserver;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Bloodpressure extends Model
+class LungCapacity extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'systolic',
-        'systolic_score',
-        'diastolic',
-        'diastolic_score',
+        'fev1',
+        'fev1_score',
+        'fev',
+        'fev_score',
+        'pef',
+        'pef_score',
         'score'
     ];
 
     protected static function booted()
     {
-        static::observe(BloodpressureObserver::class);
+        static::observe(LungcapacityObserver::class);
     }
 
     protected static function boot()
     {
         parent::boot();
 
-        static::saved(function (Bloodpressure $bloodpressure) {
+        static::saved(function (LungCapacity $lungCapacity) {
             $userController = new UserController;
-            $userController->updatePhysicalPerformanceScore($bloodpressure->user);
+            $userController->updatePhysicalPerformanceScore($lungCapacity->user);
         });
     }
 
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

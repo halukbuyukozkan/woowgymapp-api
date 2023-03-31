@@ -182,7 +182,11 @@
                             {{ $user->bloodpressures->last()->systolic }}
                             @endif
                         </td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->bloodpressures->last()))
+                            {{ $user->bloodpressures->last()->systolic_score }}
+                            @endif
+                        </td>
                         <td></td>
                         <td>
                             <a href="{{route('users.bloodpressure.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
@@ -204,7 +208,11 @@
                             {{ $user->bloodpressures->last()->diastolic }}
                             @endif
                         </td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->bloodpressures->last()))
+                            {{ $user->bloodpressures->last()->diastolic_score }}
+                            @endif
+                        </td>
                         <td>
                             @if(!empty($user->bloodpressures->last()))
                             {{ $user->bloodpressures->last()->score }}
@@ -250,12 +258,20 @@
                     </tbody>
                     <tbody>
                         <td><b>Lung Capacities</b></td>
-                        <td>FVC</td>
-                        <td></td>
-                        <td></td>
+                        <td>FEV</td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->fev }}
+                            @endif
+                        </td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->fev_score }}
+                            @endif
+                        </td>
                         <td></td>
                         <td>
-                            <a href="#" class="btn btn-icon btn-primary">
+                            <a href="{{route('users.lungcapacities.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
                                 <span class="svg-icon svg-icon-1">
                                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
@@ -269,8 +285,16 @@
                     <tbody>
                         <td><b>Lung Capacities</b></td>
                         <td>FEV1</td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->fev1 }}
+                            @endif
+                        </td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->fev1_score }}
+                            @endif
+                        </td>
                         <td></td>
                         <td>
                             <a href="#" class="btn btn-icon btn-primary">
@@ -287,9 +311,21 @@
                     <tbody>
                         <td><b>Lung Capacities</b></td>
                         <td>PEF</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->pef }}
+                            @endif
+                        </td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->pef_score }}
+                            @endif
+                        </td>
+                        <td>
+                            @if(!empty($user->lungcapacities->last()))
+                            {{ $user->lungcapacities->last()->score }}
+                            @endif
+                        </td>
                         <td>
                             <a href="#" class="btn btn-icon btn-primary">
                                 <span class="svg-icon svg-icon-1">

@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\BodyfatController;
 use App\Http\Controllers\Api\GeneralController;
 use App\Http\Controllers\Api\PermissionController;
+use App\Http\Controllers\LungCapacityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::apiResource('bodyfats', BodyfatController::class);
     Route::apiResource('parqs', ParqController::class);
     Route::get('/bodyfat/factory', [BodyfatController::class, 'factory']);
+
 });

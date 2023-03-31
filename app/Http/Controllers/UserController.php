@@ -101,10 +101,25 @@ class UserController extends Controller
     public function updatePhysicalPerformanceScore(User $user)
     {
         //her verinin güncel halini alıp, toplamını alıp generals tablosuna yazıyor
-        $bloodpressure = $user->bloodpressures->last()->score;
-        $fastingbloodsugar = $user->fastingbloodsugars->last()->score;
+        if ($user->bloodpressures->last() != null) {
+            $bloodPressure = $user->bloodpressures->last()->score;
+        } else {
+            $bloodPressure = 0;
+        }
 
-        $totalscore = $bloodpressure + $fastingbloodsugar;
+        if ($user->fastingbloodsugars->last() != null) {
+            $fastingbloodsugar = $user->fastingbloodsugars->last()->score;
+        } else {
+            $fastingbloodsugar = 0;
+        }
+
+        if ($user->lungcapacities->last() != null) {
+            $lungCapacity = $user->lungcapacities->last()->score;
+        } else {
+            $lungCapacity = 0;
+        }
+
+        $totalscore = $bloodPressure + $fastingbloodsugar + $lungCapacity;
 
         $user->generals->last()->update([
             'physical_performance_score' => $totalscore

@@ -107,43 +107,440 @@
         </div><br><br>
 
         <!-- GENERAL START -->
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <h3>General İnformations</h3>
+        <div class="card shadow-sm my-2">
+            <div class="card-header">
+                <h3 class="card-title">General İnformations</h3>
+                <div class="card-toolbar">
+                    <a href="{{route('users.generals.index',['user' => $user->id])}}" class="btn btn-primary mx-2"><span class="svg-icon svg-icon-1">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                            <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
+                            <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
+                        </svg>
+                    </span>See All
+                </a>
+                </div>
             </div>
-            <div class="col-md-9 d-flex justify-content-end pr-4">
-                <a href="{{route('users.generals.index',['user' => $user->id])}}" class="btn btn-primary mx-2">See All</a>
+            <div class="card-body">
+                <div class="table-responsive align-middle text-center">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800">
+                                <th>Weight</th>
+                                <th>Height</th>
+                                <th>Gender</th>
+                                <th>Job</th>
+                            </tr>
+                        </thead>
+                        @if(isset($general))
+                        <tbody>
+                            <td>{{ $general->weight }}</td>
+                            <td>{{ $general->height }}</td>
+                            <td>{{ $general->gender }}</td>
+                            <td>{{ $general->job }}</td>
+                        </tbody>
+                        @else
+                        <tbody>
+                            <td colspan="2">No data found</td>
+                        </tbody>
+                        @endif
+                    </table>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <div class="table-responsive px-4">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr class="fw-bold fs-6 text-gray-800">
-                            <th>Weight</th>
-                            <th>Height</th>
-                            <th>Gender</th>
-                            <th>Job</th>
-                        </tr>
-                    </thead>
-                    @if(isset($general))
-                    <tbody>
-                        <td>{{ $general->weight }}</td>
-                        <td>{{ $general->height }}</td>
-                        <td>{{ $general->gender }}</td>
-                        <td>{{ $general->job }}</td>
-                    </tbody>
-                    @else
-                    <tbody>
-                        <td colspan="2">No data found</td>
-                    </tbody>
-                    @endif
-                </table>
-            </div>
-        </div><br><br>
         <!-- GENERAL END -->
 
-        <div class="card">
+        <!-- BODYFAT START -->
+        <div class="card shadow-sm my-2">
+            <div class="card-header">
+                <h3 class="card-title">Bodyfats</h3>
+                <div class="card-toolbar">
+                    <a href="{{route('users.bodyfats.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
+                        <span class="svg-icon svg-icon-1">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                                <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
+                                <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
+                            </svg>
+                        </span>See All
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive align-middle text-center">
+                    <table class="table table-bordered">
+                        @if(isset($user->bodyfats))
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800">
+                                <th>Physical Fitness Unit</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Physical Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>Anthropometric</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                        @else
+                        <tbody>
+                            <td colspan="6">No data found</td>
+                        </tbody>
+                        @endif
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- BODYFAT END -->
+
+        <!-- BLOOD PRESSURE START -->
+        <div class="card shadow-sm my-2">
+            <div class="card-header">
+                <h3 class="card-title">Bloodpressures</h3>
+                <div class="card-toolbar">
+                    <a href="{{route('users.bloodpressures.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
+                        <span class="svg-icon svg-icon-1">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                                <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
+                                <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
+                            </svg>
+                        </span>See All
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive align-middle text-center">
+                    <table class="table table-bordered">
+                        @if(isset($user->bloodpressures))
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800">
+                                <th>Physical Fitness Unit</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Physical Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>Systolic</td>
+                            <td>
+                                @if(!empty($user->bloodpressures->last()))
+                                {{ $user->bloodpressures->last()->systolic }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->bloodpressures->last()))
+                                {{ $user->bloodpressures->last()->systolic_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Diastolic</td>
+                            <td>
+                                @if(!empty($user->bloodpressures->last()))
+                                {{ $user->bloodpressures->last()->diastolic }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->bloodpressures->last()))
+                                {{ $user->bloodpressures->last()->diastolic_score }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->bloodpressures->last()))
+                                {{ $user->bloodpressures->last()->score }}
+                                @endif
+                            </td>
+                        </tbody>
+                        @else
+                        <tbody>
+                            <td colspan="6">No data found</td>
+                        </tbody>
+                        @endif
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- BLOOD PRESSURE END -->
+
+        <!-- FASTING BLOOD SUGAR START -->
+        <div class="card shadow-sm my-2">
+            <div class="card-header">
+                <h3 class="card-title">Fasting blood sugars</h3>
+                <div class="card-toolbar">
+                    <a href="{{route('users.fastingbloodsugars.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
+                        <span class="svg-icon svg-icon-1">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                                <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
+                                <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
+                            </svg>
+                        </span>See All
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive align-middle text-center">
+                    <table class="table table-bordered">
+                        @if(isset($user->bloodpressures))
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800">
+                                <th>Physical Fitness Unit</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Physical Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>Glucose</td>
+                            <td>
+                                @if(!empty($user->fastingbloodsugars->last()))
+                                {{ $user->fastingbloodsugars->last()->glucose }}
+                                @endif
+                            </td>
+                            <td></td>
+                            <td>
+                                @if(!empty($user->fastingbloodsugars->last()))
+                                {{ $user->fastingbloodsugars->last()->score }}
+                                @endif
+                            </td>
+                        </tbody>
+                        @else
+                        <tbody>
+                            <td colspan="6">No data found</td>
+                        </tbody>
+                        @endif
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- FASTING BLOOD SUGAR END -->
+
+        <!-- LUNG CAPACITIES START -->
+        <div class="card shadow-sm my-2">
+            <div class="card-header">
+                <h3 class="card-title">Lung capacities</h3>
+                <div class="card-toolbar">
+                    <a href="{{route('users.lungcapacities.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
+                        <span class="svg-icon svg-icon-1">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                                <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
+                                <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
+                            </svg>
+                        </span>See All
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive align-middle text-center">
+                    <table class="table table-bordered">
+                        @if(isset($user->bloodpressures))
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800">
+                                <th>Physical Fitness Unit</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Physical Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>FEV</td>
+                            <td>
+                                @if(!empty($user->lungcapacities->last()))
+                                {{ $user->lungcapacities->last()->fev }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->lungcapacities->last()))
+                                {{ $user->lungcapacities->last()->fev_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>FEV1</td>
+                            <td>
+                                @if(!empty($user->lungcapacities->last()))
+                                {{ $user->lungcapacities->last()->fev1 }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->lungcapacities->last()))
+                                {{ $user->lungcapacities->last()->fev1_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>PEF</td>
+                            <td>
+                                @if(!empty($user->lungcapacities->last()))
+                                {{ $user->lungcapacities->last()->pef }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->lungcapacities->last()))
+                                {{ $user->lungcapacities->last()->pef_score }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->lungcapacities->last()))
+                                {{ $user->lungcapacities->last()->score }}
+                                @endif
+                            </td>
+                        </tbody>
+                        @else
+                        <tbody>
+                            <td colspan="6">No data found</td>
+                        </tbody>
+                        @endif
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- LUNG CAPACITIES END -->
+
+        <!-- Mobility Start -->
+        <div class="card my-4">
+            <div class="card-header">
+                <h3 class="card-title">Mobility</h3>
+                <div class="card-toolbar">
+                    <a href="{{route('users.lungcapacities.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
+                        <span class="svg-icon svg-icon-1">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                                <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
+                                <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
+                            </svg>
+                        </span>See All
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive px-4">
+                    <table class="table table-bordered align-middle text-center">
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800">
+                                <th>Physical Fitness Unit</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Physical Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>Overhead Squat</td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->overhead_squat }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->overhead_squat_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Shoulder Mobility</td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->shoulder_mobility }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->shoulder_mobility_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Hurdle Step</td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->hurdle_step }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->hurdle_step_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>In Line Lunge</td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->in_line_lunge }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->in_line_lunge_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Active Straight Leg Raise</td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->active_straight_leg_raise }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->active_straight_leg_raise_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Trunk Stability Push-up</td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->trunk_stability_push_up }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->trunk_stability_push_up_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Rotary Stability</td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->rotary_stability }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->rotary_stability_score }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->mobilities->last()))
+                                {{ $user->mobilities->last()->score }}
+                                @endif
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Mobility End -->
+
+        <!-- Others Start -->
+        <div class="card my-4">
             <div class="table-responsive px-4">
                 <table class="table table-bordered align-middle text-center">
                     <thead>
@@ -156,284 +553,6 @@
                             <th>Details</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <td><b>Bodyfat Percentage</b></td>
-                        <td>Anthropometric</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="{{route('users.bodyfat.index',['user' => $user->id])}}" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Blood Pressure</b></td>
-                        <td>Systolic</td>
-                        <td>
-                            @if(!empty($user->bloodpressures->last()))
-                            {{ $user->bloodpressures->last()->systolic }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->bloodpressures->last()))
-                            {{ $user->bloodpressures->last()->systolic_score }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Blood Pressure</b></td>
-                        <td>Diastolic</td>
-                        <td>
-                            @if(!empty($user->bloodpressures->last()))
-                            {{ $user->bloodpressures->last()->diastolic }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->bloodpressures->last()))
-                            {{ $user->bloodpressures->last()->diastolic_score }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->bloodpressures->last()))
-                            {{ $user->bloodpressures->last()->score }}
-                            @endif
-                        </td>
-                        <td>
-                            <a href="{{route('users.bloodpressure.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Fasting Blood Sugar</b></td>
-                        <td>Glucose</td>
-                        <td>
-                            @if(!empty($user->fastingbloodsugars->last()))
-                            {{ $user->fastingbloodsugars->last()->glucose }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td>
-                            @if(!empty($user->fastingbloodsugars->last()))
-                            {{ $user->fastingbloodsugars->last()->score }}
-                            @endif
-                        </td>
-                        <td>
-                            <a href="{{route('users.fastingbloodsugar.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Lung Capacities</b></td>
-                        <td>FEV</td>
-                        <td>
-                            @if(!empty($user->lungcapacities->last()))
-                            {{ $user->lungcapacities->last()->fev }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->lungcapacities->last()))
-                            {{ $user->lungcapacities->last()->fev_score }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Lung Capacities</b></td>
-                        <td>FEV1</td>
-                        <td>
-                            @if(!empty($user->lungcapacities->last()))
-                            {{ $user->lungcapacities->last()->fev1 }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->lungcapacities->last()))
-                            {{ $user->lungcapacities->last()->fev1_score }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Lung Capacities</b></td>
-                        <td>PEF</td>
-                        <td>
-                            @if(!empty($user->lungcapacities->last()))
-                            {{ $user->lungcapacities->last()->pef }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->lungcapacities->last()))
-                            {{ $user->lungcapacities->last()->pef_score }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->lungcapacities->last()))
-                            {{ $user->lungcapacities->last()->score }}
-                            @endif
-                        </td>
-                        <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Overhead Squat</b></td>
-                        <td>Mobility</td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->overhead_squat }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->overhead_squat_score }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Shoulder Mobility</b></td>
-                        <td>Mobility</td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->shoulder_mobility }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->shoulder_mobility_score }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Hurdle Step</b></td>
-                        <td>Mobility</td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->hurdle_step }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->hurdle_step_score }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tbody>
-                    <tbody>
-                        <td><b>In Line Lunge</b></td>
-                        <td>Mobility</td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->in_line_lunge }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->in_line_lunge_score }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Active Straight Leg Raise</b></td>
-                        <td>Mobility</td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->active_straight_leg_raise }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->active_straight_leg_raise_score }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Trunk Stability Push-up</b></td>
-                        <td>Mobility</td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->trunk_stability_push_up }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->trunk_stability_push_up_score }}
-                            @endif
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Rotary Stability</b></td>
-                        <td>Mobility</td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->rotary_stability }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->rotary_stability_score }}
-                            @endif
-                        </td>
-                        <td>
-                            @if(!empty($user->mobilities->last()))
-                            {{ $user->mobilities->last()->score }}
-                            @endif
-                        </td>
-                        <td>
-                            <a href="{{ route('users.mobilities.create',['user'=> $user->id]) }}" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
                     <tbody>
                         <td><b>Claw Grip Strength, Right Hand</b></td>
                         <td>Upper extremity Muscle Strength</td>
@@ -455,24 +574,6 @@
                     <tbody>
                         <td><b>Claw Grip Strength, Left Hand</b></td>
                         <td>Upper extremity Muscle Strength</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Flexibility</b></td>
-                        <td>Flexibility</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -579,6 +680,24 @@
                         </td>
                     </tbody>
                     <tbody>
+                        <td><b>Flexibility</b></td>
+                        <td>Flexibility</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="#" class="btn btn-icon btn-primary">
+                                <span class="svg-icon svg-icon-1">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
+                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </td>
+                    </tbody>
+                    <tbody>
                         <td><b>PHSICAL PERFORMANCE SCORE</b></td>
                         <td>AVARAGE</td>
                         <td></td>
@@ -596,10 +715,10 @@
                             </a>
                         </td>
                     </tbody>
-
                 </table>
             </div>
         </div>
+        <!-- Others End -->
     </div>
 
 

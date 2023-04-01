@@ -37,9 +37,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('users', UserController::class);
     Route::resource('users.parqs', ParqController::class);
-    Route::resource('users.bodyfat', BodyfatController::class);
-    Route::resource('users.bloodpressure', BloodpressureController::class);
-    Route::resource('users.fastingbloodsugar',FastingbloodsugarController::class);
+    Route::resource('users.bodyfats', BodyfatController::class);
+    Route::resource('users.bloodpressures', BloodpressureController::class);
+    Route::resource('users.fastingbloodsugars',FastingbloodsugarController::class);
 
     Route::resource('users.generals', GeneralController::class);
     Route::resource('users.lungcapacities', LungCapacityController::class);

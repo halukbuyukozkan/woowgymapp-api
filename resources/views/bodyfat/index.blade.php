@@ -26,7 +26,7 @@
                 <h2>{{$user['name']}}'s body fat</h2>
             </div>
             <div class="col-md-9 d-flex justify-content-end pr-4">
-                <a href="{{route('users.bodyfat.create',['user' => $user->id])}}" class="btn btn-primary">Create a New Body Fat Entry</a>
+                <a href="{{route('users.bodyfats.create',['user' => $user->id])}}" class="btn btn-primary">Create a New Body Fat Entry</a>
             </div>  
             <div class="card my-2">
                 <div class="table-responsive px-4">
@@ -56,7 +56,7 @@
                                 <td class="align-middle">{{ $bodyfat->subscapular }}</td>
                                 <td class="align-middle">{{ $bodyfat->suprailiac }}</td>
                                 <td class="align-middle">  
-                                    <a href="{{route('users.bodyfat.edit',['user' => $user->id , 'bodyfat' => $bodyfat->id])}}" class="btn btn-icon btn-primary">
+                                    <a href="{{route('users.bodyfats.edit',['user' => $user->id , 'bodyfat' => $bodyfat->id])}}" class="btn btn-icon btn-primary">
                                         <i class="bi bi-pencil-square fs-2"></i>
                                     </a>
                                 </td>

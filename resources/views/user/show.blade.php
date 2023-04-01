@@ -570,60 +570,84 @@
                             <td>Claw Grip Strength, Right Hand</td>
                             <td>
                                 @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->claw_grip_strength_right_hand }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
                                 {{ $user->strengths->last()->claw_grip_strength_right_hand_score }}
                                 @endif
                             </td>
-                            <td></td>
                             <td></td>
                         </tbody>
                         <tbody>
                             <td>Claw Grip Strength, Left Hand</td>
                             <td>
                                 @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->claw_grip_strength_left_hand }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
                                 {{ $user->strengths->last()->claw_grip_strength_left_hand_score }}
                                 @endif
                             </td>
-                            <td></td>
                             <td></td>
                         </tbody>
                         <tbody>
                             <td>Push-up Test</td>
                             <td>
                                 @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->push_up_test }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
                                 {{ $user->strengths->last()->push_up_test_score }}
                                 @endif
                             </td>
-                            <td></td>
                             <td></td>
                         </tbody>
                         <tbody>
                             <td>Wall Squat</td>
                             <td>
                                 @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->wall_squat }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
                                 {{ $user->strengths->last()->wall_squat_score }}
                                 @endif
                             </td>
-                            <td></td>
                             <td></td>
                         </tbody>
                         <tbody>
                             <td>Sit-up Test</td>
                             <td>
                                 @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->sit_up_test }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
                                 {{ $user->strengths->last()->sit_up_test_score }}
                                 @endif
                             </td>
-                            <td></td>
                             <td></td>
                         </tbody>
                         <tbody>
                             <td>Plank Test</td>
                             <td>
                                 @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->plank_test }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
                                 {{ $user->strengths->last()->plank_test_score }}
                                 @endif
                             </td>
-                            <td></td>
                             <td></td>
                         </tbody>
                     </table>

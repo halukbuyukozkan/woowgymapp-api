@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Strength;
 use Illuminate\Http\Request;
+use App\Http\Requests\StrengthRequest;
 
 class StrengthController extends Controller
 {
@@ -35,9 +37,14 @@ class StrengthController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StrengthRequest $request, User $user)
     {
-        //
+        $validated = $request->validated();
+        $validated['user_id'] = $user->id;
+
+        $strength = Strength::create($validated);
+
+        return redirect()->route('users.strengths.index', $strength->user_id);
     }
 
     /**
@@ -80,8 +87,10 @@ class StrengthController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Strength $strenght)
     {
-        //
+        $strenght->delete();
+
+        return redirect()->route('strength.index', $strenght->user_id);
     }
 }

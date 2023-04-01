@@ -52,10 +52,10 @@
                             <td>{{$strength->sit_up_test}}</td>
                             <td>{{$strength->plank_test}}</td>
                             <td style="width: 30%">
-                                <a href="{{route('users.mobilities.edit',['user' => $user->id , 'mobility' => $mobility->id])}}" class="btn btn-primary">
+                                <a href="{{route('users.strengths.edit',['user' => $user->id , 'strength' => $strength->id])}}" class="btn btn-primary">
                                     Edit
                                 </a>
-                                <form action="{{route('users.mobilities.destroy',['user' => $user->id , 'mobility' => $mobility->id])}}" style="display: inline-block;" method="POST">
+                                <form action="{{route('users.strengths.destroy',['user' => $user->id , 'strength' => $strength->id])}}" style="display: inline-block;" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>

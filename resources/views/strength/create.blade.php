@@ -31,28 +31,28 @@
                 @csrf
                 <div class="p-4">
                     <div class="mb-3">
-                        <label for="overhead_squat" class="form-label">Claw Grip Strength, Right Hand</label>
-                        <input type="text" class="form-control" id="overhead_squat" name="overhead_squat" required>
+                        <label for="claw_grip_strength_right_hand" class="form-label">Claw Grip Strength, Right Hand</label>
+                        <input type="text" class="form-control" id="claw_grip_strength_right_hand" name="claw_grip_strength_right_hand" required>
                     </div>
                     <div class="mb-3">
-                        <label for="shoulder_mobility" class="form-label">Claw Grip Strength, Left Hand	</label>
-                        <input type="text" class="form-control" id="shoulder_mobility" name="shoulder_mobility" required>
+                        <label for="claw_grip_strength_left_hand" class="form-label">Claw Grip Strength, Left Hand	</label>
+                        <input type="text" class="form-control" id="claw_grip_strength_left_hand" name="claw_grip_strength_left_hand" required>
                     </div>
                     <div class="mb-3">
-                        <label for="hurdle_step" class="form-label">Push-up</label>
-                        <input type="text" class="form-control" id="hurdle_step" name="hurdle_step" required>
+                        <label for="push_up_test" class="form-label">Push-up</label>
+                        <input type="text" class="form-control" id="push_up_test" name="push_up_test" required>
                     </div>
                     <div class="mb-3">
-                        <label for="in_line_lunge" class="form-label">Wall Squat</label>
-                        <input type="text" class="form-control" id="in_line_lunge" name="in_line_lunge" required>
+                        <label for="wall_squat" class="form-label">Wall Squat</label>
+                        <input type="text" class="form-control" id="wall_squat" name="wall_squat" required>
                     </div>
                     <div>
-                        <label for="active_straight_leg_raise" class="form-label">Sit-up Test</label>
-                        <input type="text" class="form-control" id="active_straight_leg_raise" name="active_straight_leg_raise" required>
+                        <label for="sit_up_test" class="form-label">Sit-up Test</label>
+                        <input type="text" class="form-control" id="sit_up_test" name="sit_up_test" required>
                     </div>
                     <div>
-                        <label for="trunk_stability_push_up" class="form-label">Plank Test</label>
-                        <input type="text" class="form-control" id="trunk_stability_push_up" name="trunk_stability_push_up" required>
+                        <label for="plank_test" class="form-label">Plank Test</label>
+                        <input type="text" class="form-control" id="plank_test" name="plank_test" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Create mobility entry</button>

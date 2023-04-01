@@ -59,7 +59,7 @@
                         <input type="text" class="form-control" id="rotary_stability" name="rotary_stability" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Create lung capacity</button>
+                    <button type="submit" class="btn btn-primary">Create mobility entry</button>
                 </div>
             </form>
         </div>

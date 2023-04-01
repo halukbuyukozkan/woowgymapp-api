@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Observers\MobilityObserver;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\UserController;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Mobility extends Model
 {
@@ -27,6 +29,22 @@ class Mobility extends Model
         'rotary_stability_score',
         'score',
     ];
+
+    protected static function booted()
+    {
+        static::observe(MobilityObserver::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function (Mobility $mobility) {
+            $userController = new UserController;
+            $userController->updatePhysicalPerformanceScore($mobility->user);
+        });
+    }
+
 
     public function user()
     {

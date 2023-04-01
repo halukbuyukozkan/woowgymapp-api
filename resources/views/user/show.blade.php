@@ -188,17 +188,7 @@
                             @endif
                         </td>
                         <td></td>
-                        <td>
-                            <a href="{{route('users.bloodpressure.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
+                        <td></td>
                     </tbody>
                     <tbody>
                         <td><b>Blood Pressure</b></td>
@@ -270,17 +260,7 @@
                             @endif
                         </td>
                         <td></td>
-                        <td>
-                            <a href="{{route('users.lungcapacities.index',['user'=> $user->id])}}" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
+                        <td></td>
                     </tbody>
                     <tbody>
                         <td><b>Lung Capacities</b></td>
@@ -296,17 +276,7 @@
                             @endif
                         </td>
                         <td></td>
-                        <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
+                        <td></td>
                     </tbody>
                     <tbody>
                         <td><b>Lung Capacities</b></td>
@@ -346,19 +316,13 @@
                             {{ $user->mobilities->last()->overhead_squat }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
                         <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->overhead_squat_score }}
+                            @endif
                         </td>
+                        <td></td>
+                        <td></td>
                     </tbody>
                     <tbody>
                         <td><b>Shoulder Mobility</b></td>
@@ -368,19 +332,13 @@
                             {{ $user->mobilities->last()->shoulder_mobility }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
                         <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->shoulder_mobility_score }}
+                            @endif
                         </td>
+                        <td></td>
+                        <td></td>
                     </tbody>
                     <tbody>
                         <td><b>Hurdle Step</b></td>
@@ -390,19 +348,13 @@
                             {{ $user->mobilities->last()->hurdle_step }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
                         <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->hurdle_step_score }}
+                            @endif
                         </td>
+                        <td></td>
+                        <td></td>
                     </tbody>
                     <tbody>
                         <td><b>In Line Lunge</b></td>
@@ -412,19 +364,13 @@
                             {{ $user->mobilities->last()->in_line_lunge }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
                         <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->in_line_lunge_score }}
+                            @endif
                         </td>
+                        <td></td>
+                        <td></td>
                     </tbody>
                     <tbody>
                         <td><b>Active Straight Leg Raise</b></td>
@@ -434,19 +380,13 @@
                             {{ $user->mobilities->last()->active_straight_leg_raise }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
                         <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->active_straight_leg_raise_score }}
+                            @endif
                         </td>
+                        <td></td>
+                        <td></td>
                     </tbody>
                     <tbody>
                         <td><b>Trunk Stability Push-up</b></td>
@@ -456,19 +396,13 @@
                             {{ $user->mobilities->last()->trunk_stability_push_up }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
                         <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->trunk_stability_push_up_score }}
+                            @endif
                         </td>
+                        <td></td>
+                        <td></td>
                     </tbody>
                     <tbody>
                         <td><b>Rotary Stability</b></td>
@@ -478,8 +412,16 @@
                             {{ $user->mobilities->last()->rotary_stability }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->rotary_stability_score }}
+                            @endif
+                        </td>
+                        <td>
+                            @if(!empty($user->mobilities->last()))
+                            {{ $user->mobilities->last()->score }}
+                            @endif
+                        </td>
                         <td>
                             <a href="{{ route('users.mobilities.create',['user'=> $user->id]) }}" class="btn btn-icon btn-primary">
                                 <span class="svg-icon svg-icon-1">

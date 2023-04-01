@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Observers\StrengthObserver;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\UserController;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Strength extends Model
 {
@@ -25,6 +27,21 @@ class Strength extends Model
         'plank_test_score',
         'score'
     ];
+
+    protected static function booted()
+    {
+        static::observe(StrengthObserver::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function (Strength $strength) {
+            $userController = new UserController;
+            $userController->updatePhysicalPerformanceScore($strength->user);
+        });
+    }
 
     public function user()
     {

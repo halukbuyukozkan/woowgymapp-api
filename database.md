@@ -92,5 +92,20 @@
 -rotary_stability_score
 -score -> nullable
 
+# Strength
+-id
+-user_id
+-claw_grip_strength_right_hand
+-clas_grip_strength_right_hand_score
+-claw_grip_strength_left_hand
+-claw_grip_strength_left_hand_score
+-wall_squat
+-wall_squat_score
+-sit_up_test
+-sit_up_test_score
+-plank_test
+-plank_test_score
+-score -> nullable
+
 
 

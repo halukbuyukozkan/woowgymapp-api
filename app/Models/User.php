@@ -84,4 +84,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Mobility::class);
     }
+
+    public function strengths(): HasMany
+    {
+        return $this->hasMany(Strength::class);
+    }
 }

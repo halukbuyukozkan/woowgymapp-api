@@ -539,6 +539,99 @@
         </div>
         <!-- Mobility End -->
 
+        <!-- Strength Start -->
+        <div class="card my-4">
+            <div class="card-header">
+                <h3 class="card-title">Strength</h3>
+                <div class="card-toolbar">
+                    <a href="{{route('users.strengths.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
+                        <span class="svg-icon svg-icon-1">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                                <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
+                                <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
+                            </svg>
+                        </span>See All
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive px-4">
+                    <table class="table table-bordered align-middle text-center">
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800">
+                                <th><b>Physical Fitness Unit</b></th>
+                                <th><b>Result</b></th>
+                                <th><b>Score</b></th>
+                                <th><b>Physical Condition</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>Claw Grip Strength, Right Hand</td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->claw_grip_strength_right_hand_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Claw Grip Strength, Left Hand</td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->claw_grip_strength_left_hand_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Push-up Test</td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->push_up_test_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Wall Squat</td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->wall_squat_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Sit-up Test</td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->sit_up_test_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                        <tbody>
+                            <td>Plank Test</td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->plank_test_score }}
+                                @endif
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Strength End -->
+
         <!-- Others Start -->
         <div class="card my-4">
             <div class="table-responsive px-4">
@@ -553,114 +646,7 @@
                             <th>Details</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <td><b>Claw Grip Strength, Right Hand</b></td>
-                        <td>Upper extremity Muscle Strength</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Claw Grip Strength, Left Hand</b></td>
-                        <td>Upper extremity Muscle Strength</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Push-up Test</b></td>
-                        <td>Upper extremity Muscle Strength</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Wall Squat</b></td>
-                        <td>Lower extremity Muscle Strength</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Sit-up Test</b></td>
-                        <td>Core Region Strength</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td><b>Plank Test</b></td>
-                        <td>Core Region Strength</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#" class="btn btn-icon btn-primary">
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                        <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                        <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                            </a>
-                        </td>
-                    </tbody>
+                    
                     <tbody>
                         <td><b>MAX-VO2</b></td>
                         <td>Cardiovascular Capacity</td>
@@ -720,8 +706,6 @@
         </div>
         <!-- Others End -->
     </div>
-
-
 
 </div>
 

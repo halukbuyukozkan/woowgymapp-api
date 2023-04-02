@@ -193,7 +193,7 @@ class StrengthObserver
                 }
                 // PLANK END
 
-            }elseif($age >= 51 && $age <= 60){
+            }elseif($age >= 51 && $age < 60){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 17){
                     $strength->claw_grip_strength_right_hand_score = 1;
                 }elseif($strength->claw_grip_strength_right_hand >= 18 && $strength->claw_grip_strength_right_hand <= 34){
@@ -224,7 +224,21 @@ class StrengthObserver
                 }
                 // WALL SQUAT END
 
-            }elseif($age >= 61){
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 10){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 11 && $strength->plank_test <= 25){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 26 && $strength->plank_test <= 55){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 56 && $strength->plank_test <= 80){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 81){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
+
+            }elseif($age >= 60){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 13){
                     $strength->claw_grip_strength_right_hand_score = 1;
                 }elseif($strength->claw_grip_strength_right_hand >= 14 && $strength->claw_grip_strength_right_hand <= 30){
@@ -254,6 +268,20 @@ class StrengthObserver
                     $strength->wall_squat_score = 6;
                 }
                 // WALL SQUAT END
+
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 10){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 11 && $strength->plank_test <= 25){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 26 && $strength->plank_test <= 50){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 51 && $strength->plank_test <= 80){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 81){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
 
             }
         }elseif($gender = 'female'){
@@ -288,6 +316,20 @@ class StrengthObserver
                 }
                 // WALL SQUAT END
 
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 20){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 21 && $strength->plank_test <= 35){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 36 && $strength->plank_test <= 50){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 51 && $strength->plank_test <= 90){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 91){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
+
             }elseif($age >= 21 && $age <= 30){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 19){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -318,6 +360,20 @@ class StrengthObserver
                     $strength->wall_squat_score = 6;
                 }
                 // WALL SQUAT END
+
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 18){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 19 && $strength->plank_test <= 33){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 34 && $strength->plank_test <= 47){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 48 && $strength->plank_test <= 87){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 88){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
 
             }elseif($age >= 31 && $age <= 40){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 18){
@@ -350,6 +406,20 @@ class StrengthObserver
                 }
                 // WALL SQUAT END
 
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 15){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 16 && $strength->plank_test <= 30){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 31 && $strength->plank_test <= 44){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 45 && $strength->plank_test <= 83){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 84){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
+
             }elseif($age >= 41 && $age <= 50){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 14){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -380,6 +450,20 @@ class StrengthObserver
                     $strength->wall_squat_score = 6;
                 }
                 // WALL SQUAT END
+
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 12){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 13 && $strength->plank_test <= 27){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 28 && $strength->plank_test <= 41){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 42 && $strength->plank_test <= 78){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 79){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
 
             }elseif($age >= 51 && $age <= 60){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 11){
@@ -412,6 +496,20 @@ class StrengthObserver
                 }
                 // WALL SQUAT END
 
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 8){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 9 && $strength->plank_test <= 23){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 24 && $strength->plank_test <= 37){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 38 && $strength->plank_test <= 70){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 71){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
+
             }elseif($age >= 61){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 10){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -442,6 +540,20 @@ class StrengthObserver
                     $strength->wall_squat_score = 6;
                 }
                 // WALL SQUAT END
+
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 8){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 9 && $strength->plank_test <= 23){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 24 && $strength->plank_test <= 32){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 33 && $strength->plank_test <= 60){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 61){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
 
             }
         }

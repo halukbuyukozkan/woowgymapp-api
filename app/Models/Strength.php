@@ -33,7 +33,6 @@ class Strength extends Model
     {
         parent::boot();
         static::observe(StrengthObserver::class);
-        static::observe(StrengthPushSitObserver::class);
 
         static::saved(function (Strength $strength) {
             $userController = new UserController;

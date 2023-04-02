@@ -17,6 +17,7 @@ class General extends Model
         'height',
         'gender',
         'job',
+        'age',
         'physical_performance_score'
     ];
 

@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="card">
-            <form action="{{ route('users.fastingbloodsugar.store',$user->id) }}" method="POST">
+            <form action="{{ route('users.fastingbloodsugars.store',$user->id) }}" method="POST">
                 @csrf
                 <div class="p-4">
                     <div class="mb-3">

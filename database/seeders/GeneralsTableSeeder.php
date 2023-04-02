@@ -27,6 +27,7 @@ class GeneralsTableSeeder extends Seeder
                 'height' => 183,
                 'gender' => 'male',
                 'job' => 'developer',
+                'age' => 25,
                 'created_at' => '2023-03-18 18:40:38',
                 'updated_at' => '2023-03-18 18:40:38',
             ),

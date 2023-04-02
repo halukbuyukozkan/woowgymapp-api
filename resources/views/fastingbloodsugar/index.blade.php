@@ -26,7 +26,7 @@
                 <h2>{{$user['name']}}'s fasting blood sugar</h2>
             </div>
             <div class="col-md-9 d-flex justify-content-end pr-4">
-                <a href="{{route('users.fastingbloodsugar.create',['user' => $user->id])}}" class="btn btn-primary">Create a New Fasting Blood Sugar Entry</a>
+                <a href="{{route('users.fastingbloodsugars.create',['user' => $user->id])}}" class="btn btn-primary">Create a New Fasting Blood Sugar Entry</a>
             </div>
             <div class="card my-2">
                 <div class="table-responsive px-4">
@@ -41,7 +41,7 @@
                             <tbody>
                                     <td class="align-middle">{{ $fastingbloodsugar->glucose }}</td>
                                     <td class="align-middle">
-                                        <a href="{{route('users.fastingbloodsugar.edit',['user' => $user->id , 'fastingbloodsugar' => $fastingbloodsugar->id])}}" class="btn btn-icon btn-primary">
+                                        <a href="{{route('users.fastingbloodsugars.edit',['user' => $user->id , 'fastingbloodsugar' => $fastingbloodsugar->id])}}" class="btn btn-icon btn-primary">
                                             <i class="bi bi-pencil-square fs-2"></i>
                                         </a>
                                     </td>

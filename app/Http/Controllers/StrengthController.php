@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Strength;
 use Illuminate\Http\Request;
-use App\Models\Bloodpressure;
-use App\Http\Requests\BloodpressureRequest;
+use App\Http\Requests\StrengthRequest;
 
-class BloodpressureController extends Controller
+class StrengthController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class BloodpressureController extends Controller
      */
     public function index(User $user)
     {
-        $bloodpressures = $user->bloodpressures;
+        $strenghts = $user->strengths;
 
-        return view('bloodpressure.index', compact('user', 'bloodpressures'));
+        return view('strength.index', compact('strenghts','user'));
     }
 
     /**
@@ -28,7 +28,7 @@ class BloodpressureController extends Controller
      */
     public function create(User $user)
     {
-        return view('bloodpressure.create', compact('user'));
+        return view('strength.create', compact('user'));
     }
 
     /**
@@ -37,15 +37,14 @@ class BloodpressureController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BloodpressureRequest $request, User $user)
+    public function store(StrengthRequest $request, User $user)
     {
         $validated = $request->validated();
-
         $validated['user_id'] = $user->id;
 
-        $bloodpressure = Bloodpressure::create($validated);
+        $strength = Strength::create($validated);
 
-        return redirect()->route('users.bloodpressures.index', $bloodpressure->user_id);
+        return redirect()->route('users.strengths.index', $strength->user_id);
     }
 
     /**
@@ -88,8 +87,10 @@ class BloodpressureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Strength $strenght)
     {
-        //
+        $strenght->delete();
+
+        return redirect()->route('strength.index', $strenght->user_id);
     }
 }

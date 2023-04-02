@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('height');
             $table->string('gender');
             $table->string('job');
+            $table->integer('age');
             $table->integer('physical_performance_score')->nullable();
             $table->timestamps();
         });

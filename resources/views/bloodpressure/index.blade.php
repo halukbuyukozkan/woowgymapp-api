@@ -26,7 +26,7 @@
                 <h2>{{$user['name']}}'s Blood pressure</h2>
             </div>
             <div class="col-md-9 d-flex justify-content-end pr-4">
-                <a href="{{route('users.bloodpressure.create',['user' => $user->id])}}" class="btn btn-primary">Create a New Blood Pressure Entry</a>
+                <a href="{{route('users.bloodpressures.create',['user' => $user->id])}}" class="btn btn-primary">Create a New Blood Pressure Entry</a>
             </div>
             <div class="card my-2">
                 <div class="table-responsive px-4">

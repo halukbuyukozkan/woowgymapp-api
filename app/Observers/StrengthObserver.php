@@ -30,6 +30,21 @@ class StrengthObserver
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
 
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 45){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 46 && $strength->wall_squat <= 70){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 71 && $strength->wall_squat <= 120){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 121 && $strength->wall_squat <= 180){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 181){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
+
+
             }elseif($age >= 21 && $age <= 30){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 23){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -46,6 +61,20 @@ class StrengthObserver
                 }elseif($strength->claw_grip_strength_left_hand >= 49 && $strength->claw_grip_strength_left_hand <= 100){
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
+
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 40){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 41 && $strength->wall_squat <= 65){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 66 && $strength->wall_squat <= 110){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 111 && $strength->wall_squat <= 170){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 171){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
 
             }elseif($age >= 31 && $age <= 40){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 21){
@@ -64,6 +93,20 @@ class StrengthObserver
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
 
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 35){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 36 && $strength->wall_squat <= 60){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 61 && $strength->wall_squat <= 100){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 101 && $strength->wall_squat <= 160){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 161){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
+
             }elseif($age >= 41 && $age <= 50){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 19){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -80,6 +123,20 @@ class StrengthObserver
                 }elseif($strength->claw_grip_strength_left_hand >= 42 && $strength->claw_grip_strength_left_hand <= 100){
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
+
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 30){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 31 && $strength->wall_squat <= 55){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 56 && $strength->wall_squat <= 90){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 91 && $strength->wall_squat <= 150){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 151){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
 
             }elseif($age >= 51 && $age <= 60){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 17){
@@ -98,6 +155,20 @@ class StrengthObserver
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
 
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 25){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 26 && $strength->wall_squat <= 50){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 51 && $strength->wall_squat <= 80){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 81 && $strength->wall_squat <= 140){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 141){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
+
             }elseif($age >= 61){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 13){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -114,6 +185,20 @@ class StrengthObserver
                 }elseif($strength->claw_grip_strength_left_hand >= 31 && $strength->claw_grip_strength_left_hand <= 100){
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
+
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 20){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 21 && $strength->wall_squat <= 45){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 46 && $strength->wall_squat <= 70){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 71 && $strength->wall_squat <= 130){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 131){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
 
             }
         }elseif($gender = 'female'){
@@ -134,6 +219,20 @@ class StrengthObserver
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
 
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 30){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 31 && $strength->wall_squat <= 45){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 46 && $strength->wall_squat <= 90){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 91 && $strength->wall_squat <= 120){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 121){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
+
             }elseif($age >= 21 && $age <= 30){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 19){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -150,6 +249,20 @@ class StrengthObserver
                 }elseif($strength->claw_grip_strength_left_hand >= 38 && $strength->claw_grip_strength_left_hand <= 100){
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
+
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 25){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 26 && $strength->wall_squat <= 40){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 41 && $strength->wall_squat <= 80){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 81 && $strength->wall_squat <= 110){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 111){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
 
             }elseif($age >= 31 && $age <= 40){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 18){
@@ -168,6 +281,20 @@ class StrengthObserver
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
 
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 20){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 21 && $strength->wall_squat <= 35){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 36 && $strength->wall_squat <= 70){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 71 && $strength->wall_squat <= 100){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 101){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
+
             }elseif($age >= 41 && $age <= 50){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 14){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -184,6 +311,20 @@ class StrengthObserver
                 }elseif($strength->claw_grip_strength_left_hand >= 31 && $strength->claw_grip_strength_left_hand <= 100){
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
+
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 15){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 16 && $strength->wall_squat <= 30){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 31 && $strength->wall_squat <= 60){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 61 && $strength->wall_squat <= 90){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 91){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
 
             }elseif($age >= 51 && $age <= 60){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 11){
@@ -202,6 +343,20 @@ class StrengthObserver
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
 
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 10){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 11 && $strength->wall_squat <= 25){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 26 && $strength->wall_squat <= 55){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 56 && $strength->wall_squat <= 85){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 86){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
+
             }elseif($age >= 61){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 10){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -218,6 +373,20 @@ class StrengthObserver
                 }elseif($strength->claw_grip_strength_left_hand >= 27 && $strength->claw_grip_strength_left_hand <= 100){
                     $strength->claw_grip_strength_left_hand_score = 3;
                 }
+
+                // WALL SQUAT START
+                if($strength->wall_squat >= 0 && $strength->wall_squat <= 10){
+                    $strength->wall_squat_score = 1;
+                }elseif($strength->wall_squat >= 11 && $strength->wall_squat <= 25){
+                    $strength->wall_squat_score = 2;
+                }elseif($strength->wall_squat >= 26 && $strength->wall_squat <= 50){
+                    $strength->wall_squat_score = 3;
+                }elseif($strength->wall_squat >= 51 && $strength->wall_squat <= 80){
+                    $strength->wall_squat_score = 4;
+                }elseif($strength->wall_squat >= 81){
+                    $strength->wall_squat_score = 6;
+                }
+                // WALL SQUAT END
 
             }
         }

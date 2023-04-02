@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Observers\StrengthObserver;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\UserController;
+use App\Observers\StrengthPushSitObserver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Strength extends Model
@@ -28,14 +29,11 @@ class Strength extends Model
         'score'
     ];
 
-    protected static function booted()
-    {
-        static::observe(StrengthObserver::class);
-    }
-
     protected static function boot()
     {
         parent::boot();
+        static::observe(StrengthObserver::class);
+        static::observe(StrengthPushSitObserver::class);
 
         static::saved(function (Strength $strength) {
             $userController = new UserController;

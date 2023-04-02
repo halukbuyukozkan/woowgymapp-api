@@ -44,6 +44,19 @@ class StrengthObserver
                 }
                 // WALL SQUAT END
 
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 30){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 31 && $strength->plank_test <= 45){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 46 && $strength->plank_test <= 90){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 91 && $strength->plank_test <= 120){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 121){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
 
             }elseif($age >= 21 && $age <= 30){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 23){
@@ -76,6 +89,20 @@ class StrengthObserver
                 }
                 // WALL SQUAT END
 
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 25){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 26 && $strength->plank_test <= 40){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 41 && $strength->plank_test <= 80){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 81 && $strength->plank_test <= 110){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 111){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
+
             }elseif($age >= 31 && $age <= 40){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 21){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -107,6 +134,20 @@ class StrengthObserver
                 }
                 // WALL SQUAT END
 
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 20){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 21 && $strength->plank_test <= 35){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 36 && $strength->plank_test <= 70){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 71 && $strength->plank_test <= 100){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 101){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
+
             }elseif($age >= 41 && $age <= 50){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 19){
                     $strength->claw_grip_strength_right_hand_score = 1;
@@ -137,6 +178,20 @@ class StrengthObserver
                     $strength->wall_squat_score = 6;
                 }
                 // WALL SQUAT END
+
+                // PLANK START
+                if($strength->plank_test >= 0 && $strength->plank_test <= 15){
+                    $strength->plank_test_score = 1;
+                }elseif($strength->plank_test >= 16 && $strength->plank_test <= 30){
+                    $strength->plank_test_score = 2;
+                }elseif($strength->plank_test >= 31 && $strength->plank_test <= 60){
+                    $strength->plank_test_score = 3;
+                }elseif($strength->plank_test >= 61 && $strength->plank_test <= 90){
+                    $strength->plank_test_score = 4;
+                }elseif($strength->plank_test >= 91){
+                    $strength->plank_test_score = 5;
+                }
+                // PLANK END
 
             }elseif($age >= 51 && $age <= 60){
                 if($strength->claw_grip_strength_right_hand >= 0 && $strength->claw_grip_strength_right_hand <= 17){

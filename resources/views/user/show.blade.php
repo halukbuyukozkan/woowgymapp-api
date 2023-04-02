@@ -658,7 +658,11 @@
                                 {{ $user->strengths->last()->plank_test_score }}
                                 @endif
                             </td>
-                            <td></td>
+                            <td>
+                                @if(!empty($user->strengths->last()))
+                                {{ $user->strengths->last()->score }}
+                                @endif
+                            </td>
                         </tbody>
                         @else
                         <tbody>

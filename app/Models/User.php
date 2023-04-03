@@ -94,4 +94,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Maxvo2::class);
     }
+
+    public function flexibilities(): HasMany
+    {
+        return $this->hasMany(Flexibility::class);
+    }
 }

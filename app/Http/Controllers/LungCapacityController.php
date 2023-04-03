@@ -43,7 +43,7 @@ class LungCapacityController extends Controller
         $validated['user_id'] = $user->id;
         $lungCapacity = LungCapacity::create($validated);
 
-        return redirect()->route('users.lungcapacities.index', $user);
+        return redirect()->route('users.show', $user);
     }
 
     /**

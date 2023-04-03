@@ -26,7 +26,7 @@
                 <h2>Max Vo2 Information</h2>
             </div>
             <div class="col-md-7 d-flex justify-content-end pr-4">
-                <a href="{{route('users.maxvo2s.create',['user' => $user->id])}}" class="btn btn-primary mx-2">Create new lung capacity</a>
+                <a href="{{route('users.maxvo2s.create',['user' => $user->id])}}" class="btn btn-primary mx-2">Create new Max-VO2</a>
             </div>
         </div>
         <div class="card">

@@ -26,7 +26,7 @@
                 <h2>Strength Informations</h2>
             </div>
             <div class="col-md-7 d-flex justify-content-end pr-4">
-                <a href="{{route('users.strengths.create',['user' => $user->id])}}" class="btn btn-primary mx-2">Create new mobility entry</a>
+                <a href="{{route('users.strengths.create',['user' => $user->id])}}" class="btn btn-primary mx-2">Create strength entry</a>
             </div>
         </div>
         <div class="card">

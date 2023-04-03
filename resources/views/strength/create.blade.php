@@ -55,7 +55,7 @@
                         <input type="text" class="form-control" id="plank_test" name="plank_test" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Create mobility entry</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
                 </div>
             </form>
         </div>

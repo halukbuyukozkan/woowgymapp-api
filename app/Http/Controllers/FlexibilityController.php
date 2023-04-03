@@ -43,7 +43,7 @@ class FlexibilityController extends Controller
         $validated['user_id'] = $user->id;
         $flexibility = Flexibility::create($validated);
 
-        return redirect()->route('users.flexibilities.index', $flexibility->user_id);
+        return redirect()->route('users.show', $flexibility->user_id);
     }
 
     /**

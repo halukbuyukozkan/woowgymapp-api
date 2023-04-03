@@ -43,7 +43,7 @@ class Maxvo2Controller extends Controller
         $validated['user_id'] = $user->id;
         $maxvo2 = Maxvo2::create($validated);
 
-        return redirect()->route('users.maxvo2s.index', $maxvo2->user_id);
+        return redirect()->route('users.show', $maxvo2->user_id);
     }
 
     /**

@@ -48,25 +48,10 @@
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </div>
-                <div class="menu-item">
-                    <a class="menu-link {{ request()->routeIs('users.index') ? 'active' : '' }}" href="{{ route('users.index') }}">
-                        <span class="menu-icon">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
-                            <span class="svg-icon svg-icon-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <rect x="2" y="2" width="9" height="9" rx="2" fill="black" />
-                                    <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="black" />
-                                    <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="black" />
-                                    <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="black" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                        </span>
-                        <span class="menu-title">User</span>
-                    </a>
-                </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link">
+                
+                <!-- USER START -->
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('users.index') ? 'hover show' : '' }}">
+                    <span class="menu-link {{ request()->routeIs('users.index') ? 'active' : '' }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -78,71 +63,24 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Test</span>
+                        <span class="menu-title">User</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <span class="menu-link">
+                        <div class="menu-item">
+                            <a class="menu-link {{ request()->routeIs('users.index') ? 'active' : '' }}"  href="{{ route('users.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Testler</span>
-                                <span class="menu-arrow"></span>
-                            </span>
-                            <div class="menu-sub menu-sub-accordion menu-active-bg">
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo1/dist/pages/profile/overview.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Overview</span>
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo1/dist/pages/profile/projects.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Projects</span>
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo1/dist/pages/profile/campaigns.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Campaigns</span>
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo1/dist/pages/profile/documents.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Documents</span>
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo1/dist/pages/profile/connections.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Connections</span>
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link" href="../../demo1/dist/pages/profile/activity.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Activity</span>
-                                    </a>
-                                </div>
-                            </div>
+                                <span class="menu-title">Users</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+                <!-- USER END -->
+
+
+                <!-- SYSTEM START -->
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('roles.index') ? 'hover show' : '' }}{{ request()->routeIs('permissions.index') ? 'hover show' : '' }}">
                     <span class="menu-link {{ request()->routeIs('roles.index') ? 'active' : '' }}{{ request()->routeIs('permissions.index') ? 'active' : '' }}">
                         <span class="menu-icon">
@@ -178,6 +116,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- SYSTEM END -->
             </div>
             <!--end::Menu-->
         </div>

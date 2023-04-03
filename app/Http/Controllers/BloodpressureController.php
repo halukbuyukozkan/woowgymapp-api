@@ -45,7 +45,7 @@ class BloodpressureController extends Controller
 
         $bloodpressure = Bloodpressure::create($validated);
 
-        return redirect()->route('users.bloodpressures.index', $bloodpressure->user_id);
+        return redirect()->route('users.show', $bloodpressure->user_id);
     }
 
     /**

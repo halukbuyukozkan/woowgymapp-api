@@ -12,6 +12,7 @@ use App\Http\Controllers\StrengthController;
 use App\Http\Controllers\FlexibilityController;
 use App\Http\Controllers\LungCapacityController;
 use App\Http\Controllers\BloodpressureController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FastingbloodsugarController;
 
 /*
@@ -33,9 +34,7 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::resource('users', UserController::class);

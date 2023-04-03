@@ -108,4 +108,11 @@
 -score -> nullable
 
 
+# Maxvo2
+-id
+-user_id
+-max_vo2
+-score -> nullable
+
+
 

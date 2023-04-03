@@ -131,7 +131,13 @@ class UserController extends Controller
             $strength = 0;
         }
 
-        $totalscore = $bloodPressure + $fastingbloodsugar + $lungCapacity + $mobility + $strength;
+        if ($user->maxvo2s->last() != null) {
+            $maxvo2 = $user->maxvo2s->last()->score;
+        } else {
+            $maxvo2 = 0;
+        }
+
+        $totalscore = $bloodPressure + $fastingbloodsugar + $lungCapacity + $mobility + $strength + $maxvo2;
 
         $user->generals->last()->update([
             'physical_performance_score' => $totalscore

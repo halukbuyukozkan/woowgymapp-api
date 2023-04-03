@@ -89,4 +89,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Strength::class);
     }
+
+    public function maxvo2s(): HasMany
+    {
+        return $this->hasMany(Maxvo2::class);
+    }
 }

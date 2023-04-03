@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ParqController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Maxvo2Controller;
 use App\Http\Controllers\BodyfatController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\MobilityController;
@@ -46,4 +47,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users.lungcapacities', LungCapacityController::class);
     Route::resource('users.mobilities', MobilityController::class);
     Route::resource('users.strengths', StrengthController::class);
+    Route::resource('users.maxvo2s', Maxvo2Controller::class);
 });

@@ -1,0 +1,32 @@
+{
+    "Date":"Tarih",
+    "Systolic":"Sistolik",
+    "Diastolic":"Diyastolik",
+    "No data found":"Kayıt bulunamadı.",
+
+
+    "Dashboard":"Yönetim Paneli",
+    "User":"Kullanıcı",
+    "Test":"Test",
+    "test":"test",
+    "Tests":"Testler",
+    "Overview":"Genel Bakış",
+    "Projects":"Projeler",
+    "Campaigns":"Kampanyalar",
+    "Documents":"Dökümanlar",
+    "Connections":"Bağlantılar",
+    "Activity":"Aktivite",
+    "System":"Sistem",
+    "Permissions":"İzinler",
+    "Roles":"Roller",
+    "Registered Users":"Kayıtlı Kullanıcılar",
+    "Users":"Kullanıcılar",
+    "About":"Hakkımızda",
+    "Support":"Destek",
+    "Pages":"Sayfalar",
+    "Profile":"Profil",
+    "lungcapacities":"Akciğer kapasiteleri",
+    "See all":"Hepsini gör"
+
+
+}

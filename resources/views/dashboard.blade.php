@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 				<!--begin::Title-->
-				<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Dashboard
+				<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Dashboard')}}
 				<!--begin::Separator-->
 				<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
 				<!--end::Separator-->
@@ -35,10 +35,10 @@
         <div class="row">
             <div class="card shadow-sm col-md-7 m-4">
                 <div class="card-header">
-                    <h3 class="card-title">lungcapacities</h3>
+                    <h3 class="card-title">{{__('lungcapacities')}}</h3>
                     <div class="card-toolbar">
                         <a href="{{ route('users.lungcapacities.index',$user) }}" type="button" class="btn btn-sm btn-light">
-                            See All
+                            {{__('See all')}}
                         </a>
                     </div>
                 </div>
@@ -144,12 +144,12 @@ new Chart(ctx, {
 <!-- STRENGTH END -->
 
 <script>
-    var bloodPressure= @json($user->bloodpressures->last()->score);
-    var fastingBloodSugar = @json($user->fastingbloodsugars->last()->score);
-    var lungcapacities = @json($user->lungcapacities->last()->score);
-    var strength = @json($user->strengths->last()->score);
-    var maxvo2 = @json($user->maxvo2s->last()->score);
-    const ctx2 = document.getElementById('myChart2');
+    var bloodPressure= @json($user->bloodpressures->last()->score ??null);
+    var fastingBloodSugar = @json($user->fastingbloodsugars->last()->score ??null);
+    var lungcapacities = @json($user->lungcapacities->last()->score ??null);
+    var strength = @json($user->strengths->last()->score ??null);
+    var maxvo2 = @json($user->maxvo2s->last()->score ??null);
+    const ctx2 = document.getElementById('myChart2'??null);
 
     new Chart(ctx2, {
         type: 'polarArea',
@@ -176,7 +176,7 @@ new Chart(ctx, {
         }
     });
 
-</script> 
+</script>
 
 
 @endsection

@@ -32,7 +32,7 @@
                     <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
                         <div class="menu-item me-lg-1">
                             <a class="menu-link active py-3" href="../../demo1/dist/index.html">
-                                <span class="menu-title">Dashboard</span>
+                                <span class="menu-title">{{__('Dashboard')}}</span>
                             </a>
                         </div>
                         <div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
@@ -54,7 +54,7 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </span>
-                                        <span class="menu-title">Pages</span>
+                                        <span class="menu-title">{{__('Pages')}}</span>
                                         <span class="menu-arrow"></span>
                                     </span>
                                     <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg py-lg-4 w-lg-225px">
@@ -63,7 +63,7 @@
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">Profile</span>
+                                                <span class="menu-title">{{__('Profile')}}</span>
                                                 <span class="menu-arrow"></span>
                                             </span>
                                             <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg py-lg-4 w-lg-225px">
@@ -72,7 +72,7 @@
                                                         <span class="menu-bullet">
                                                             <span class="bullet bullet-dot"></span>
                                                         </span>
-                                                        <span class="menu-title">Overview</span>
+                                                        <span class="menu-title">{{__('Overview')}}</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item">
@@ -80,7 +80,7 @@
                                                         <span class="menu-bullet">
                                                             <span class="bullet bullet-dot"></span>
                                                         </span>
-                                                        <span class="menu-title">Projects</span>
+                                                        <span class="menu-title">{{__('Projects')}}</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -117,8 +117,8 @@
                                     <!--end::Avatar-->
                                     <!--begin::Username-->
                                     <div class="d-flex flex-column">
-                                        <div class="fw-bolder d-flex align-items-center fs-5">test</div>
-                                        <a href="#" class="fw-bold text-muted text-hover-primary fs-7">test</a>
+                                        <div class="fw-bolder d-flex align-items-center fs-5">{{__('test')}}</div>
+                                        <a href="#" class="fw-bold text-muted text-hover-primary fs-7">{{__('test')}}</a>
                                     </div>
                                     <!--end::Username-->
                                 </div>
@@ -129,17 +129,17 @@
                             <!--end::Menu separator-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-                                <a href="../../demo1/dist/account/overview.html" class="menu-link px-5">My Profile</a>
+                                <a href="../../demo1/dist/account/overview.html" class="menu-link px-5">{{__('My Profile')}}</a>
                             </div>
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5 my-1">
-                                <a href="../../demo1/dist/account/settings.html" class="menu-link px-5">Account Settings</a>
+                                <a href="../../demo1/dist/account/settings.html" class="menu-link px-5">{{__('Account Settings')}}</a>
                             </div>
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-                                <a href="{{ route('logout') }}" class="menu-link px-5">Sign Out</a>
+                                <a href="{{ route('logout') }}" class="menu-link px-5">{{__('Sign out')}}</a>
                             </div>
                             <!--end::Menu item-->
                         </div>

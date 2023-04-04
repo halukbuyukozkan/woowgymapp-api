@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Users
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Users')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,45 +23,45 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>New Body Fat Entry:</h2>
+                <h2>{{__('New Body Fat Entry:')}}</h2>
             </div>
         </div>
         <div class="card">
-            <form action="{{ route('users.bodyfat.store',$user->id) }}" method="POST">
+            <form action="{{ route('users.bodyfats.store',$user->id) }}" method="POST">
                 @csrf
                 <div class="p-4">
                     @if($user->generals->last()->gender == 'male')
                     <div class="mb-3">
-                        <label for="chest" class="form-label">Chest size:</label>
+                        <label for="chest" class="form-label">{{__('Chest size:')}}</label>
                         <input type="text" class="form-control" id="chest" name="chest" required>
                     </div>
                     <div class="mb-3">
-                        <label for="abdominal" class="form-label">Abdominal size:</label>
+                        <label for="abdominal" class="form-label">{{__('Abdominal size:')}}</label>
                         <input type="text" class="form-control" id="abdominal" name="abdominal" required>
                     </div>
                     <div class="mb-3">
-                        <label for="thigh" class="form-label">Thigh size:</label>
+                        <label for="thigh" class="form-label">{{__('Thigh size:')}}</label>
                         <input type="text" class="form-control" id="thigh" name="thigh" required>
                     </div>
                     @else
                     <div class="mb-3">
-                        <label for="biceps" class="form-label">Biceps size:</label>
+                        <label for="biceps" class="form-label">{{__('Biceps size:')}}</label>
                         <input type="text" class="form-control" id="biceps" name="biceps" required>
                     </div>
                     <div class="mb-3">
-                        <label for="triceps" class="form-label">Triceps size:</label>
+                        <label for="triceps" class="form-label">{{__('Triceps size:')}}</label>
                         <input type="text" class="form-control" id="triceps" name="triceps" required>
                     </div>
                     <div class="mb-3">
-                        <label for="subscapular" class="form-label">Subscapular size:</label>
+                        <label for="subscapular" class="form-label">{{__('Subscapular size:')}}</label>
                         <input type="text" class="form-control" id="subscapular" name="subscapular" required>
                     </div>
                     <div class="mb-3">
-                        <label for="suprailiac" class="form-label">Suprailiac size:</label>
+                        <label for="suprailiac" class="form-label">{{__('Suprailiac size:')}}</label>
                         <input type="text" class="form-control" id="suprailiac" name="suprailiac" required>
                     </div>
                     @endif
-                    <button type="submit" class="btn btn-primary">Create Bodyfat</button>
+                    <button type="submit" class="btn btn-primary">{{__('Create Bodyfat')}}</button>
                 </div>
             </form>
         </div>

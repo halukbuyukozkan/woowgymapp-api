@@ -23,19 +23,19 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>{{$user['name']}}'s Blood pressure</h2>
+                <h2>{{ __('user_bloodpressure', ['name' => $user['name']]) }}</h2>
             </div>
             <div class="col-md-9 d-flex justify-content-end pr-4">
-                <a href="{{route('users.bloodpressures.create',['user' => $user->id])}}" class="btn btn-primary">Create a New Blood Pressure Entry</a>
+                <a href="{{route('users.bloodpressures.create',['user' => $user->id])}}" class="btn btn-primary">{{__('Create a New Blood Pressure Entry')}}</a>
             </div>
             <div class="card my-2">
                 <div class="table-responsive px-4">
                     <table class="table table-bordered text-center">
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Date</th>
-                                <th>Systolic</th>
-                                <th>Diastolic</th>
+                                <th>{{__('Date')}}</th>
+                                <th>{{__('Systolic')}}</th>
+                                <th>{{__('Diastolic')}}</th>
                             </tr>
                         </thead>
                         @if(isset($bloodpressures))
@@ -49,7 +49,7 @@
                             @endforeach
                         @else
 
-                            <td colspan="2">No data found</td>
+                            <td colspan="2">{{__('No data found')}}</td>
                         @endif
                     </table>
                 </div>

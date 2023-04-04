@@ -68,5 +68,14 @@
     "PHSICAL PERFORMANCE SCORE":"FİZİKSEL PERFORMANS PUANI",
     "AVARAGE":"ORTALAMA",
     "General İnformations":"Genel Bilgiler",
-    "user_details":":name kişisinin detayları"
+    "user_details":":name kişisinin detayları",
+    "Create User":"Kullanıcı Oluştur",
+    "Name":"İsim",
+    "Email adress":"E-posta adresi",
+    "Password":"Şifre",
+    "Confirm Password":"Şifre tekrarı",
+    "Update user":"Kullanıcı bilgilerini yenile",
+    "Users Table":"Kullanıcı tablosu",
+    "Edit":"Düzenle",
+    "Actions":"Hareketler"
 }

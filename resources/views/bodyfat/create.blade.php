@@ -61,7 +61,7 @@
                         <input type="text" class="form-control" id="suprailiac" name="suprailiac" required>
                     </div>
                     @endif
-                    <button type="submit" class="btn btn-primary">{{__('Create Bodyfat')}}</button>
+                    <button type="submit" class="btn btn-primary">{{__('Create')}}</button>
                 </div>
             </form>
         </div>

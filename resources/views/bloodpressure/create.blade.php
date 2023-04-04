@@ -38,7 +38,7 @@
                         <label for="diastolic" class="form-label">{{__('Diastolic Bloodpressure')}}</label>
                         <input type="text" class="form-control" id="diastolic" name="diastolic" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">{{__('Create Bloodpressure')}}</button>
+                    <button type="submit" class="btn btn-primary">{{__('Create')}}</button>
                 </div>
             </form>
         </div>

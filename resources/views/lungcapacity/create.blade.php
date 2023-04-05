@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Users
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Lung Capacities')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>New lung capacity entry:</h2>
+                <h2>{{__('New lung capacity entry:')}}</h2>
             </div>
         </div>
         <div class="card">
@@ -42,7 +42,7 @@
                         <label for="pef" class="form-label">pef:</label>
                         <input type="text" class="form-control" id="pef" name="pef" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Create lung capacity</button>
+                    <button type="submit" class="btn btn-primary">{{__('Create')}}</button>
                 </div>
             </form>
         </div>

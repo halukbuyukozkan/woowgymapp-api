@@ -104,5 +104,13 @@
     "Create":"Oluştur",
     "user_flexibility":":name kullanıcısının esnekliği",
     "Delete":"Sil",
-    "Create a New Flexibility Entry":"Yeni Esneklik Değeri Oluştur"
+    "Create a New Flexibility Entry":"Yeni Esneklik Değeri Oluştur",
+    "Flexibility Informations":"Esneklik Bilgileri",
+    "General Informations":"Genel Bilgiler",
+    "General İnformations Table":"",
+    "user_general":":name kullanıcısının genel bilgileri",
+    "Create new general information":"Yeni genel bilgi girdisi oluştur",
+    "Lung Capacities":"Akciğer Kapasiteleri",
+    "Create new lung capacity":"Yeni akciğer kapasitesi girdisi oluştur",
+    "New lung capacity entry:":"Yeni akciğer kapasitesi girdisi:"
 }

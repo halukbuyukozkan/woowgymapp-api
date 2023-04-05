@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>{{__('Create General Information Entry')}}</h2>
+                <h2>{{__('New General Information Entry')}}</h2>
             </div>
         </div>
         <div class="card">

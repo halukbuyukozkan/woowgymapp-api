@@ -43,7 +43,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <td>{{__('Do you have a chronic illness')}}?</td>
+                            <td>{{__('Do you have a chronic illness?')}}?</td>
                             <td>{{ $parq->chronic_illness }}</td>
                         </tbody>
                         <tbody>

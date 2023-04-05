@@ -33,15 +33,15 @@
                     <table class="table table-bordered text-center">
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Rate</th>
-                                <th>Chest</th>
+                                <th>{{__('Rate')}}</th>
+                                <th>{{__('Chest')}}</th>
                                 <th>Abdominal</th>
                                 <th>Thigh</th>
                                 <th>Biceps</th>
                                 <th>Triceps</th>
                                 <th>Subscapular</th>
                                 <th>Suprailiac</th>
-                                <th>Action</th>
+                                <th>{{__('Actions')}}</th>
                             </tr>
                         </thead>
                         @if(isset($bodyfats))

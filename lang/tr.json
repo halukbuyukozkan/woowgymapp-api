@@ -32,7 +32,7 @@
     "Update Par-q Test":"Par-q testini güncelle",
     "Questions":"Sorular",
     "Answers":"Yanıtlar",
-    "Do you have a chronic illness":"Kronik bir rahatsızlığınız var mı?",
+    "Do you have a chronic illness?":"Kronik bir rahatsızlığınız var mı?",
     "Have you ever had a blood pressure problem before?":"Daha önce tansiyon problemi yaşadınız mı?",
     "Have you ever had a cardiovascular (heart disease, vascular disease etc.) condition before?":"Daha önce kardiovasküler(kalp,damar vb.) bir rahatsızlık yaşadınız mı?",
     "Have you felt pain in your chest while walking or climbing stairs in the past month?":"Son bir ay içerisinde merdiven çıkarken ya da yürürken göğsünüzde ağrı hissettiniz mi?",
@@ -93,7 +93,7 @@
     "Suprailiac size:":"Suprailiac ölçüsü:",
     "Update Body Fat Entry:":"Yağ oranı bilgisini güncelle:",
     "Update Bodyfat":"Yağ oranını güncelle:",
-    "Rate":"Değer",
+    "Rate":"Oran",
     "user_bodyfat":":name kullanıcısının yağ oranı",
     "Create a New Body Fat Entry":"Yeni Yağ Oranı Girdisi Oluştur",
     "New Fasting Blood Sugar Entry:":"Yeni Açlık Kan Şekeri Girdisi:",
@@ -120,5 +120,12 @@
     "user_mobility":":name kullanıcısının mobilite bilgileri",
     "Create new mobility entry":"Yeni mobilite girdisi oluştur",
     "Create mobility entry":"Yeni mobilite girdisi oluştur",
-    "New mobility entry:":"Yeni mobilite girdisi"
+    "New mobility entry:":"Yeni mobilite girdisi",
+    "New Par-q Test:":"Yeni Par-q Testi:",
+    "Update":"Güncelle",
+    "New strength entry:":"Yeni kuvvet girdisi:",
+    "user_strength":":name kullanıcısının kuvvet bilgileri",
+    "Create a new strength entry":"Yeni kuvvet girdisi oluştur",
+    "New General Information Entry":"Yeni genel bilgi girdisi",
+    "Chest":"Göğüs"
 }

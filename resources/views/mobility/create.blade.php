@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Mobility
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Mobility')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>New mobility entry:</h2>
+                <h2>{{__('New mobility entry:')}}</h2>
             </div>
         </div>
         <div class="card">
@@ -59,7 +59,7 @@
                         <input type="text" class="form-control" id="rotary_stability" name="rotary_stability" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Create mobility entry</button>
+                    <button type="submit" class="btn btn-primary">{{__('Create mobility entry')}}</button>
                 </div>
             </form>
         </div>

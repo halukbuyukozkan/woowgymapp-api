@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-5">
-                <h2>{{__('Lung capacities')}}</h2>
+                <h2>{{ __('user_lungcapacity', ['name' => $user['name']]) }}</h2>
             </div>
             <div class="col-md-7 d-flex justify-content-end pr-4">
                 <a href="{{route('users.lungcapacities.create',['user' => $user->id])}}" class="btn btn-primary mx-2">{{__('Create new lung capacity')}}</a>

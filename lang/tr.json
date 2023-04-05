@@ -104,7 +104,7 @@
     "Create":"Oluştur",
     "user_flexibility":":name kullanıcısının esnekliği",
     "Delete":"Sil",
-    "Create a New Flexibility Entry":"Yeni Esneklik Değeri Oluştur",
+    "Create a New Flexibility Entry":"Yeni Esneklik Girdisi Oluştur",
     "Flexibility Informations":"Esneklik Bilgileri",
     "General Informations":"Genel Bilgiler",
     "General İnformations Table":"",
@@ -112,5 +112,13 @@
     "Create new general information":"Yeni genel bilgi girdisi oluştur",
     "Lung Capacities":"Akciğer Kapasiteleri",
     "Create new lung capacity":"Yeni akciğer kapasitesi girdisi oluştur",
-    "New lung capacity entry:":"Yeni akciğer kapasitesi girdisi:"
+    "New lung capacity entry:":"Yeni akciğer kapasitesi girdisi:",
+    "user_lungcapacity":":name kullanıcısının akciğer kapasiteleri",
+    "user_maxvo2":":name kullanıcısının max-VO2 bilgileri",
+    "Create new Max-VO2":"Yeni Max-VO2 girdisi oluştur",
+    "New Max-Vo2 entry:":"Yeni Max-VO2 girdisi:",
+    "user_mobility":":name kullanıcısının mobilite bilgileri",
+    "Create new mobility entry":"Yeni mobilite girdisi oluştur",
+    "Create mobility entry":"Yeni mobilite girdisi oluştur",
+    "New mobility entry:":"Yeni mobilite girdisi"
 }

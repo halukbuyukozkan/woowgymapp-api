@@ -28,7 +28,7 @@
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
                 <div class="menu-item">
                     <div class="menu-content pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{__('Dashboard')}}</span>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -45,10 +45,10 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Dashboard</span>
+                        <span class="menu-title">{{__('Dashboard')}}</span>
                     </a>
                 </div>
-                
+
                 <!-- USER START -->
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('users.index') ? 'hover show' : '' }}">
                     <span class="menu-link {{ request()->routeIs('users.index') ? 'active' : '' }}">
@@ -63,7 +63,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">User</span>
+                        <span class="menu-title">{{__('User')}}</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
@@ -72,7 +72,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Users</span>
+                                <span class="menu-title">{{__('Users')}}</span>
                             </a>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">System</span>
+                        <span class="menu-title">{{__('System')}}</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
@@ -103,7 +103,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Roles</span>
+                                <span class="menu-title">{{__('Roles')}}</span>
                             </a>
                         </div>
                         <div class="menu-item">
@@ -111,7 +111,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Permissions</span>
+                                <span class="menu-title">{{__('Permissions')}}</span>
                             </a>
                         </div>
                     </div>

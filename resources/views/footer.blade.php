@@ -10,13 +10,10 @@
         <!--begin::Menu-->
         <ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
             <li class="menu-item">
-                <a href="#" class="menu-link px-2">About</a>
+                <a href="#" class="menu-link px-2">{{__('About')}}</a>
             </li>
             <li class="menu-item">
-                <a href="#" class="menu-link px-2">Support</a>
-            </li>
-            <li class="menu-item">
-                <a href="#" class="menu-link px-2">Purchase</a>
+                <a href="#" class="menu-link px-2">{{__('Support')}}</a>
             </li>
         </ul>
         <!--end::Menu-->

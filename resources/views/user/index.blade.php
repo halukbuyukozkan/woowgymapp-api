@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Users
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Users')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,10 +23,10 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>Users Table</h2>
+                <h2>{{__('Users Table')}}</h2>
             </div>
             <div class="col-md-9 d-flex justify-content-end pr-4">
-                <a href="{{ route('users.create') }}" class="btn btn-primary">Create User</a>
+                <a href="{{ route('users.create') }}" class="btn btn-primary">{{__('Create User')}}</a>
             </div>
         </div>
         <div class="card">
@@ -34,12 +34,12 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr class="fw-bold fs-6 text-gray-800">
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Weight</th>
-                            <th>Height</th>
-                            <th>Gender</th>
-                            <th>Actions</th>
+                            <th>{{__('Name')}}</th>
+                            <th>{{__('Email')}}</th>
+                            <th>{{__('Weight')}}</th>
+                            <th>{{__('Height')}}</th>
+                            <th>{{__('Gender')}}</th>
+                            <th>{{__('Actions')}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,10 +55,10 @@
                             <td>@if($user->generals->count() > 0){{ $user->generals->first()->gender }}@endif</td>
                             <td>
                                 <a href="{{ route('users.show',['user' => $user['id']]) }}" type="button" class="btn btn-sm btn-light">
-                                    Details
+                                    {{__('Details')}}
                                 </a>
                                 <a href="{{ route('users.edit',['user' => $user['id']]) }}" type="button" class="btn btn-sm btn-light">
-                                    Edit
+                                    {{__('Edit')}}
                                 </a>
                             </td>
                         </tr>

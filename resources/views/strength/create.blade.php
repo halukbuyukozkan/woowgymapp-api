@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Strength
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Strength')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>New strength entry:</h2>
+                <h2>{{__('New strength entry:')}}</h2>
             </div>
         </div>
         <div class="card">
@@ -31,11 +31,11 @@
                 @csrf
                 <div class="p-4">
                     <div class="mb-3">
-                        <label for="claw_grip_strength_right_hand" class="form-label">Claw Grip Strength, Right Hand</label>
+                        <label for="claw_grip_strength_right_hand" class="form-label">{{__('Claw Grip Strength, Right Hand')}}</label>
                         <input type="text" class="form-control" id="claw_grip_strength_right_hand" name="claw_grip_strength_right_hand" required>
                     </div>
                     <div class="mb-3">
-                        <label for="claw_grip_strength_left_hand" class="form-label">Claw Grip Strength, Left Hand	</label>
+                        <label for="claw_grip_strength_left_hand" class="form-label">{{__('Claw Grip Strength, Left Hand')}}</label>
                         <input type="text" class="form-control" id="claw_grip_strength_left_hand" name="claw_grip_strength_left_hand" required>
                     </div>
                     <div class="mb-3">
@@ -55,7 +55,7 @@
                         <input type="text" class="form-control" id="plank_test" name="plank_test" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary">{{__('Create')}}</button>
                 </div>
             </form>
         </div>

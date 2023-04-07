@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Strength
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Strength')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,10 +23,10 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-5">
-                <h2>Strength Informations</h2>
+                <h2>{{ __('user_strength', ['name' => $user['name']]) }}</h2>
             </div>
             <div class="col-md-7 d-flex justify-content-end pr-4">
-                <a href="{{route('users.strengths.create',['user' => $user->id])}}" class="btn btn-primary mx-2">Create strength entry</a>
+                <a href="{{route('users.strengths.create',['user' => $user->id])}}" class="btn btn-primary mx-2">{{__('Create a new strength entry')}}</a>
             </div>
         </div>
         <div class="card">
@@ -34,8 +34,8 @@
                 <table class="table table-bordered align-middle text-center">
                     <thead>
                         <tr class="fw-bold fs-6 text-gray-800">
-                            <th>Claw grip Strength right hand</th>
-                            <th>Claw grip Strength left hand</th>
+                            <th>{{__('Claw Grip Strength, Right Hand')}}</th>
+                            <th>{{__('Claw Grip Strength, Left Hand')}}</th>
                             <th>Push up</th>
                             <th>Wall squat</th>
                             <th>Sit up</th>
@@ -53,12 +53,12 @@
                             <td>{{$strength->plank_test}}</td>
                             <td style="width: 30%">
                                 <a href="{{route('users.strengths.edit',['user' => $user->id , 'strength' => $strength->id])}}" class="btn btn-primary">
-                                    Edit
+                                    {{__('Edit')}}
                                 </a>
                                 <form action="{{route('users.strengths.destroy',['user' => $user->id , 'strength' => $strength->id])}}" style="display: inline-block;" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger">{{__('Delete')}}</button>
                                 </form>
                             </td>
                         </tr>

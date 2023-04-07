@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Lung Capacities
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Lung Capacities')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,10 +23,10 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-5">
-                <h2>Lung capacities</h2>
+                <h2>{{ __('user_lungcapacity', ['name' => $user['name']]) }}</h2>
             </div>
             <div class="col-md-7 d-flex justify-content-end pr-4">
-                <a href="{{route('users.lungcapacities.create',['user' => $user->id])}}" class="btn btn-primary mx-2">Create new lung capacity</a>
+                <a href="{{route('users.lungcapacities.create',['user' => $user->id])}}" class="btn btn-primary mx-2">{{__('Create new lung capacity')}}</a>
             </div>
         </div>
         <div class="card">
@@ -48,12 +48,12 @@
                             <td>{{ $lungCapacity->pef }}</td>
                             <td style="width: 30%">
                                 <a href="{{route('users.lungcapacities.edit',['user' => $user->id , 'lungcapacity' => $lungCapacity->id])}}" class="btn btn-primary">
-                                    Edit
+                                    {{__('Edit')}}
                                 </a>
                                 <form action="{{route('users.lungcapacities.destroy',['user' => $user->id , 'lungcapacity' => $lungCapacity->id])}}" style="display: inline-block;" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger">{{__('Delete')}}</button>
                                 </form>
                             </td>
                         </tr>

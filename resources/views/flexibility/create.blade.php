@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Flexibility
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Flexibility İnformations')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>Flexibility</h2>
+                <h2>{{__('New Flexibility Entry:')}}</h2>
             </div>
         </div>
         <div class="card">
@@ -31,10 +31,10 @@
                 @csrf
                 <div class="p-4">
                     <div class="mb-3">
-                        <label for="flexibility" class="form-label">Flexibility</label>
+                        <label for="flexibility" class="form-label">{{__('Flexibility')}}</label>
                         <input type="text" class="form-control" id="flexibility" name="flexibility" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary">{{__('Create')}}</button>
                 </div>
             </form>
         </div>

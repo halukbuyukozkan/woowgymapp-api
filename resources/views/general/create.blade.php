@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">General Informations
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('General Informations')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>Create General Information</h2>
+                <h2>{{__('New General Information Entry')}}</h2>
             </div>
         </div>
         <div class="card">
@@ -31,23 +31,23 @@
                 @csrf
                 <div class="p-4">
                     <div class="mb-3">
-                        <label for="weight" class="form-label">Weight</label>
+                        <label for="weight" class="form-label">{{__('Weight')}}</label>
                         <input type="text" class="form-control" id="weight" name="weight" required>
                     </div>
                     <div class="mb-3">
-                        <label for="height" class="form-label">Height</label>
+                        <label for="height" class="form-label">{{__('Height')}}</label>
                         <input type="text" class="form-control" id="height" name="height" required>
                     </div>
                     <div class="mb-3">
-                        <label for="gender" class="form-label">Gender</label>
+                        <label for="gender" class="form-label">{{__('Gender')}}</label>
                         <input type="text" class="form-control" id="gender" name="gender" required>
                     </div>
                     <div class="mb-3">
-                        <label for="job" class="form-label">Job</label>
+                        <label for="job" class="form-label">{{__('Job')}}</label>
                         <input type="text" class="form-control" id="job" name="job" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Create general information</button>
+                    <button type="submit" class="btn btn-primary">{{__('Create')}}</button>
                 </div>
             </form>
         </div>

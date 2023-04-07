@@ -23,10 +23,10 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-5">
-                <h2>Max Vo2 Information</h2>
+                <h2>{{ __('user_maxvo2', ['name' => $user['name']]) }}</h2>
             </div>
             <div class="col-md-7 d-flex justify-content-end pr-4">
-                <a href="{{route('users.maxvo2s.create',['user' => $user->id])}}" class="btn btn-primary mx-2">Create new Max-VO2</a>
+                <a href="{{route('users.maxvo2s.create',['user' => $user->id])}}" class="btn btn-primary mx-2">{{__('Create new Max-VO2')}}</a>
             </div>
         </div>
         <div class="card">
@@ -35,7 +35,7 @@
                     <thead>
                         <tr class="fw-bold fs-6 text-gray-800">
                             <th>maxvo2</th>
-                            <th>Actions</th>
+                            <th>{{__('Actions')}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,12 +44,12 @@
                             <td>{{ $maxvo2->max_vo2 }}</td>
                             <td style="width: 30%">
                                 <a href="{{route('users.maxvo2s.edit',['user' => $user->id , 'maxvo2' => $maxvo2->id])}}" class="btn btn-primary">
-                                    Edit
+                                    {{__('Edit')}}
                                 </a>
                                 <form action="{{route('users.maxvo2s.destroy',['user' => $user->id , 'maxvo2' => $maxvo2->id])}}" style="display: inline-block;" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger">{{__('Delete')}}</button>
                                 </form>
                             </td>
                         </tr>

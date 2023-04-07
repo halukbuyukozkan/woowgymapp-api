@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Details
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Details')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -23,12 +23,12 @@
     <div class="container">
         <div class="card shadow-sm my-2">
             <div class="card-header">
-                <h3 class="card-title">{{$user['name']}}s details</h3>
+                <h3 class="card-title">{{ __('user_details', ['name' => $user['name']]) }}</h3>
                 <div class="card-toolbar">
                     @if($parq == null)
-                    <a href="{{route('users.parqs.create',['user' => $user->id])}}" class="btn btn-primary">Create a new Par-q Test</a>
+                    <a href="{{route('users.parqs.create',['user' => $user->id])}}" class="btn btn-primary">{{__('Create a new Par-q Test')}}</a>
                     @else
-                    <a href="{{route('users.parqs.edit',['user' => $user->id , 'parq' => $parq->id])}}" class="btn btn-primary">Update Par-q Test</a>
+                    <a href="{{route('users.parqs.edit',['user' => $user->id , 'parq' => $parq->id])}}" class="btn btn-primary">{{__('Update Par-q Test')}}</a>
                     @endif
                 </div>
             </div>
@@ -38,65 +38,65 @@
                         @if(isset($parq))
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Questions</th>
-                                <th>Answers</th>
+                                <th>{{__('Questions')}}</th>
+                                <th>{{__('Answers')}}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <td>Do you have a chronic illness?</td>
+                            <td>{{__('Do you have a chronic illness?')}}?</td>
                             <td>{{ $parq->chronic_illness }}</td>
                         </tbody>
                         <tbody>
-                            <td>Have you ever had a blood pressure problem before?</td>
+                            <td>{{__('Have you ever had a blood pressure problem before?')}}</td>
                             <td>{{ $parq->tension }}</td>
                         </tbody>
                         <tbody>
-                            <td>Have you ever had a cardiovascular (heart disease, vascular disease etc.) condition before?</td>
+                            <td>{{__('Have you ever had a cardiovascular (heart disease, vascular disease etc.) condition before?')}}</td>
                             <td>{{ $parq->cardiovascular }}</td>
                         </tbody>
                         <tbody>
-                            <td>Have you felt pain in your chest while walking or climbing stairs in the past month?</td>
+                            <td>{{__('Have you felt pain in your chest while walking or climbing stairs in the past month?')}}</td>
                             <td>{{ $parq->chest_pain }}</td>
                         </tbody>
                         <tbody>
-                            <td>Have you ever had a spinal cord (hernia, slipped disc, scoliosis etc.) disorder?</td>
+                            <td>{{__('Have you ever had a spinal cord (hernia, slipped disc, scoliosis etc.) disorder?')}}</td>
                             <td>{{ $parq->spinal_cord_discomfort }}</td>
                         </tbody>
                         <tbody>
-                            <td>Have you ever had an anatomical disorder (fracture,fiber breakage etc.) before?</td>
+                            <td>{{__('Have you ever had an anatomical disorder (fracture,fiber breakage etc.) before?')}}</td>
                             <td>{{ $parq->anatomical_discomfort }}</td>
                         </tbody>
                         <tbody>
-                            <td>Have you ever had a surgical intervention (surgery etc.) before?</td>
+                            <td>{{__('Have you ever had a surgical intervention (surgery etc.) before?')}}</td>
                             <td>{{ $parq->operation }}</td>
                         </tbody>
                         <tbody>
-                            <td>Do you have type 1 or type 2 diabetes?</td>
+                            <td>{{__('Do you have type 1 or type 2 diabetes?')}}</td>
                             <td>{{ $parq->diabetes }}</td>
                         </tbody>
                         <tbody>
-                            <td>Do you have a medication that you use regularly?</td>
+                            <td>{{__('Do you have a medication that you use regularly?')}}</td>
                             <td>{{ $parq->medicine }}</td>
                         </tbody>
                         <tbody>
-                            <td>Do you have a supplement (vitamins, protein powders etc.) that you use regularly?</td>
+                            <td>{{__('Do you have a supplement (vitamins, protein powders etc.) that you use regularly?')}}</td>
                             <td>{{ $parq->supplements }}</td>
                         </tbody>
                         <tbody>
-                            <td>Do you smoke?</td>
+                            <td>{{__('Do you smoke?')}}</td>
                             <td>{{ $parq->smoke }}</td>
                         </tbody>
                         <tbody>
-                            <td>Do you have an addiction to drugs, alcohol etc.? If yes, have you had any treatment related to them?</td>
+                            <td>{{__('Do you have an addiction to drugs, alcohol etc.? If yes, have you had any treatment related to them?')}}</td>
                             <td>{{ $parq->addiction }}</td>
                         </tbody>
                         <tbody>
-                            <td>Do you have any food sensitivities or allergies?</td>
+                            <td>{{__('Do you have any food sensitivities or allergies?')}}</td>
                             <td>{{ $parq->allergy }}</td>
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="2">No data found</td>
+                            <td colspan="2">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -110,7 +110,7 @@
         <!-- GENERAL START -->
         <div class="card shadow-sm my-2">
             <div class="card-header">
-                <h3 class="card-title">General İnformations</h3>
+                <h3 class="card-title">{{__('General İnformations')}}</h3>
                 <div class="card-toolbar">
                     <a href="{{route('users.generals.index',['user' => $user->id])}}" class="btn btn-primary mx-2"><span class="svg-icon svg-icon-1">
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +118,7 @@
                             <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
                             <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
                         </svg>
-                    </span>See All
+                    </span>{{ __('See All') }}
                 </a>
                 </div>
             </div>
@@ -128,10 +128,10 @@
                         @if(isset($general))
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Weight</th>
-                                <th>Height</th>
-                                <th>Gender</th>
-                                <th>Job</th>
+                                <th>{{__('Weight')}}</th>
+                                <th>{{__('Height')}}</th>
+                                <th>{{__('Gender')}}</th>
+                                <th>{{__('Job')}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -142,7 +142,7 @@
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="2">No data found</td>
+                            <td colspan="2">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -156,7 +156,7 @@
         <!-- BODYFAT START -->
         <div class="card shadow-sm my-2">
             <div class="card-header">
-                <h3 class="card-title">Bodyfats</h3>
+                <h3 class="card-title">{{__('Bodyfats')}}</h3>
                 <div class="card-toolbar">
                     <a href="{{route('users.bodyfats.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
                         <span class="svg-icon svg-icon-1">
@@ -165,7 +165,7 @@
                                 <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
                                 <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
                             </svg>
-                        </span>See All
+                        </span>{{__('See All')}}
                     </a>
                 </div>
             </div>
@@ -175,21 +175,21 @@
                         @if($user->bodyfats->count() > 0)
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Physical Fitness Unit</th>
-                                <th>Result</th>
-                                <th>Score</th>
-                                <th>Physical Condition</th>
+                                <th>{{__('Physical Fitness Unit')}}</th>
+                                <th>{{__('Result')}}</th>
+                                <th>{{__('Score')}}</th>
+                                <th>{{__('Physical Condition')}}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <td>Anthropometric</td>
+                            <td>{{__('Anthropometric')}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="6">No data found</td>
+                            <td colspan="6">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -201,7 +201,7 @@
         <!-- BLOOD PRESSURE START -->
         <div class="card shadow-sm my-2">
             <div class="card-header">
-                <h3 class="card-title">Bloodpressures</h3>
+                <h3 class="card-title">{{__('Bloodpressures')}}</h3>
                 <div class="card-toolbar">
                     <a href="{{route('users.bloodpressures.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
                         <span class="svg-icon svg-icon-1">
@@ -210,7 +210,7 @@
                                 <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
                                 <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
                             </svg>
-                        </span>See All
+                        </span>{{__('See All')}}
                     </a>
                 </div>
             </div>
@@ -220,14 +220,14 @@
                         @if($user->bloodpressures->count() > 0)
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Physical Fitness Unit</th>
-                                <th>Result</th>
-                                <th>Score</th>
-                                <th>Physical Condition</th>
+                                <th>{{__('Physical Fitness Unit')}}</th>
+                                <th>{{__('Result')}}</th>
+                                <th>{{__('Score')}}</th>
+                                <th>{{__('Physical Condition')}}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <td>Systolic</td>
+                            <td>{{__('Systolic')}}</td>
                             <td>
                                 @if(!empty($user->bloodpressures->last()))
                                 {{ $user->bloodpressures->last()->systolic }}
@@ -241,7 +241,7 @@
                             <td></td>
                         </tbody>
                         <tbody>
-                            <td>Diastolic</td>
+                            <td>{{__('Diastolic')}}</td>
                             <td>
                                 @if(!empty($user->bloodpressures->last()))
                                 {{ $user->bloodpressures->last()->diastolic }}
@@ -260,7 +260,7 @@
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="6">No data found</td>
+                            <td colspan="6">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -272,7 +272,7 @@
         <!-- FASTING BLOOD SUGAR START -->
         <div class="card shadow-sm my-2">
             <div class="card-header">
-                <h3 class="card-title">Fasting blood sugars</h3>
+                <h3 class="card-title">{{__('Fasting blood sugars')}}</h3>
                 <div class="card-toolbar">
                     <a href="{{route('users.fastingbloodsugars.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
                         <span class="svg-icon svg-icon-1">
@@ -281,7 +281,7 @@
                                 <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
                                 <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
                             </svg>
-                        </span>See All
+                        </span>{{__('See All')}}
                     </a>
                 </div>
             </div>
@@ -291,14 +291,14 @@
                         @if($user->fastingbloodsugars->count() > 0)
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Physical Fitness Unit</th>
-                                <th>Result</th>
-                                <th>Score</th>
-                                <th>Physical Condition</th>
+                                <th>{{__('Physical Fitness Unit')}}</th>
+                                <th>{{__('Result')}}</th>
+                                <th>{{__('Score')}}</th>
+                                <th>{{__('Physical Condition')}}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <td>Glucose</td>
+                            <td>{{__('Glucose')}}</td>
                             <td>
                                 @if(!empty($user->fastingbloodsugars->last()))
                                 {{ $user->fastingbloodsugars->last()->glucose }}
@@ -313,7 +313,7 @@
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="6">No data found</td>
+                            <td colspan="6">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -325,7 +325,7 @@
         <!-- LUNG CAPACITIES START -->
         <div class="card shadow-sm my-2">
             <div class="card-header">
-                <h3 class="card-title">Lung capacities</h3>
+                <h3 class="card-title">{{__('Lung capacities')}}</h3>
                 <div class="card-toolbar">
                     <a href="{{route('users.lungcapacities.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
                         <span class="svg-icon svg-icon-1">
@@ -334,7 +334,7 @@
                                 <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
                                 <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
                             </svg>
-                        </span>See All
+                        </span>{{__('See All')}}
                     </a>
                 </div>
             </div>
@@ -344,10 +344,10 @@
                         @if($user->lungcapacities->count() > 0)
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Physical Fitness Unit</th>
-                                <th>Result</th>
-                                <th>Score</th>
-                                <th>Physical Condition</th>
+                                <th>{{__('Physical Fitness Unit')}}</th>
+                                <th>{{__('Result')}}</th>
+                                <th>{{__('Score')}}</th>
+                                <th>{{__('Physical Condition')}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -398,7 +398,7 @@
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="6">No data found</td>
+                            <td colspan="6">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -410,7 +410,7 @@
         <!-- Mobility Start -->
         <div class="card my-4">
             <div class="card-header">
-                <h3 class="card-title">Mobility</h3>
+                <h3 class="card-title">{{__('Mobility')}}</h3>
                 <div class="card-toolbar">
                     <a href="{{route('users.mobilities.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
                         <span class="svg-icon svg-icon-1">
@@ -419,7 +419,7 @@
                                 <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
                                 <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
                             </svg>
-                        </span>See All
+                        </span>{{__('See All')}}
                     </a>
                 </div>
             </div>
@@ -429,10 +429,10 @@
                         @if($user->mobilities->count() > 0)
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Physical Fitness Unit</th>
-                                <th>Result</th>
-                                <th>Score</th>
-                                <th>Physical Condition</th>
+                                <th>{{__('Physical Fitness Unit')}}</th>
+                                <th>{{__('Result')}}</th>
+                                <th>{{__('Score')}}</th>
+                                <th>{{__('Physical Condition')}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -450,7 +450,7 @@
                             <td></td>
                         </tbody>
                         <tbody>
-                            <td>Shoulder Mobility</td>
+                            <td>{{__('Shoulder Mobility')}}</td>
                             <td>
                                 @if(!empty($user->mobilities->last()))
                                 {{ $user->mobilities->last()->shoulder_mobility }}
@@ -539,7 +539,7 @@
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="6">No data found</td>
+                            <td colspan="6">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -551,7 +551,7 @@
         <!-- Strength Start -->
         <div class="card my-4">
             <div class="card-header">
-                <h3 class="card-title">Strength</h3>
+                <h3 class="card-title">{{__('Strength')}}</h3>
                 <div class="card-toolbar">
                     <a href="{{route('users.strengths.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
                         <span class="svg-icon svg-icon-1">
@@ -560,7 +560,7 @@
                                 <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
                                 <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
                             </svg>
-                        </span>See All
+                        </span>{{__('See All')}}
                     </a>
                 </div>
             </div>
@@ -570,14 +570,14 @@
                         @if($user->strengths->count() > 0)
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th><b>Physical Fitness Unit</b></th>
-                                <th><b>Result</b></th>
+                                <th><b>{{__('Physical Fitness Unit')}}</b></th>
+                                <th><b>{{__('Result')}}</b></th>
                                 <th><b>Score</b></th>
-                                <th><b>Physical Condition</b></th>
+                                <th><b>{{__('Physical Condition')}}</b></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <td>Claw Grip Strength, Right Hand</td>
+                            <td>{{__('Claw Grip Strength, Right Hand')}}</td>
                             <td>
                                 @if(!empty($user->strengths->last()))
                                 {{ $user->strengths->last()->claw_grip_strength_right_hand }}
@@ -591,7 +591,7 @@
                             <td></td>
                         </tbody>
                         <tbody>
-                            <td>Claw Grip Strength, Left Hand</td>
+                            <td>{{__('Claw Grip Strength, Left Hand')}}</td>
                             <td>
                                 @if(!empty($user->strengths->last()))
                                 {{ $user->strengths->last()->claw_grip_strength_left_hand }}
@@ -666,7 +666,7 @@
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="6">No data found</td>
+                            <td colspan="6">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -687,7 +687,7 @@
                                 <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
                                 <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
                             </svg>
-                        </span>See All
+                        </span>{{__('See All')}}
                     </a>
                 </div>
             </div>
@@ -697,10 +697,10 @@
                         @if($user->maxvo2s->count() > 0)
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Physical Fitness Unit</th>
-                                <th>Result</th>
-                                <th>Score</th>
-                                <th>Physical Condition</th>
+                                <th>{{__('Physical Fitness Unit')}}</th>
+                                <th>{{__('Result')}}</th>
+                                <th>{{__('Score')}}</th>
+                                <th>{{__('Physical Condition')}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -719,7 +719,7 @@
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="6">No data found</td>
+                            <td colspan="6">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -731,7 +731,7 @@
         <!-- FLEXİBİLİTY START -->
         <div class="card shadow-sm my-2">
             <div class="card-header">
-                <h3 class="card-title">Flexibility</h3>
+                <h3 class="card-title">{{__('Flexibility')}}</h3>
                 <div class="card-toolbar">
                     <a href="{{route('users.flexibilities.index',['user' => $user->id])}}" class="btn btn-primary mx-2">
                         <span class="svg-icon svg-icon-1">
@@ -740,7 +740,7 @@
                                 <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
                                 <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
                             </svg>
-                        </span>See All
+                        </span>{{__('See All')}}
                     </a>
                 </div>
             </div>
@@ -750,14 +750,14 @@
                         @if($user->flexibilities->count() > 0)
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>Physical Fitness Unit</th>
-                                <th>Result</th>
-                                <th>Score</th>
-                                <th>Physical Condition</th>
+                                <th>{{__('Physical Fitness Unit')}}</th>
+                                <th>{{__('Result')}}</th>
+                                <th>{{__('Score')}}</th>
+                                <th>{{__('Physical Condition')}}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <td>Flexibility</td>
+                            <td>{{__('Flexibility')}}</td>
                             <td>
                                 @if(!empty($user->flexibilities->last()))
                                 {{ $user->flexibilities->last()->flexibility }}
@@ -772,7 +772,7 @@
                         </tbody>
                         @else
                         <tbody>
-                            <td colspan="6">No data found</td>
+                            <td colspan="6">{{__('No data found')}}</td>
                         </tbody>
                         @endif
                     </table>
@@ -792,8 +792,8 @@
                         <th></th>
                     </thead>
                     <tbody>
-                        <td style="width: 40%"><b>PHSICAL PERFORMANCE SCORE</b></td>
-                        <td style="width: 20%">AVARAGE</td>
+                        <td style="width: 40%"><b>{{ __('PHSICAL PERFORMANCE SCORE') }}</b></td>
+                        <td style="width: 20%">{{ __('AVARAGE') }}</td>
                         <td>@if(!empty($user->generals->last())){{ $user->generals->last()->physical_performance_score }}@endif</td>
                     </tbody>
                 </table>
@@ -802,7 +802,7 @@
         <!-- Others End -->
 
         @endif
-    
+
     </div>
 
 </div>

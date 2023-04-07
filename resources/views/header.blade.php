@@ -102,9 +102,22 @@
                     <!--begin::User-->
                     <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
                         <!--begin::Menu wrapper-->
+                        <!-- LANGUAGE SWITCH START -->
+                        @php
+                            $locale = session()->get('locale');
+                        @endphp
+                        <div>{{ $locale }}</div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="language-switch">
+                            <label class="form-check-label" for="language-switch">
+                              <i class="bi bi-flag"></i> English <span class="text-muted">/ Turkhis</span>
+                            </label>
+                        </div>
+                        <!-- LANGUAGE SWITCH END -->
                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
                             <div class="fw-bolder d-flex align-items-center fs-5">sadfasdf
-                                <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span></div>
+                                <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
+                            </div>
                         </div>
                         <!--begin::Menu-->
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
@@ -170,3 +183,19 @@
     </div>
     <!--end::Container-->
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('#language-switch').change(function() {
+        var state = $(this).prop('checked');
+        var locale = state ? 'tr' : 'en';
+        $.ajax({
+            url: '/switch-language/' + locale,
+            method: 'GET',
+            success: function(data) {
+                console.log(data);
+                location.reload();
+            }
+        });
+    });
+</script>

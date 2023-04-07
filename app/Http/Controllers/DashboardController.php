@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -23,5 +24,11 @@ class DashboardController extends Controller
 
 
         return view('dashboard',compact('user','lungCapacityDates','strengthDates'));
+    }
+
+    public function switchLanguage($locale)
+    {
+        session(['locale' => $locale]);
+        App::setLocale(session('locale'));
     }
 }

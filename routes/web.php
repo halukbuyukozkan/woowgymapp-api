@@ -49,4 +49,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users.strengths', StrengthController::class);
     Route::resource('users.maxvo2s', Maxvo2Controller::class);
     Route::resource('users.flexibilities', FlexibilityController::class);
+
+    Route::get('/switch-language/{locale}', [DashboardController::class, 'switchLanguage'])->name('switchLanguage');
 });

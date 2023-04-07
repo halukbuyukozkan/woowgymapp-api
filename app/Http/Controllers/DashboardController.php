@@ -25,10 +25,4 @@ class DashboardController extends Controller
 
         return view('dashboard',compact('user','lungCapacityDates','strengthDates'));
     }
-
-    public function switchLanguage($locale)
-    {
-        session(['locale' => $locale]);
-        App::setLocale(session('locale'));
-    }
 }

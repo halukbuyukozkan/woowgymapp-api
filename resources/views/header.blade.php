@@ -103,15 +103,9 @@
                     <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
                         <!--begin::Menu wrapper-->
                         <!-- LANGUAGE SWITCH START -->
-                        @php
-                            $locale = session()->get('locale');
-                        @endphp
-                        <div>{{ $locale }}</div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="language-switch">
-                            <label class="form-check-label" for="language-switch">
-                              <i class="bi bi-flag"></i> English <span class="text-muted">/ Turkhis</span>
-                            </label>
+                        <div class="mx-2">
+                            <a href="?locale=en" class="btn btn-light-primary {{ app()->getLocale() == 'en' ? 'active' : '' }} p-2">EN</a>
+                            <a href="?locale=tr" class="btn btn-light-primary {{ app()->getLocale() == 'tr' ? 'active' : '' }} p-2">TR</a>
                         </div>
                         <!-- LANGUAGE SWITCH END -->
                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
@@ -183,19 +177,3 @@
     </div>
     <!--end::Container-->
 </div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $('#language-switch').change(function() {
-        var state = $(this).prop('checked');
-        var locale = state ? 'tr' : 'en';
-        $.ajax({
-            url: '/switch-language/' + locale,
-            method: 'GET',
-            success: function(data) {
-                console.log(data);
-                location.reload();
-            }
-        });
-    });
-</script>

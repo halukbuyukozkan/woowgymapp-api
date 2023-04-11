@@ -39,6 +39,10 @@
                         <input type="text" class="form-control" id="height" name="height" required>
                     </div>
                     <div class="mb-3">
+                        <label for="weight" class="form-label">{{__('Age')}}</label>
+                        <input type="text" class="form-control" id="age" name="age" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="gender" class="form-label">{{__('Gender')}}</label>
                         <input type="text" class="form-control" id="gender" name="gender" required>
                     </div>

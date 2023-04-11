@@ -45,7 +45,7 @@ class FastingbloodsugarController extends Controller
 
         $fastingbloodsugar = Fastingbloodsugar::create($validated);
 
-        return redirect()->route('users.show',$fastingbloodsugar->user_id);
+        return redirect()->route('users.lungcapacities.create', $user->id);
     }
 
     /**

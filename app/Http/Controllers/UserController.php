@@ -42,7 +42,7 @@ class UserController extends Controller
 
         $user = User::create($validated);
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.generals.create', $user->id);
     }
     /**
      * Display the specified resource.

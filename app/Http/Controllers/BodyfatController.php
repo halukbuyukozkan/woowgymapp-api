@@ -45,7 +45,7 @@ class BodyfatController extends Controller
 
         $bodyfat = Bodyfat::create($validated);
 
-        return redirect()->route('users.bodyfat.index', $bodyfat->user_id);
+        return redirect()->route('users.bloodpressures.create', $user->id);
     }
 
     /**

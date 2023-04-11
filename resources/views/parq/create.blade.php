@@ -21,11 +21,6 @@
 	</div>
 	<!--end::Toolbar-->
     <div class="container">
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <h2>{{__('New Par-q Test:')}}</h2>
-            </div>
-        </div>
         <div class="card">
             <form action="{{ route('users.parqs.store',$user->id) }}" method="POST">
                 @csrf

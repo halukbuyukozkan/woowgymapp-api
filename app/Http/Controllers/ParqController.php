@@ -42,8 +42,8 @@ class ParqController extends Controller
         $validated['user_id'] = $user->id;
 
         $parq = Parq::create($validated);
-
-        return redirect()->route('users.show', $parq->user_id);
+        
+        return redirect()->route('users.bodyfats.create', $user->id);
     }
 
     /**
@@ -84,7 +84,7 @@ class ParqController extends Controller
 
         $parq->update($validated);
 
-        return redirect()->route('users.show', $parq->user_id);
+        return redirect()->route('users.bodyfats.create', $user->id);
     }
 
     /**

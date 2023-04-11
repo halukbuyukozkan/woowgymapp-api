@@ -26,6 +26,7 @@ class GeneralRequest extends FormRequest
         return [
             'weight' => 'required|integer',
             'height' => 'required|integer',
+            'age'=> 'required|integer',
             'gender' => 'required|string',
             'job' => 'required|string|max:255'
 

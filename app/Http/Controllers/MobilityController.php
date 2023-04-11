@@ -43,7 +43,7 @@ class MobilityController extends Controller
         $validated['user_id'] = $user->id;
         $mobility = Mobility::create($validated);
 
-        return redirect()->route('users.show', $mobility->user_id);
+        return redirect()->route('users.strengths.create', $user->id);
     }
 
     /**

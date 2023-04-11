@@ -127,5 +127,6 @@
     "user_strength":":name kullanıcısının kuvvet bilgileri",
     "Create a new strength entry":"Yeni kuvvet girdisi oluştur",
     "New General Information Entry":"Yeni genel bilgi girdisi",
-    "Chest":"Göğüs"
+    "Chest":"Göğüs",
+    "General":"Genel"
 }

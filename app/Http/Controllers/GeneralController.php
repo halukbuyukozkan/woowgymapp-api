@@ -42,7 +42,7 @@ class GeneralController extends Controller
     {
         $user->generals()->create($request->validated());
 
-        return redirect()->route('users.generals.index', $user);
+        return redirect()->route('users.parqs.create', $user->id);
     }
 
     /**

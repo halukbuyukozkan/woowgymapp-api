@@ -44,7 +44,7 @@ class StrengthController extends Controller
 
         $strength = Strength::create($validated);
 
-        return redirect()->route('users.show', $strength->user_id);
+        return redirect()->route('users.maxvo2s.create', $user->id);
     }
 
     /**

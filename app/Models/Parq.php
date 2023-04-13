@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Parq extends Model
 {
@@ -11,6 +12,7 @@ class Parq extends Model
 
     protected $fillable = [
         'user_id',
+        'illness_id',
         'chronic_illness',
         'tension',
         'cardiovascular',
@@ -30,4 +32,9 @@ class Parq extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function illnesses(): BelongsToMany
+{
+    return $this->belongsToMany(Illness::class);
+}
 }

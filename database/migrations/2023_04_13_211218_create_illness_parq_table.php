@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('illness_parq', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('illness_id')->constrained();
-            $table->foreignId('parq_id')->constrained();
+            $table->foreignId('illness_id');
+            $table->foreignId('parq_id');
             $table->timestamps();
         });
     }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Illness;
 use Illuminate\Http\Request;
+use App\Http\Requests\IllnessRequest;
 
 class IllnessController extends Controller
 {
@@ -16,7 +18,7 @@ class IllnessController extends Controller
     {
         $illnesses = Illness::paginate();
 
-        return view('illnesses.index', compact('illnesses'));
+        return view('illnesses.index',compact('illnesses'));
     }
 
     /**
@@ -24,9 +26,9 @@ class IllnessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $user)
     {
-        //
+        return view('illnesses.create',compact('user'));
     }
 
     /**
@@ -35,9 +37,13 @@ class IllnessController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(IllnessRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $illness = Illness::create($validated);
+
+        return redirect()->route('illnesses.index');
     }
 
     /**

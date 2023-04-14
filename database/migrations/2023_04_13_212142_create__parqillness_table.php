@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('_parqillness', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parq_id')->constrained('parqillness');
-            $table->foreignId('illness_id')->constrained('illness');
+            $table->foreignId('parq_id');
+            $table->foreignId('illness_id');
             $table->timestamps();
         });
     }

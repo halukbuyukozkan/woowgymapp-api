@@ -109,7 +109,7 @@
                         </div>
                         <!-- LANGUAGE SWITCH END -->
                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                            <div class="fw-bolder d-flex align-items-center fs-5">sadfasdf
+                            <div class="fw-bolder d-flex align-items-center fs-5">{{ Auth::user()->name }}
                                 <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
                             </div>
                         </div>

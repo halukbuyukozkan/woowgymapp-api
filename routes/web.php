@@ -7,12 +7,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Maxvo2Controller;
 use App\Http\Controllers\BodyfatController;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\IllnessController;
 use App\Http\Controllers\MobilityController;
 use App\Http\Controllers\StrengthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FlexibilityController;
 use App\Http\Controllers\LungCapacityController;
 use App\Http\Controllers\BloodpressureController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FastingbloodsugarController;
 
 /*
@@ -49,4 +50,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users.strengths', StrengthController::class);
     Route::resource('users.maxvo2s', Maxvo2Controller::class);
     Route::resource('users.flexibilities', FlexibilityController::class);
+
+    Route::resource('illnesses', IllnessController::class);
 });

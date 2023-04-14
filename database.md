@@ -32,6 +32,15 @@
 -allergy
 
 
+# IllnessParq (Many to Many)
+-id
+-parq_id
+-illness_id
+
+# Illness
+-id
+-name
+
 # Bodyfat
 -id
 -user_id
@@ -113,6 +122,8 @@
 -user_id
 -max_vo2
 -score -> nullable
+
+
 
 
 

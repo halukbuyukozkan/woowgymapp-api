@@ -21,7 +21,7 @@
 	</div>
 	<!--end::Toolbar-->
     <div class="container">
-
+        @if($general != null)
         <!-- Tabs start  -->
         <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
             <li class="nav-item">
@@ -52,9 +52,12 @@
                 <a class="nav-link" data-bs-toggle="tab" href="#flexibility">{{ __('Flexibility')}}</a>
             </li>
         </ul>
+        <!-- Tabs end  -->
+        @endif
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="parq" role="tabpanel">
                 <!-- PARQ START -->
+                @if($general != null)
                 <div class="card shadow-sm my-2">
                     <div class="card-header">
                         <h3 class="card-title">{{ __('user_details', ['name' => $user['name']]) }}</h3>
@@ -137,20 +140,22 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 <!-- PARQ END -->
                 <!-- GENERAL START -->
                 <div class="card shadow-sm my-2">
                     <div class="card-header">
                         <h3 class="card-title">{{__('General İnformations')}}</h3>
                         <div class="card-toolbar">
+                            @if($general != null)
                             <a href="{{route('users.generals.index',['user' => $user->id])}}" class="btn btn-primary mx-2"><span class="svg-icon svg-icon-1">
-                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-                                    <rect x="11" y="17" width="7" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-                                    <rect x="11" y="9" width="2" height="2" rx="1" transform="rotate(-90 11 9)" fill="currentColor"/>
-                                </svg>
-                            </span>{{ __('See All') }}
-                        </a>
+                            {{ __('See All') }}
+                            </a>
+                            @else
+                            <a href="{{route('users.generals.create',['user' => $user->id])}}" class="btn btn-primary mx-2"><span class="svg-icon svg-icon-1">
+                            {{ __('Create a new General Information') }}
+                            </a>
+                            @endif
                         </div>
                     </div>
                     <div class="card-body">
@@ -181,7 +186,9 @@
                     </div>
                 </div>
                 <!-- GENERAL END -->
-                <!-- Others Start -->
+                <!-- SCORE Start -->
+                @if($general != null)
+                @if($general->physical_performance_score != null)
                 <div class="card my-4">
                     <div class="table-responsive px-4">
                         <table class="table table-bordered align-middle text-center">
@@ -193,12 +200,14 @@
                             <tbody>
                                 <td style="width: 40%"><b>{{ __('PHSICAL PERFORMANCE SCORE') }}</b></td>
                                 <td style="width: 20%">{{ __('AVARAGE') }}</td>
-                                <td>@if(!empty($user->generals->last())){{ $user->generals->last()->physical_performance_score }}@endif</td>
+                                <td>@if($general != null){{ $general->physical_performance_score }}@endif</td>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <!-- Others End -->
+                @endif
+                @endif
+                <!-- SCORE End -->
             </div>
 
             <div class="tab-pane fade" id="bodyfats" role="tabpanel">

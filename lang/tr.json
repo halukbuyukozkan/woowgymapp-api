@@ -128,5 +128,11 @@
     "Create a new strength entry":"Yeni kuvvet girdisi oluştur",
     "New General Information Entry":"Yeni genel bilgi girdisi",
     "Chest":"Göğüs",
-    "General":"Genel"
+    "General":"Genel",
+    "Create a new General Information":"Genel bilgi oluştur",
+    "Illness":"Hastalık",
+    "New Illness Entry:":"Yeni hastalık girdisi ",
+    "Enter illness name:":"Hastalık adı:",
+    "Create a New Illness Entry":"Yeni Hastalık Oluştur"
+
 }

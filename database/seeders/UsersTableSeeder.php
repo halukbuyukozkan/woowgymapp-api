@@ -41,6 +41,28 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-20 10:50:30',
                 'updated_at' => '2023-03-20 10:50:30',
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'name' => 'Teoman Demir',
+                'email' => 'teomandemir@woowgym.com',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$PXC5BmH8dVBpwzdOluU6iuGoxVwWnXxEgvjfX6NdI4AdVvDlBE7pC',
+                'remember_token' => NULL,
+                'created_at' => '2023-04-13 19:53:38',
+                'updated_at' => '2023-04-13 19:53:38',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'name' => 'Selçuk Değirmenci',
+                'email' => 'selcukdegirmenci@woowgym.com',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$nXXKemP1vqxa15xyQd0LiOPePfowo95QUMuii.EEbOLkFIbSB6r6G',
+                'remember_token' => NULL,
+                'created_at' => '2023-04-14 07:09:49',
+                'updated_at' => '2023-04-14 07:09:49',
+            ),
         ));
         
         

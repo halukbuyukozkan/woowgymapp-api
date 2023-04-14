@@ -14,9 +14,8 @@ class Illness extends Model
         'name',
     ];
 
-    public function illness(): BelongsToMany
-{
-    return $this->belongsToMany(Parq::class);
-}
-
+    public function parqs(): BelongsToMany
+    {
+        return $this->belongsToMany(Parq::class);
+    }
 }

@@ -32,7 +32,7 @@
 -allergy
 
 
-# ParqIllness (Many to Many)
+# IllnessParq (Many to Many)
 -id
 -parq_id
 -illness_id

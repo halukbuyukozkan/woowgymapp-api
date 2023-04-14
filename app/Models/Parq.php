@@ -34,7 +34,7 @@ class Parq extends Model
     }
 
     public function illnesses(): BelongsToMany
-{
-    return $this->belongsToMany(Illness::class);
-}
+    {
+        return $this->belongsToMany(Illness::class);
+    }
 }

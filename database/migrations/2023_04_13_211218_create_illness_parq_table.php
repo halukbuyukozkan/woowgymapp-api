@@ -15,12 +15,9 @@ return new class extends Migration
     {
         Schema::create('illness_parq', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('illness_id');
-            $table->foreignId('parq_id');
+            $table->foreignId('illness_id')->constrained();
+            $table->foreignId('parq_id')->constrained();
             $table->timestamps();
-
-            $table->foreign('illness_id')->references('id')->on('illness')->onDelete('cascade');
-            $table->foreign('parq_id')->references('id')->on('parq')->onDelete('cascade');
         });
     }
 

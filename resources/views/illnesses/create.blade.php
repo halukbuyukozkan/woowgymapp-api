@@ -33,7 +33,21 @@
                     <div class="mb-3">
                         <label for="illness" class="form-label">{{__('Enter illness name:')}}</label>
                         <input type="text" class="form-control" id="illness" name="name" required>
-                    </div>
+                    </div><br>
+                    <select class="form-select" data-control="select2" data-placeholder="Hastalık tipi seçiniz" name="illness_type_id">
+                        <option></option>
+                        <option value="1">{{__('Cardiovascular diseases')}}</option>
+                        <option value="2">{{__('Bone and joint diseases')}}</option>
+                        <option value="3">{{__('Respiratory diseases')}}</option>
+                        <option value="4">{{__('Diabetes')}}</option>
+                        <option value="5">{{__('Neurological diseases')}}</option>
+                        <option value="6">{{__('Allergies')}}</option>
+                        <option value="7">{{__('Mental diseases')}}</option>
+                        <option value="8">{{__('Gastrointestinal diseases')}}</option>
+                        <option value="9">{{__('Cancer diseases')}}</option>
+                        <option value="10">{{__('Spinal disorders')}}</option>
+
+                    </select><br><br>
                     <button type="submit" class="btn btn-primary">{{__('Create')}}</button>
                 </div>
             </form>

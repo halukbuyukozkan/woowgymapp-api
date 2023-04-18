@@ -34,12 +34,14 @@
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
                                 <th>{{__('Illness')}}</th>
+                                <th>{{__('Illness type')}}</th>
                             </tr>
                         </thead>
                         @if(isset($illnesses))
                             @foreach ($illnesses as $illness)
                             <tbody>
                                 <td class="align-middle">{{ $illness->name }}</td>
+                                <td class="align-middle">{{ $illness->type->name }}</td>
                                 <td class="align-middle">
                                 </td>
                             </tbody>

@@ -16,7 +16,7 @@ class IllnessController extends Controller
      */
     public function index()
     {
-        $illnesses = Illness::paginate();
+        $illnesses = Illness::with('illnesstypes')->paginate();
 
         return view('illnesses.index',compact('illnesses'));
     }

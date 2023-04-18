@@ -25,6 +25,7 @@ class IllnessRequest extends FormRequest
     {
         return [
             'name'=>'required|string',
+            'illness_type_id'=>'nullable',
         ];
     }
 }

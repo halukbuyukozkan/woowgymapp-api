@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('illnesses', function (Blueprint $table) {
+        Schema::create('illness_types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('illness_type_id')->constrained();
             $table->string('name');
             $table->timestamps();
         });
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('illnesses');
+        Schema::dropIfExists('illness_types');
     }
 };

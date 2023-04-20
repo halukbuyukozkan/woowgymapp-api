@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Illness;
+use App\Models\IllnessType;
 use Illuminate\Http\Request;
 use App\Http\Requests\IllnessRequest;
 
@@ -16,7 +17,7 @@ class IllnessController extends Controller
      */
     public function index()
     {
-        $illnesses = Illness::with('illnesstypes')->paginate();
+        $illnesses = Illness::with('illnessType')->paginate();
 
         return view('illnesses.index', compact('illnesses'));
     }
@@ -28,7 +29,9 @@ class IllnessController extends Controller
      */
     public function create(User $user)
     {
-        return view('illnesses.create', compact('user'));
+        $illnessTypes = IllnessType::all();
+
+        return view('illnesses.create', compact('user', 'illnessTypes'));
     }
 
     /**

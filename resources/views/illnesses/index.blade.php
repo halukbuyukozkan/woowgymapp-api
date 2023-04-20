@@ -41,7 +41,7 @@
                             @foreach ($illnesses as $illness)
                             <tbody>
                                 <td class="align-middle">{{ $illness->name }}</td>
-                                <td class="align-middle">{{ $illness->type->name }}</td>
+                                <td class="align-middle">{{ __('illnesses.'.$illness->illnessType->name) }}</td>
                                 <td class="align-middle">
                                 </td>
                             </tbody>

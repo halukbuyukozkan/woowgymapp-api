@@ -134,16 +134,8 @@
     "New Illness Entry:":"Yeni hastalık girdisi ",
     "Enter illness name:":"Hastalık adı:",
     "Create a New Illness Entry":"Yeni Hastalık Oluştur",
-    "Cardiovascular diseases":"kardiovasküler hastalıklar",
-    "Bone and joint diseases":"Eklem ve kemik hastalıkları",
-    "Respiratory diseases":"Solunum yolu hastalıkları",
-    "Diabetes":"Diyabet",
-    "Neurological diseases":"Nörolojik hastalıklar",
-    "Allergies":"Alerjiler",
-    "Mental diseases":"Mental hastalıklar",
-    "Gastrointestinal diseases":"Gastrointestinal hastalıklar",
-    "Cancer diseases":"Kanser hastalıkları",
-    "Spinal disorders":"Omuriliksel rahatsızlıklar",
     "Illness type":"Hastalık tipi",
-    "Illnesses":"Hastalıklar"
+    "Illnesses":"Hastalıklar",
+    "Create a New Illness Type":"Yeni hastalık tipi oluştur",
+    "New Illness Type:":"Yeni hastalık tipi:"
 }

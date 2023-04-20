@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-9 d-flex justify-content-end pr-4">
                     <a href="{{ route('illnesses.create') }}"
-                        class="btn btn-primary">{{ __('Create a New Illness Entry') }}</a>
+                        class="btn btn-primary btn-sm">{{ __('Create a New Illness Entry') }}</a>
                 </div>
                 <div class="card my-2">
                     <div class="table-responsive px-4">

@@ -146,13 +146,17 @@
     "Cancer diseases":"Kanser hastalıkları",
     "Spinal disorders":"Omuriliksel rahatsızlıklar",
     "Illness type":"Hastalık tipi",
+    "Illness Type":"Hastalık tipi",
     "Illnesses":"Hastalıklar",
     "Create a New Illness Type":"Yeni hastalık tipi oluştur",
+    "Edit Illness Type":"Hastalık tipini düzenle",
     "New Illness Type:":"Yeni hastalık tipi:",
     "Illness Types":"Hastalık tipleri",
     "Arteriosclerosis":"Damar sertliği",
     "Heart failure":"Kalp yetmezliği",
     "Cardiac arrhythmia":"Kardiyak aritmiler",
     "Hypertension":"Hipertansiyon",
-    "Hipotension":"Hipotansiyon"
+    "Hipotension":"Hipotansiyon",
+    "Create Illness":"Hastalık oluştur",
+    "Enter illness type name":"Hastalık tipi adı"
 }

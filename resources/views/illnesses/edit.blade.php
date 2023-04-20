@@ -49,7 +49,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
+                        <button type="submit" class="btn btn-primary btn-sm">{{ __('Create') }}</button>
                     </div>
                 </form>
             </div>

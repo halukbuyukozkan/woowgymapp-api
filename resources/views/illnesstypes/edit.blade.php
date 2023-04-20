@@ -33,12 +33,12 @@
                     @csrf
                     @method('PUT')
                     <div class="p-4">
-                        <div class="mb-3">
+                        <div>
                             <label for="illness" class="form-label">{{ __('Enter illness name:') }}</label>
                             <input type="text" class="form-control" id="illness" name="name"
-                                value="{{ old('name', $illnessType->name) }}" required>
+                                value="{{ __($illnessType->name) }}" required>
                         </div><br>
-                        <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
+                        <button type="submit" class="btn btn-primary btn-sm">{{ __('Create') }}</button>
                     </div>
                 </form>
             </div>

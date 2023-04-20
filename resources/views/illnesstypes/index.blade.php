@@ -34,12 +34,23 @@
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
                                 <th>{{__('Illness Type')}}</th>
+                                <th>{{__('Actions')}}</th>
                             </tr>
                         </thead>
                         @if(isset($illnessTypes))
                             @foreach ($illnessTypes as $illnessType)
                             <tbody>
                                 <td class="align-middle">{{ __($illnessType->name) }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="{{ route('illnessTypes.edit', $illnessType) }}" class="btn btn-primary btn-sm py-2 px-4">{{__('Edit')}}</a>
+                                        <form action="{{ route('illnessTypes.destroy', $illnessType) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm py-2 px-4 rounded-start-0">{{__('Delete')}}</button>
+                                        </form>
+                                    </div>
+                                </td>
                             </tbody>
                             @endforeach
                         @else

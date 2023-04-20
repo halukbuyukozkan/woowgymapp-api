@@ -60,9 +60,9 @@ class IllnessTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(IllnessType $illnessType)
     {
-        //
+        return view('illnessTypes.edit', compact('illnessType'));
     }
 
     /**
@@ -72,9 +72,11 @@ class IllnessTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(IllnessTypeRequest $request, IllnessType $illnessType)
     {
-        //
+        $illnessType->update($request->validated());
+
+        return redirect()->route('illnessTypes.index')->with('success', 'Illness type updated successfully.');
     }
 
     /**
@@ -83,8 +85,10 @@ class IllnessTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(IllnessType $illnessType)
     {
-        //
+        $illnessType->delete();
+
+        return redirect()->route('illnessTypes.index')->with('success', 'Illness type deleted successfully.');
     }
 }

@@ -133,6 +133,9 @@
     "Illness":"Hastalık",
     "New Illness Entry:":"Yeni hastalık girdisi ",
     "Enter illness name:":"Hastalık adı:",
-    "Create a New Illness Entry":"Yeni Hastalık Oluştur"
-
+    "Create a New Illness Entry":"Yeni Hastalık Oluştur",
+    "Illness type":"Hastalık tipi",
+    "Illnesses":"Hastalıklar",
+    "Create a New Illness Type":"Yeni hastalık tipi oluştur",
+    "New Illness Type:":"Yeni hastalık tipi:"
 }

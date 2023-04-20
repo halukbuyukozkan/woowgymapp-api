@@ -12,6 +12,7 @@ use App\Http\Controllers\MobilityController;
 use App\Http\Controllers\StrengthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FlexibilityController;
+use App\Http\Controllers\IllnessTypeController;
 use App\Http\Controllers\LungCapacityController;
 use App\Http\Controllers\BloodpressureController;
 use App\Http\Controllers\FastingbloodsugarController;
@@ -42,7 +43,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users.parqs', ParqController::class);
     Route::resource('users.bodyfats', BodyfatController::class);
     Route::resource('users.bloodpressures', BloodpressureController::class);
-    Route::resource('users.fastingbloodsugars',FastingbloodsugarController::class);
+    Route::resource('users.fastingbloodsugars', FastingbloodsugarController::class);
 
     Route::resource('users.generals', GeneralController::class);
     Route::resource('users.lungcapacities', LungCapacityController::class);
@@ -52,4 +53,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users.flexibilities', FlexibilityController::class);
 
     Route::resource('illnesses', IllnessController::class);
+    Route::resource('illnessTypes', IllnessTypeController::class);
 });

@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Illness;
+use App\Http\Requests\IllnessTypeRequest;
 use App\Models\IllnessType;
 use Illuminate\Http\Request;
-use App\Http\Requests\IllnessRequest;
 
-class IllnessController extends Controller
+class IllnessTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +15,9 @@ class IllnessController extends Controller
      */
     public function index()
     {
-        $illnesses = Illness::with('illnessType')->paginate();
+        $illnessTypes = IllnessType::paginate();
 
-        return view('illnesses.index', compact('illnesses'));
+        return view('illnessTypes.index', compact('illnessTypes'));
     }
 
     /**
@@ -27,11 +25,9 @@ class IllnessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(User $user)
+    public function create()
     {
-        $illnessTypes = IllnessType::all();
-
-        return view('illnesses.create', compact('user', 'illnessTypes'));
+        return view('illnessTypes.create');
     }
 
     /**
@@ -40,13 +36,11 @@ class IllnessController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(IllnessRequest $request)
+    public function store(IllnessTypeRequest $request)
     {
-        $validated = $request->validated();
+        IllnessType::create($request->validated());
 
-        $illness = Illness::create($validated);
-
-        return redirect()->route('illnesses.index');
+        return redirect()->route('illnessTypes.index')->with('success', 'IllnessType created successfully.');
     }
 
     /**

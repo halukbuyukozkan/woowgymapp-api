@@ -23,30 +23,22 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3">
-                <h2>{{__('New Illness Entry:')}}</h2>
+                <h2>{{__('New Illness Type:')}}</h2>
             </div>
         </div>
         <div class="card">
-            <form action="{{ route('illnesses.store',$user->id) }}" method="POST">
+            <form action="{{ route('illnessTypes.store') }}" method="POST">
                 @csrf
                 <div class="p-4">
                     <div class="mb-3">
-                        <label for="illness" class="form-label">{{__('Enter illness name:')}}</label>
+                        <label for="illness" class="form-label">{{__('Enter illness type name:')}}</label>
                         <input type="text" class="form-control" id="illness" name="name" required>
                     </div><br>
-                    <select class="form-select" data-control="select2" data-placeholder="Hastalık tipi seçiniz" name="illness_type_id">
-                        <option value="">{{__('Select Illness Type')}}</option>
-                        @foreach ($illnessTypes as $illnessType)
-                            <option value="{{ $illnessType->id }}">{{ __('illnesses.' . $illnessType->name) }} </option>
-                        @endforeach
-                    </select><br><br>
                     <button type="submit" class="btn btn-primary">{{__('Create')}}</button>
                 </div>
             </form>
         </div>
     </div>
-
-
 
 </div>
 

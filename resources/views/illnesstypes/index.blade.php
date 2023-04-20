@@ -9,7 +9,7 @@
 			<!--begin::Page title-->
 			<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Details')}}
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">{{__('Illness Types')}}
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                 <!--end::Separator-->
@@ -26,22 +26,20 @@
                 <h2></h2>
             </div>
             <div class="col-md-9 d-flex justify-content-end pr-4">
-                <a href="{{route('illnesses.create')}}" class="btn btn-primary">{{__('Create a New Illness Entry')}}</a>
+                <a href="{{route('illnessTypes.create')}}" class="btn btn-primary">{{__('Create a New Illness Type')}}</a>
             </div>
             <div class="card my-2">
                 <div class="table-responsive px-4">
                     <table class="table table-bordered text-center">
                         <thead>
                             <tr class="fw-bold fs-6 text-gray-800">
-                                <th>{{__('Illness')}}</th>
-                                <th>{{__('Illness type')}}</th>
+                                <th>{{__('Illness Type')}}</th>
                             </tr>
                         </thead>
-                        @if(isset($illnesses))
-                            @foreach ($illnesses as $illness)
+                        @if(isset($illnessTypes))
+                            @foreach ($illnessTypes as $illnessType)
                             <tbody>
-                                <td class="align-middle">{{ $illness->name }}</td>
-                                <td class="align-middle">{{ __('illnesses.'.$illness->illnessType->name) }}</td>
+                                <td class="align-middle">{{ __('illnesses.' . $illnessType->name) }}</td>
                                 <td class="align-middle">
                                 </td>
                             </tbody>

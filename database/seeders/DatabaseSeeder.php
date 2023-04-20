@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ModelHasPermissionsTableSeeder::class);
         $this->call(PersonalAccessTokensTableSeeder::class);
         $this->call(BodyfatsTableSeeder::class);
+        $this->call(IllnessTypesTableSeeder::class);
     }
 }

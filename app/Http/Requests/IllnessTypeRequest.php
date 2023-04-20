@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class IllnessRequest extends FormRequest
+class IllnessTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,7 @@ class IllnessRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|string',
-            'illness_type_id'=>'nullable',
+            'name' => 'required|string|max:255',
         ];
     }
 }

@@ -37,7 +37,7 @@
                     <select class="form-select" data-control="select2" data-placeholder="Hastalık tipi seçiniz" name="illness_type_id">
                         <option value="">{{__('Select Illness Type')}}</option>
                         @foreach ($illnessTypes as $illnessType)
-                            <option value="{{ $illnessType->id }}">{{ __('illnesses.' . $illnessType->name) }} </option>
+                            <option value="{{ $illnessType->id }}">{{ __($illnessType->name) }} </option>
                         @endforeach
                     </select><br><br>
                     <button type="submit" class="btn btn-primary">{{__('Create')}}</button>

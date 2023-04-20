@@ -39,9 +39,7 @@
                         @if(isset($illnessTypes))
                             @foreach ($illnessTypes as $illnessType)
                             <tbody>
-                                <td class="align-middle">{{ __('illnesses.' . $illnessType->name) }}</td>
-                                <td class="align-middle">
-                                </td>
+                                <td class="align-middle">{{ __($illnessType->name) }}</td>
                             </tbody>
                             @endforeach
                         @else

@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
-class SetLanguage
+class Language
 {
     /**
      * Handle an incoming request.
@@ -16,9 +17,8 @@ class SetLanguage
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->has('locale') && in_array($request->input('locale'), config('app.locales'))) {
-            session()->put('locale', $request->input('locale'));
-            app()->setLocale($request->input('locale'));
+        if (Session()->has('applocale') AND array_key_exists(Session()->get('applocale'), config('languages'))) {
+            App::setLocale(Session()->get('applocale'));
         }
 
         return $next($request);

@@ -44,7 +44,7 @@
                             @if (isset($illnesses))
                                 @foreach ($illnesses as $illness)
                                     <tbody>
-                                        <td class="align-middle">{{ $illness->name }}</td>
+                                        <td class="align-middle">{{ __($illness->name) }}</td>
                                         <td class="align-middle">{{ __($illness->illnessType->name) }}</td>
                                         <td class="align-middle">
                                             <div class="btn-group">

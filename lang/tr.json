@@ -149,5 +149,10 @@
     "Illnesses":"Hastalıklar",
     "Create a New Illness Type":"Yeni hastalık tipi oluştur",
     "New Illness Type:":"Yeni hastalık tipi:",
-    "Illness Types":"Hastalık tipleri"
+    "Illness Types":"Hastalık tipleri",
+    "Arteriosclerosis":"Damar sertliği",
+    "Heart failure":"Kalp yetmezliği",
+    "Cardiac arrhythmia":"Kardiyak aritmiler",
+    "Hypertension":"Hipertansiyon",
+    "Hipotension":"Hipotansiyon"
 }

@@ -37,6 +37,9 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/locale/{locale}', [DashboardController::class, 'changeLocal'])->name('changeLocal');
+
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::resource('users', UserController::class);

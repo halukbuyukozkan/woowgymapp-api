@@ -27,7 +27,7 @@ class IllnessTypeController extends Controller
      */
     public function create()
     {
-        return view('illnessTypes.create');
+        return view('illnesstypes.create');
     }
 
     /**
@@ -62,7 +62,7 @@ class IllnessTypeController extends Controller
      */
     public function edit(IllnessType $illnessType)
     {
-        return view('illnessTypes.edit', compact('illnessType'));
+        return view('illnesstypes.edit', compact('illnessType'));
     }
 
     /**
@@ -89,6 +89,6 @@ class IllnessTypeController extends Controller
     {
         $illnessType->delete();
 
-        return redirect()->route('illnessTypes.index')->with('success', 'Illness type deleted successfully.');
+        return redirect()->route('illnesstypes.index')->with('success', 'Illness type deleted successfully.');
     }
 }

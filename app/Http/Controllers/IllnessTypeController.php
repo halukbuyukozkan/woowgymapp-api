@@ -17,7 +17,7 @@ class IllnessTypeController extends Controller
     {
         $illnessTypes = IllnessType::paginate();
 
-        return view('illnessTypes.index', compact('illnessTypes'));
+        return view('illnesstypes.index', compact('illnessTypes'));
     }
 
     /**

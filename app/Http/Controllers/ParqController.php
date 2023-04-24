@@ -6,6 +6,7 @@ use App\Models\Parq;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\ParqRequest;
+use App\Models\Illness;
 
 class ParqController extends Controller
 {
@@ -26,7 +27,10 @@ class ParqController extends Controller
      */
     public function create(User $user)
     {
-        return view('parq.create', compact('user'));
+        $cardiovascularIllnesses = Illness::OfType(1)->get();
+        $spinalIllnesses = Illness::OfType(10)->get();
+
+        return view('parq.create', compact('user', 'cardiovascularIllnesses', 'spinalIllnesses'));
     }
 
     /**

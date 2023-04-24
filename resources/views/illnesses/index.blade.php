@@ -67,6 +67,11 @@
                             @endif
                         </table>
                     </div>
+
+                    <div class="d-flex justify-content-center my-2">
+                        {{ $illnesses->links() }}
+                    </div>
+
                 </div><br><br>
             </div>
         </div>

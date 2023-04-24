@@ -158,5 +158,49 @@
     "Hypertension":"Hipertansiyon",
     "Hipotension":"Hipotansiyon",
     "Create Illness":"Hastalık oluştur",
-    "Enter illness type name":"Hastalık tipi adı"
+    "Enter illness type name":"Hastalık tipi adı",
+    "Herniated disc":"Bel fıtığı",
+    "Neck hernia":"Boyun fıtığı",
+    "Spinal calcification":"Omurga kireçlenmesi",
+    "Spinal slippage":"Omurga kayması",
+    "Scoliosis":"Skolyoz",
+
+    "Osteoarthritis":"Osteoartrit",
+    "Rheumatoid":"Romatoid",
+    "Arthritis":"Artrit",
+    "Gout":"Gut hastalığı",
+
+    "Asthma":"Astım",
+    "Coah":"Koah",
+    "Bronchitis":"Bronşit",
+
+    "Type 1":"Tip 1",
+    "Type 2":"Tip 2",
+
+    "Alzheimer":"Alzheimer",
+    "Parkinson":"Parkinson",
+    "Demantia":"Demans",
+
+    "Hay fever":"Saman nezlesi",
+    "House dust mite allergy":"Ev tozu akarı alerjisi",
+    "Pet dander allergy":"Hayvan tüyü alerjisi",
+    "Food allergy":"Besin alerjisi",
+
+    "Depression":"Depresyon",
+    "Burnout":"Tükenmişlik sendromu",
+    "Bipolar disorder":"Bipolar bozukluk",
+    "Schizophrenia":"Şizofreni",
+
+    "Restless bowel syndrome":"Huzursuz bağırsak sendromu",
+    "Ulcerative colitis":"Ülseratif kolit",
+    "Crohn's disease":"Crohn hastalığı",
+
+    "Breast cancer":"Meme kanseri",
+    "Prostate cancer":"Prostat kanseri",
+    "Colon cancer":"Kolon kanseri",
+    "Lung cancer":"Akciğer kanseri",
+
+    "Anatomical injury":"Anatomik yaralanma"
+
+
 }

@@ -25,4 +25,9 @@ class Illness extends Model
     {
         return $this->belongsTo(IllnessType::class);
     }
+
+    public function scopeOfType($query, $type)
+    {
+        return $query->where('illness_type_id', $type);
+    }
 }
